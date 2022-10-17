@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container-fluid pt-5 pb-5">
+  <div class="container p-5">
+    <div class="row border p-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-8">
+          <h5 class="font-weight-bold">OOO  «MY PRINT»</h5>
+          <h6>Адрес: г.Ташкент  Учтепинский р-н, 14-квартал дом № 4. Тел: 90-109-15-00</h6s>
+          <p class="pt-3 h6 ">Со склада: Участок оперативной печати склад</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 p-3">
+            <img src="img/logo.png" width="100%" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+            <h5 class="text-center font-weight-bold pt-3">№ 0000000003 от  <span class="h5 font-weight-bold">02.12.2022</span></h5>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+         <p class="h6">Получатель:  ________________</p>
+         <p class="h6">Основание:   Заявка 00001     г.</p>
+         <p class="h6">Через: ID  001</p>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 text-center justify-content-center">
+	<table class="table table-bordered">
+     <thead>
+        
+     </thead>   
+     <tbody>
+
+          <tr>
+            <th>Clinet</th>
+            <th>Name</th>
+            <th>Selected</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Wtihout Price VAT</th>
+            <th>VAT</th>
+            <th>Price VAT</th>
+            <th>Total</th>
+          </tr>
+         {% for data in datas %}
+            
+           <tr>
+            <td class="pt-3">{{data.student.client}}</td>
+            <td class="pt-3">{{data.name}}</td>
+            <td class="pt-5">{{data.status_order}}</td>
+            <td class="pt-5">{{data.amount}}</td>
+            <td class="pt-5">{{data.price}}</td>
+            <td class="pt-5">{{data.price_free_VAT}}</td>
+            <td class="pt-5">{{data.VAT}}</td>
+            <td class="pt-5">{{data.price_with_VAT}}</td>
+            <td class="pt-5">{{data.total}}</td>
+           </tr>
+         {% endfor %}
+     </tbody>
+    </table>
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <h6> Разрешил   _____________________</h6>
+    <h6>Отпустил   ______________________</h6>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <h6>Гл.бухгалтер  _____________________</h6>
+    <h6>Получил  _________________________</h6>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<p><a href="{% url 'myprint:create_pdf' %}" class="h6 text-dark">CONVERT PDF</a></p><br>
+{% endblock %}

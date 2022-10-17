@@ -1,0 +1,595 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	 <section class="container-fluid pl-0 pr-0 overflow-hidden header-slider">
+		<div class="container-fluid" style="background-color: rgba(0,0,0,0.5); width: 100%; height: 100%;">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3">
+						<div class='console-container'><span id='text'></span></div>
+					</div>
+					</div>
+				</div>
+		</div>
+	</section> 
+
+
+<section class="container-fluid pl-0 pr-0 pt-5" id="servic_section">     
+	<div class="container pt-5">
+		<div class="row">
+		  <ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+				<a class="text-dark" data-toggle="tab" href="#tabs-1" role="tab">
+				  <div class="card bg-transparent border-0 text-center p-2">
+					<img src="{% static 'img/bg/indexCategory1.png' %}" width="95%" height="220" class="m-auto">
+					<h4 class="pt-3 text-dark" data-toggle="tab" href="#tabs-1" role="tab">Полиграфия</h4>  
+				  </div>  
+				</a>
+			</li>
+			<li class="nav-item col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+				<a class="text-dark" data-toggle="tab" href="#tabs-2" role="tab">
+					<div class="card bg-transparent border-0 text-center p-2">
+			<img src="{% static 'img/bg/indexCategory2.png' %}" width="95%" height="220" class="m-auto">
+			<h4 class="pt-3 text-dark" data-toggle="tab" href="#tabs-1" role="tab">Реклама</h4>  
+		  </div>  
+				</a>
+			</li>
+			<li class="nav-item col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+				<a class="text-dark" data-toggle="tab" href="#tabs-3" role="tab">
+								<div class="card bg-transparent border-0 text-center p-2">
+			<img src="{% static 'img/bg/indexCategory3.png' %}" width="95%" height="220" class="m-auto">
+			<h4 class="pt-3 text-dark" data-toggle="tab" href="#tabs-1" role="tab">Сувениры</h4>  
+		  </div>  
+				</a>
+			</li>
+		</ul>
+		
+		<div class="tab-content">
+			<div class="tab-pane" id="tabs-1" role="tabpanel">
+				<div class="row pl-0 pr-0">
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w1.png' %}" width="100" height="100" class="m-auto" alt="">
+					  <h6 class="text-dark pt-2">Визитки</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w2.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Брошюры</h6>
+					  </div>
+					</a> 
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w3.png' %}" width="100" height="100" class="m-auto" alt="">
+					  <h6 class="text-dark pt-2">Календари</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w4.png' %}" width="100" height="100" class="m-auto" alt="">
+					  <h6 class="text-dark pt-2">Каталоги</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w5.png' %}" width="100" height="100" class="m-auto" alt="">
+					  <h6 class="text-dark pt-2">Буклеты</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w6.png' %}" width="100" height="100" class="m-auto" alt="">
+					  <h6 class="text-dark pt-2">Листовки</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+						<img src="{% static 'img/type/w7.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Наклейки</h6>
+					</div>
+					  </a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+						<img src="{% static 'img/type/w8.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Презентации</h6>
+					</div>
+					  </a>
+				  </div>
+				  <div class="col-12 col-sm46 col-md34 col-lg23 col-xl-2 p-3 text-center">
+					  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+						<img src="{% static 'img/type/w9.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Пакеты</h6>
+					</div>
+					  </a>
+				  </div>
+				  <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+					  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+						<img src="{% static 'img/type/w10.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Приглашения</h6>
+					</div>
+					  </a>
+				  </div>
+				  <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<img src="{% static 'img/type/w11.png' %}" width="100" height="100" class="m-auto" alt="">
+						<h6 class="text-dark pt-2">Меню</h6>
+					  </div>
+					</a>
+				  </div>
+				  <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+					  <div class="card borderH p-3">
+						<h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+						<h6 class="text-dark pt-2">Ещё</h6>
+					  </div>
+					</a>	
+				  </div>
+				</div>
+			  </div>
+			  		
+
+			<div class="tab-pane" id="tabs-2" role="tabpanel">
+			  <div class="row pl-0 pr-0">
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+				  <div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					  <h6 class="text-dark pt-2">Объемные Буквы</h6>
+				  </div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					<h6 class="text-dark pt-2">Инфостенды</h6>
+					</div>
+				  </a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					  <h6 class="text-dark pt-2">Указатели</h6>
+					</div>
+				  </a> 
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					<h6 class="text-dark pt-2">Торговое оборудование</h6>
+					</div>
+				  </a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					<h6 class="text-dark pt-2">Внутреннее оформление</h6>
+					</div>
+				  </a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					<h6 class="text-dark pt-2">Выставочные стенды</h6>
+					</div>
+				  </a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					<h6 class="text-dark pt-2">Roll Up</h6>
+					</div>
+				  </a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+					<a href="poligraphy.html">
+				  <div class="card borderH p-3">
+					  					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					  <h6 class="text-dark pt-2">Pop Up</h6>
+				  </div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 p-3 text-center">
+				  <a href="poligraphy.html">
+					<div class="card borderH p-3">
+					  <h3 class=""><img src="{% static 'img/icons/more2.svg' %}" height="100" alt=""></h3>
+					  <h6 class="text-dark pt-2">Ещё</h6>
+					</div>
+				  </a>
+				</div>
+			  </div>
+			</div>
+
+		
+			<div class="tab-pane" id="tabs-3" role="tabpanel">			
+				<div class="row">					
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r1.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Подарочные наборы</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r2.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Ручки</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r4.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Ежедневники</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r16.svg' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Флешки</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r5.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Футболки</h5>
+					</div>
+				</a>
+				</div>
+
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r17.svg' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Зонты</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r18.svg' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Кепки и бейсболки</h5>
+					</div>
+				</a>
+				</div>        
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r9.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Брелки</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r10.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Сумки</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r12.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Чехлы для телефонов</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r13.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Картхолдеры</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r14.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Кружки</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r15.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Бейджики</h5>
+					</div>
+				</a>
+				</div>
+				<div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2 p-3 text-center">
+				<a href="suviner.html">
+					<div class="card bg-transparent p-2 borderHh">
+					<img src="{% static 'img/type/r19.png' %}" width="100" height="100" class="m-auto" alt="">
+					<h5 class="pt-3 text-dark">Часы</h5>
+					</div>
+				</a>
+				</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>  
+
+
+ <section class="container-fluid pl-0 pr-0" id="about-section" style="background-image: url(img/bg/indexAboutBg.png); background-size: cover;">
+	<div class="container">
+		<div class="row">
+		  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-right">
+			  <img src="{% static 'img/bg/indexAboutPerson.png' %}" width="80%" alt="">
+		  </div>
+		  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pt-5 pb-2">
+			<h1 class="pad_top_about" style=" color: red; font-weight: bold;">Кто мы ?</h1>
+			<h5 class="text-justify">
+				ООО “MyPrint” работает для Вас с 2013 года! <br> Мы ведущая полиграфическая компания Ташкенте, с большим опытом реализации успешных проектов по печати рекламной продукции.
+			</h5>
+			<h5 class="text-justify">
+				“MyPrint” создает полиграфическую продукцию, которая отражает в себе талант дизайнеров, стабильность и качество современного производства, в самый короткий срок. Офис и производство расположены в центре Ташкенте.
+			</h5>
+		  </div>
+		</div>
+	</div>
+  </section>  
+  
+ 
+
+  
+
+  <section class="container-fluid pt-5 pb-5">
+	<div class="container pl-0 pr-0">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-4 text-center">
+				<h2 class="text-center font-weight-bold">Как мы работаем</h2>
+			</div>
+			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 text-center" style="height: 200px;">
+				<img src="{% static 'img/icons/w2.svg' %}" width="80" height="100" alt="">
+				<h6 class="font-weight-bold pt-3">Оставьте заявку на сайте или позвоните</h6>
+			</div>
+			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 text-center" style="height: 200px;">
+				<img src="{% static 'img/icons/w5.svg' %}" width="80" height="100" alt="">
+				<h6 class="font-weight-bold border-left pt-3">Подберем оптимальное решение</h6>
+			</div>
+			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 text-center" style="height: 200px;">
+				<img src="{% static 'img/icons/w4.svg' %}" width="80" height="100" alt="">
+				<h6 class="font-weight-bold border-left pt-3">Заключение договора</h6>
+			</div>
+			<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 text-center" style="height: 200px;">
+				<img src="{% static 'img/icons/images.png' %}" width="80" height="100" alt="">
+				<h6 class="font-weight-bold border-left pt-3">Вы получаете готовый продукции</h6>
+			</div>
+		</div>
+	</div>
+</section>
+	
+<section class="container-fluid pt-5 pb-5 border-top" style="background-image: url(img/bg/full.png);">
+	<div class="container">
+	 <div class="row">
+	   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		<h2 class="text-center font-weight-bold">Mы предлагаем</h2>
+	   </div>  
+	 </div>
+
+	 <div class="row pb-4 pt-3">
+	   <div class="m-auto text-center">
+		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="all">Все</button>
+		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="poligraphy">Полиграфия</button>
+		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="gifts">Сувениры</button>
+		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="textile">Текстиль</button>
+	   </div> 
+	 </div>
+		   <div class="row">
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter textile"><img src="{% static 'img/products/textile/kepka.jpg' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/reklama/eurorollup1.jpg' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter textile"><img src="{% static 'img/products/textile/jiletka.jpg' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter gifts"><img src="{% static 'img/products/ruchka/r1.png' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/reklama/pauk2.webp' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter gifts"><img src="{% static 'img/products/suviner/hub.jpg' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/katalog.png' %}" width="100%" height="230" class="img-responsive"></div>
+			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/vizitka.png' %}" width="100%" height="230" class="img-responsive"></div>
+						
+		   </div> 
+</div>
+</section> 
+
+
+
+		<section class="container-fluid pl-0 pr-0" style=" background-image: url(img/bg/head.jpg);">
+			<div class="container-fluid" style="background-color: rgba(0,0,0,.3);">
+				<div class="container pb-5 pt-5">
+					<div class="row">
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-white">
+							<h1 class="font-weight-bold text_h1">Есть вопросы ?</h1>
+							<h2>
+								<img src="{% static 'img/type/phone-white.svg' %}" class="mb-2" style="color: #0fa123;" width="40" alt="">
+								<span class="h2 font-weight-bold text_h1" >+998 (55) 500-15-05</span>
+							</h2>
+							</div>
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-white">
+							<h1 class="font-weight-bold text_h1">Звоните! </h1>
+	
+							<h2 class="font-weight-bold text_h1">Мы всегда рады!</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	
+		<section class="container-fluid pt-5 pb-5">
+			<div class="container pl-0 pr-0">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-2 text-center">
+						<h2><span class="h2 font-weight-bold">Наши преимущества</span></h2>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/icoP1.svg' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+								<h6 class="font-weight-bold  pt-3">Заказ любого объема</h6>
+								<small>Типография полного цикла предполагает изготовление заказа любого объема и сложности.</small>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/w4.svg' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+								<h6 class="font-weight-bold pt-3">Доступные цены</h6>
+								<small>Мы гарантируем высочайшее качество печати по доступным ценам.</small>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/images.png' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+								<h6 class="font-weight-bold pt-3">Соблюдение сроков сдачи</h6>
+								<small>Отлаженные процессы выполнения заказов гарантируют соблюдение оптимальных сроков.</small>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/images.png' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+								<h6 class="font-weight-bold pt-3">Различные виды печати</h6>
+								<small>Представляем цифровую печать, офсетную печать, широкоформатную печать и т.д.</small>
+							</div>
+						</div>					
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/w5.svg' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+						<h6 class="font-weight-bold pt-3">Контроль качества</h6>
+								<small>На каждом этапе производства продукции специалисты тщательно следят за ее качеством.</small>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-4 text-center p-3">
+						<div class="media">
+							<img src="{% static 'img/icons/icoP6.svg' %}" width="60" height="100" alt="">
+							<div class="media-body pl-3 text-left">
+						<h6 class="font-weight-bold pt-3">Собственная дизайн-студия</h6>
+								<small>Наши дизайнеры настоящие профессионалы, воплощающие Ваше видение в чудесные макеты.</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="bg-video-wrap">
+			<video src="{% static 'img/video/videoplayback.mp4' %}" loop muted autoplay></video>
+			<div class="overlay"></div>
+			<h1 style="font-size: 3em;" class="text-uppercase">наша цель - Быть партнерами лучших, <br> быть лучшими партнерами</h1> 
+		  </div>
+
+
+
+	<section class="container-fluid pt-5 pb-5 border-top">
+		<div class="container pl-0 pr-0">
+			<div class="row">
+				<div class="col-12 pb-2">
+					<h2 class="text-center font-weight-bold">Нам доверяют</h2>
+				</div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c1.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c7.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c8.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c9.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c10.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c5.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c2.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c3.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c6.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c4.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c27.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c28.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c29.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c30.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c31.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c32.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c33.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c34.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c35.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c36.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c37.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c38.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c39.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c40.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c41.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c42.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c43.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c44.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c45.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c46.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c47.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c48.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c49.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c50.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c51.svg' %}" width="100%" alt="clients-logo"></div></div>
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 p-1"><div class="p-0 text-center"><img src="{% static 'img/client/c52.svg' %}" width="100%" alt="clients-logo"></div></div>
+
+
+			</div>
+		</div>
+	</section>
+	{% if request.user.is_authenticated %}
+	<section class="container-fluid pl-0 pr-0" style="background-image: url(); background-size: cover;">
+		<div class="container pl-0 pr-0 pt-5 ">
+			<div class="row">
+			  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-5">
+				<div class="card bg-transparent border-0 pt-3">
+				  <h1 class="" style="padding-top: 130px; color: red; font-weight: normal;">Остались Вопросы? </h1>
+				  <h5 class="pt-3 pb-3">Оставляйте свой номер телефона и  мы перезвоним Вам в течение 50 секунд!</h5>
+				  <input type="text" class="form-control" placeholder="ФИШ">
+				  <input type="text" class="form-control mt-3 mb-3" placeholder="Telefon">
+				  <button class="btn btn-success pl-3 pr-3 ">ЖДУ ЗВОНОК!</button>
+				</div>
+			  </div>
+			  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-right pb-0">
+				<img src="{% static 'img/bg/indexAboutPerson.png' %}" width="80%" alt="">
+			</div>
+			</div>
+		</div>
+	  </section>
+	  {% endif %}
+
+{% endblock content %}

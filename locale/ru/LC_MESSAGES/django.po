@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-10 05:41+0500\n"
+"PO-Revision-Date: 2022-10-10 09:21+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: .\config\settings.py:123
+msgid "English"
+msgstr "Russian"
+
+#: .\config\settings.py:124
+msgid "Russian"
+msgstr "English"
+
+#: .\config\settings.py:125
+msgid "Uzbek"
+msgstr "English"
+
+#: .\config\urls.py:24
+msgid "admin/"
+msgstr ""
+
+#: .\myprint\models.py:33
+msgid "first_name"
+msgstr ""
+
+#: .\myprint\models.py:34
+msgid "full_name"
+msgstr ""
+
+#: .\myprint\models.py:35
+msgid "phone_number"
+msgstr ""
+
+#: .\myprint\models.py:65 .\myprint\models.py:81 .\myprint\models.py:87
+#: .\myprint\models.py:103 .\myprint\models.py:120 .\myprint\models.py:129
+#: .\myprint\models.py:137 .\myprint\models.py:146 .\myprint\models.py:153
+#: .\myprint\models.py:163 .\myprint\models.py:174 .\myprint\models.py:183
+#: .\myprint\models.py:195 .\myprint\models.py:203
+msgid "name"
+msgstr ""
+
+#: .\myprint\models.py:72 .\myprint\models.py:109
+msgid "size"
+msgstr ""
+
+#: .\myprint\models.py:73
+msgid "element"
+msgstr ""
+
+#: .\myprint\models.py:82 .\myprint\models.py:88 .\myprint\models.py:105
+#: .\myprint\models.py:138 .\myprint\models.py:154 .\myprint\models.py:164
+#: .\myprint\models.py:175 .\myprint\models.py:187 .\myprint\models.py:196
+#: .\myprint\models.py:205
+msgid "image"
+msgstr ""
+
+#: .\myprint\models.py:91 .\myprint\models.py:104 .\myprint\models.py:166
+#: .\myprint\models.py:186
+msgid "description"
+msgstr ""
+
+#: .\myprint\models.py:110
+msgid "type_paper"
+msgstr ""
+
+#: .\myprint\models.py:111
+msgid "one_site_print"
+msgstr ""
+
+#: .\myprint\models.py:112
+msgid "double_site_print"
+msgstr ""
+
+#: .\myprint\models.py:165 .\myprint\models.py:184 .\myprint\models.py:204
+msgid "number"
+msgstr ""
+
+#: .\myprint\models.py:185
+msgid "info"
+msgstr ""
+
+#: .\templates\main\reklama.html:13
+msgid "Наружная реклама."
+msgstr ""
+
+#: .\templates\main\reklama.html:14
+msgid ""
+"Наши производственные мощности позволяют работать не только с Конечным "
+"клиентом, но и с ним же через Рекламные Агентства. Для Рекламных Агентств и "
+"посредников мы предлагаем:"
+msgstr ""
+
+#: .\templates\main\reklama.html:15
+msgid "Производственные мощности;"
+msgstr ""
+
+#: .\templates\main\reklama.html:16
+msgid "Профессиональных специалистов;"
+msgstr ""
+
+#: .\templates\main\reklama.html:17
+msgid "Конфиденциальность "
+msgstr ""
+
+#: .\templates\main\reklama.html:18
+msgid ""
+"Предоставление цен, отличных от цен для Конечного Клиента возможно лишь тем "
+"посредникам, которые готовы уменьшить наши трудозатраты за счет грамотного "
+"снятия потребности с Клиента, точно сформированного ТЗ, профессиональной "
+"подготовки макета к печати и готовых авансировать производство! "
+msgstr ""

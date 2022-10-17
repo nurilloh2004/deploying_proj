@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+    <section class="console-container" style="background-image: url(img/bg/head.jpg); background-size: cover;">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
+                  <h1 class="text-white font-weight-bold text-left text_h1">Цифровая печать.</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid" style="background-color: #fff;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-5">
+                    <h6 class="font-weight-normal text-justify"><span class="text-danger h3">Цифровая печать</span> – это технология получения оттисков с использованием переменной печатной формы. Изменениями в печатной машине на каждом этапе управляет компьютер издательской системы. Так как в технологическом процессе не используются плёнки и формы, значительно снижается не только стоимость подготовительных процессов, но и риск потери качества на этих стадиях печати. Этот вид техники используют для печати малотиражных рекламных или коммерческих изданий, в которые могут быть внесены изменения в процессе изготовления тиража даже после печати каждого экземпляра. Это позволяет печатать неограниченное число копий от 1 до нескольких тысяч.</h6>
+                </div>
+                 <div class="col-5 pt-5 pb-3 text-center">
+                  <img src="img/bg/heroxlogo2.png" width="" alt="">
+                </div> 
+                <div class="col-7 pt-3 pb-3 ">
+                  <img src="img/bg/herox.png" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="console-container pl-0 pr-0">
+        <div class="container" style="margin-top: 20rem; z-index: 1000;">
+            <div class="row m-auto pt-3 pb-5">
+          
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Размер бумага</th>
+                        <th scope="col">Тип бумага</th>
+                        <th scope="col">Односторонняя печать (4+0)</th>
+                        <th scope="col">Двухсторонняя печать (4+4)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row" data-label="Размер бумага">A3 (320*450sm)</td>
+                        <td data-label="Тип бумага">200 gr</td>
+                        <td data-label="Односторонняя печать (4+0)">7500</td>
+                        <td data-label="Двухсторонняя печать (4+4)">15.000</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" data-label="Размер бумага">A3 (320*450sm)</td>
+                        <td data-label="Тип бумага">200 gr</td>
+                        <td data-label="Односторонняя печать (4+0)">7500</td>
+                        <td data-label="Двухсторонняя печать (4+4)">15.000</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" data-label="Размер бумага">A3 (320*450sm)</td>
+                        <td data-label="Тип бумага">200 gr</td>
+                        <td data-label="Односторонняя печать (4+0)">7500</td>
+                        <td data-label="Двухсторонняя печать (4+4)">15.000</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" data-label="Размер бумага">A3 (320*450sm)</td>
+                        <td data-label="Тип бумага">200 gr</td>
+                        <td data-label="Односторонняя печать (4+0)">7500</td>
+                        <td data-label="Двухсторонняя печать (4+4)">15.000</td>
+                      </tr>
+                      <tr>
+                        <td scope="row" data-label="Размер бумага">A3 (320*450sm)</td>
+                        <td data-label="Тип бумага">200 gr</td>
+                        <td data-label="Односторонняя печать (4+0)">7500</td>
+                        <td data-label="Двухсторонняя печать (4+4)">15.000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="console-container pt-5 pb-5 mt-5" style="background-color: #efefef;">
+        <div class="container" style="border: 2px solid #000;">
+            <div class="row">
+                <div class="col-12 pt-5 pb-5 text-center">
+                    <h1 class="colorBlack">Загрузите файл на печать </h1>                       
+                    <input type="file" class="m-auto" width="100%" value=""> 
+            </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}
+	

@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from myprint.uz/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2022 05:18:16 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>myprint.uz</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{%  static 'img/favicon.png' %}" type="image/png">
+		<link rel="stylesheet" type="text/css" href="{%  static 'bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{%  static 'fontawesomePremium/css/all.css' %}">
+		<link rel="stylesheet" href="{%  static 'css/slick.css' %}">
+	
+	  <link rel="stylesheet" type="text/css" href="{%  static 'css/animate.css' %}">
+		<link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}">
+	<style>
+
+.hidden {
+  opacity:0;
+}
+.console-container { 
+  font-family:Khula;
+  text-align:center;
+
+  display:block;
+  position:absolute;
+  color:white;
+  top:150px;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-container span {
+	font-size: 150px;
+}
+
+.pad_top_about{
+	padding-top: 130px;
+}
+@media (max-width:576px) {
+	.console-container span {
+	font-size: 50px;
+}
+.console-container {
+	top:250px;
+}
+
+.pad_top_about{
+	padding-top: 10px;
+}
+}
+
+
+	</style>
+	</head>
+<body class="container-fluid pl-0 pr-0" style="overflow-x: hidden;">
+	
+	<div class="page-loader"><div class="spinner"></div></div>
+	
+	<header class="header shop"> 
+		<div class="topbar">
+		 <div class="container">
+		   <div class="row">
+			 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center text-md-left">
+			   <a href="index-2.html" class="cat-1heading"><img src="{% static 'img/logo.svg' %}" width="220" alt=""></a>
+			 </div>
+			 <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 text-center">
+			   <div class="right-content">							
+				 <ul class="list-main pt-3">
+				   <li class="pr-1 pb-2 border-0"><a href="https://www.facebook.com/myprintreklama/"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://t.me/MYPRINTUZ"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://www.instagram.com/myprintuz/"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:+998555001505" class="pb-0 pt-3 mb-0 font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg'%}" width="25" class="mr-2 ml-2" height="30" alt="">+998 (55) <span style="font-size: 25px; font-weight: bold;">500-15-05</span></a></li>
+	
+				 </ul>
+			   </div>
+			 </div>
+		   </div>
+		 </div>
+	   </div>  
+	
+	   <div class="header-inner">
+		<div class="container pl-5  pr-5 pr-lg-0 pr-xl-0">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+							<nav class="navbar navbar-expand-lg pr-4 pr-lg-0 pr-xl-0">
+								<div class="navbar-collapse">	
+									<div class="nav-inner">	
+				  <ul class="nav menu navbar-nav">
+					  <li class="active"><a href="{% url 'myprint:home' %}">ГЛАВНАЯ</a></li>
+					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">О компании</a></li>
+												<li><a href="#!">УСЛУГИ</a>
+						  <ul class="dropdown">
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:design' %}">Дизайн</a></li>
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_paper' %}">Цифровая печать</a></li>
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_large' %}">Широкоформатная печать</a></li>
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_textile' %}">Текстильная печать</a></li>
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:markirovka' %}">Лазерная маркировка</a></li>
+						  </ul>
+					  </li>
+					  <li><a href="#!">ПРОДУКЦИЯ</a>
+						  <ul class="dropdown">
+							  <li style="list-style-type: none;"><a href="{% url 'myprint:poligraphy_product' %}">полиграфический продукций </a></li>
+													<li style="list-style-type: none;"><a href="{% url 'myprint:gift_product' %}">сувенирная продукция</a></li>
+													<li style="list-style-type: none;"><a href="{% url 'myprint:promotional_products' %}">рекламная продукция</a></li>
+													<li style="list-style-type: none;"><a href="{% url 'myprint:textile_products' %}">текстильная продукция</a></li>
+						  </ul>
+					  </li>								
+					  <li><a href="{% url 'myprint:portfolio' %}">НАШИ РАБОТЫ</a></li>
+					  <li><a href="{% url 'myprint:contact' %}">КОНТАКТЫ</a></li>
+					  {% if request.user.is_authenticated %}
+					  <li><a href="{% url 'myprint:create'%}">Order</a></li>
+					  <li><a href="{% url 'myprint:list' %}">INVOICE</a></li>
+					  {% endif %}
+					  <li><a href="{% url 'myprint:login' %}">LOG IN</a></li>
+				  </ul>
+										
+									</div>
+									
+								</div>
+							</nav>
+							
+					</div>
+				</div>
+			</div>
+	</div> 
+</header> 
+
+
+{% block content %}{% endblock content %}
+
+
+
+<footer class="container-fluid pl-0 pr-0 pt-5 border-top">		
+	<div class="container pb-3">
+		<div class="row m-0">
+		  <div class="offset-2 offset-sm-0 col-8 col-sm-12 col-md-6 col-lg-3 col-xl-2 pt-3 pt-lg-0 text-center">
+			<img src="{% static 'img/logo.png' %}" width="100%" alt="">
+		  </div>
+		  <div class="offset-3 offset-sm-0 col-9 col-sm-12 col-md-6 col-lg-6 col-xl-7 footer_menu">
+			<h5 class="ml-3 mr-3"><a href="poligraphy-products.html" class="colorBlack">Полиграфия</a></h5>
+			<h5 class="ml-3 mr-3"><a href="gifts-products.html" class="colorBlack">Сувениры</a></h5>
+			<h5 class="ml-3 mr-3"><a href="promotional-products.html" class="colorBlack">Реклама</a></h5>
+			<h5 class="ml-3"><a href="dizayn.html" class="colorBlack">Дизайн</a></h5>
+		  </div>
+		  <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center text-md-right">
+			<span class="ml-2"><i class="fab fa-2x fa-telegram colorBlack"></i></span>
+			<span class="ml-2"><i class="fab fa-2x fa-instagram colorBlack"></i></span>
+			<span class="ml-2"><i class="fab fa-2x fa-facebook colorBlack"></i></span>
+			<span class="ml-2"><i class="fab fa-2x fa-youtube colorBlack"></i></span>
+		  </div>
+		</div>
+	</div>
+	<div class="container-fluid bgRed">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 form-inline justify-content-between">
+					<p class="small">&copy; 2020 Все права защищены.</p>                          
+					<p class="small">Сайт разработан в студио инновационныx разработок <a href="http://myweb.uz/" class="text-white text-decoration-none font-weight-bold"> MYWEB.UZ.</a></p>             
+				  </div>
+			</div>
+		</div>
+	</div>
+</footer> 
+
+<button class="btn btn-top" title="Прокрутка вверх"><i class="fa fa-angle-up"></i></button>
+
+
+<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{%  static 'bootstrap/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{%  static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script type="text/javascript" src="{%  static 'fontawesomePremium/js/all.js' %}"></script>
+
+<script type="text/javascript" src="{%  static 'js/fontaweasome.js' %}"></script>
+<script src="{%  static 'js/jquery.ripples.js' %}"></script>
+<script type="text/javascript" src="{%  static 'js/script.js' %}"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+$(".filter-button").click(function(){
+var value = $(this).attr('data-filter');
+
+if(value == "all")
+{
+	$('.filter').show('1000');
+}
+else
+{
+
+	$(".filter").not('.'+value).hide('3000');
+	$('.filter').filter('.'+value).show('3000');
+	
+}
+});
+});
+
+
+consoleText(['MYPRINT.UZ', 'Реклама', 'Полиграфия', 'Сувениры'], 'text',['#ffffff','#ffffff','#ffffff','#ffffff']);
+function consoleText(words, id, colors) {
+ if (colors === undefined) colors = ['#fff'];
+ var visible = true;
+ var con = document.getElementById('console');
+ var letterCount = 1;
+ var x = 1;
+ var waiting = false;
+ var target = document.getElementById(id)
+ target.setAttribute('style', 'color:' + colors[0])
+ window.setInterval(function() {
+
+   if (letterCount === 0 && waiting === false) {
+	 waiting = true;
+	 target.innerHTML = words[0].substring(0, letterCount)
+	 window.setTimeout(function() {
+	   var usedColor = colors.shift();
+	   colors.push(usedColor);
+	   var usedWord = words.shift();
+	   words.push(usedWord);
+	   x = 1;
+	   target.setAttribute('style', 'color:' + colors[0])
+	   letterCount += x;
+	   waiting = false;
+	 }, 800)
+   } else if (letterCount === words[0].length + 1 && waiting === false) {
+	 waiting = true;
+	 window.setTimeout(function() {
+	   x = -1;
+	   letterCount += x;
+	   waiting = false;
+	 }, 500)
+   } else if (waiting === false) {
+	 target.innerHTML = words[0].substring(0, letterCount)
+	 letterCount += x;
+   }
+ }, 120)
+ window.setInterval(function() {
+   if (visible === true) {
+	 con.className = 'console-underscore hidden'
+	 visible = false;
+
+   } else {
+	 con.className = 'console-underscore'
+
+	 visible = true;
+   }
+ }, 200)
+}
+</script>
+{% block extra_script %}{% endblock %}
+</body>
+
+<!-- Mirrored from myprint.uz/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2022 05:21:00 GMT -->
+</html>

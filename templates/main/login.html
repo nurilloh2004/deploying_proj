@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container-fluid pb-5 pt-5">
+        <div class="container pt-4 pb-5 pl-5 pr-5 ">
+            <div class="row pt-2">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6 p-5 m-auto text-center border">
+                    <h2 class="text-dark pb-5 font-weight-bold">Авторизоваться</h2>
+                    <form class="" method="POST" action="">
+                        {% csrf_token %}
+                        {{form.phone_number}}
+                        {{form.password}}
+                        <button class="btn bgRed w-100 mb-3 text-dark font-weight-bold" type="submit">Войти</button>
+                    </form>
+                    
+                    <p><a href="{% url 'myprint:portfolio' %}" class="h6 text-dark">Company products</a></p><br>
+                    <p>Если вы еще не создали учетную запись, <сначал></сначал>а
+                        <a href="{% url 'myprint:home' %}" class="text-secondary">зарегистрируйтесь.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

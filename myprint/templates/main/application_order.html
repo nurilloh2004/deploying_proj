@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+
+
+<style>
+
+.name-input, .name1-input{
+    display: flex;
+    width: 100%;
+    margin: 40px 0;
+
+}
+
+.name-input input, .name1-input input{
+    width: 16.6%;
+}
+
+
+</style>
+
+
+
+
+
+<!--  -->
+<section class="container-fluid p-5 p-5">
+      <div class="">
+        <div class="row border p-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-5">
+                <h5 class="font-weight-bold text-center pb-3 pt-3">ЗАЯВКА-ЗАКАЗ № <span class="h5 font-weight-bold">00001</span></h5>
+                <h6>Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:</h6>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 text-center pt-5">
+                <img src="img/logo.png" width="100%" alt="">
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-9 col-xl-10">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th class="font-weight-bold">ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span></th>
+                            <th class="font-weight-bold">Имя <br> ЗАКАЗЧИКА</th>
+                            <th class="font-weight-bold">Номер <br> ТЕЛЕФОНА</th>
+                            <th class="font-weight-bold">ОТВЕТСВЕННЫЙ <br> Менеджер</th>
+                            <th class="font-weight-bold">ДАТА ПРИЕМА ЗАКАЗА</th>
+                            <th class="font-weight-bold">ДАТА ОТГРУЗКИ ЗАКАЗА</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in detail %}
+                        <tr>
+                            
+                            <td class="pt-3">{{i.id_name_order}}</td>
+                            <td class="pt-5">{{i.name_client}}</td>
+                            <td class="pt-5">{{i.client_phone_number}}</td>
+                            <td class="pt-5">{{i.manager_name}}</td>
+                            <td class="pt-5">{{i.date_order}}</td>
+                            <td class="pt-5">{{i.ready_product_date_order}}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-5">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            
+                            <th class="font-weight-bold small">№ </th>
+                            <th class="font-weight-bold small">Наименование работ,услуг,изделий</th>
+                            <th class="font-weight-bold small">Ед.изм.</th>
+                            <th class="font-weight-bold small">Кол-во</th>
+                            <th class="font-weight-bold small">Цена за единицу</th>
+                            <th class="font-weight-bold small">Цена без учета НДС</th>
+                            <th class="font-weight-bold small">НДС</th>
+                            <th class="font-weight-bold small">Цена с учетом НДС</th>
+                            <th class="font-weight-bold small">Всего</th>
+                            
+                        </tr>
+                    </thead>
+                    {% for i in detail %}
+                    <tbody>
+                        
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td>{{i.name}}</td>
+                            <td>
+                                <select class="p-2" name="" id="">
+                                    <option class="small p-2" selected value="шт">{{i.status_order}}</option>
+                                </select>
+                            </td>
+                            <td>{{i.amount}}</td>
+                            <td>{{i.price}}</td>
+                            <td>{{i.price_free_VAT}}</td>
+                            <td>{{i.VAT}}</td>
+                            <td>{{i.price_with_VAT}}</td>
+                            <td>{{i.total}}</td>
+                        </tr>
+                    
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>Итого:</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{i.total_price_with_VAT}}</td>
+                            <td></td>
+                            <td>{{i.total_price_ALL}}</td>
+                        </tr>
+                        
+                    </tfoot>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-5 pb-5">
+                <h5>Mакет: </h5>
+                <h5>Пояснение к утверждению макета : _________________________________________________________________</h5>
+                <h5>"Утверждаю" счет-заказ. С итоговой суммой заказа, условиями, размещенными на обороте, условиями утверждения макета</h5>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <h5 class="pb-3">Ознокомлен и согласен:  ___________________ <sub class="small">Подпись заказчика</sub></h5>
+                <h5>Продукцию получил:  ______________________  <sub class="small">Подпись заказчика</sub></h5>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <h5 class="pb-3">Менеджер _____________________</h5>
+                <h5>Кассир _________________________</h5>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-5">
+                <h5>    При получении продукции наличие счет-заказа обязательно.</h5>
+            </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            
+        </div>
+      </div>
+</section>
+
+
+<section class="container-fluid p-5 p-5">
+    <div class="">
+      <div class="row border p-3">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-5">
+              <h5 class="font-weight-bold text-center pb-3 pt-3">ЗАЯВКА-ЗАКАЗ № <span class="h5 font-weight-bold">00001</span></h5>
+              <h6>Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:</h6>
+          </div>
+          
+      <br>
+      <br>
+      <br>
+      <br>
+
+          <form method="POST">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col">
+                    <input name="id_name_order" type="text" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                  </div>
+                  <div class="col">
+                    <input name="client" type="text" class="form-control" placeholder="Имя ЗАКАЗЧИКА" aria-label="Имя ЗАКАЗЧИКА">
+                  </div>
+                  <div class="col">
+                      <input name="client_phone_number" type="text" class="form-control" placeholder="Номер ТЕЛЕФОНА" aria-label="Номер ТЕЛЕФОНА">
+                  </div>
+                    <div class="col">
+                      <input name="manager_name" type="text" class="form-control" placeholder="ОТВЕТСВЕННЫЙ Менеджер" aria-label="ОТВЕТСВЕННЫЙ Менеджер">
+                    </div>
+                    <div class="col">
+                      <input name="date_order" type="date" class="form-control" placeholder="ДАТА ПРИЕМА ЗАКАЗА " aria-label="ДАТА ПРИЕМА ЗАКАЗА ">
+                    </div>
+                    <div class="col">
+                      <input name="ready_product_date_order" type="date" class="form-control" placeholder="ДАТА ОТГРУЗКИ ЗАКАЗА" aria-label="ДАТА ОТГРУЗКИ ЗАКАЗА">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+      
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="№" aria-label="№">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Наименование работ,услуг,изделий	" aria-label="Наименование работ,услуг,изделий	">
+                  </div>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this </option>
+                    <option value="1">One</option>
+                  </select>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Кол-во" aria-label="Кол-во">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Цена за единицу" aria-label="Цена за единицу">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Цена без учета НДС" aria-label="Цена без учета НДС">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="НДС" aria-label="НДС">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Цена с учетом НДС" aria-label="Цена с учетом НДС">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Всего" aria-label="Всего">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button class="btn btn-primary" type="submit">Button</button>
+          </form>
+          
+      </div>
+    </div>
+</section>
+
+
+{% endblock content %}
