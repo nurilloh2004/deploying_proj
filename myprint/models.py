@@ -228,12 +228,12 @@ class SocialMedia(models.Model):
 
 
 class Customer(models.Model):
-    id_name_order = models.CharField(max_length=300)
-    client = models.CharField(max_length=65)
-    client_phone_number = models.CharField(max_length=65)
-    manager_name = models.CharField(max_length=65)
-    date_order = models.DateTimeField(auto_now_add=False)
-    ready_product_date_order = models.DateTimeField(auto_now_add=False)
+    id_name_order = models.CharField(_('id_name_order'), max_length=300)
+    client = models.CharField(_('client'), max_length=65)
+    client_phone_number = models.CharField(_('client_phone_number'), max_length=65)
+    manager_name = models.CharField(_('manager_name'), max_length=65)
+    date_order = models.DateTimeField(_('date_order'), auto_now_add=False)
+    ready_product_date_order = models.DateTimeField(_('ready_product_date_order'), auto_now_add=False)
 
 
     def __str__(self):
@@ -249,16 +249,16 @@ class OrderForm(models.Model):
         ('шт', 'шт'),
         ('усл', 'усл'),
     )
-    name = models.CharField(max_length=65, blank=True, null=True)
-    status_order = models.CharField(max_length=20, choices=Product_Status, default='шт', null=True, blank=True)
-    amount = models.IntegerField(blank=True, null=True)
-    price = models.PositiveIntegerField(blank=True, null=True)
-    price_free_VAT = models.PositiveIntegerField(blank=True, null=True)
-    VAT = models.FloatField(blank=True, null=True)
-    price_with_VAT = models.PositiveIntegerField(blank=True, null=True)
-    total = models.PositiveIntegerField(blank=True, null=True)    
-    total_price_with_VAT = models.PositiveIntegerField(blank=True, null=True)    
-    total_price_ALL = models.PositiveIntegerField(blank=True, null=True)
+    name = models.CharField(_('name'), max_length=65, blank=True, null=True)
+    status_order = models.CharField(_('status_order'), max_length=20, choices=Product_Status, default='шт', null=True, blank=True)
+    amount = models.IntegerField(_('amount'), blank=True, null=True)
+    price = models.PositiveIntegerField(_('price'), blank=True, null=True)
+    price_free_VAT = models.PositiveIntegerField(_('price_free_VAT'), blank=True, null=True)
+    VAT = models.FloatField(_('VAT'), blank=True, null=True)
+    price_with_VAT = models.PositiveIntegerField(_('price_with_VAT'), blank=True, null=True)
+    total = models.PositiveIntegerField(_('total'), blank=True, null=True)    
+    total_price_with_VAT = models.PositiveIntegerField(_('total_price_with_VAT'), blank=True, null=True)    
+    total_price_ALL = models.PositiveIntegerField(_('total_price_ALL'), blank=True, null=True)
     
     @property
     def total_sum(self):
@@ -281,8 +281,8 @@ class OrderForm(models.Model):
     
 
 class Form(models.Model):
-    full_name = models.CharField(max_length=65)
-    phone_number = models.CharField(max_length=15)
+    full_name = models.CharField(_('full_name'), max_length=65)
+    phone_number = models.CharField(_('phone_number'), max_length=15)
 
     def __str__(self) -> str:
                 return self.full_name
@@ -291,8 +291,8 @@ class Form(models.Model):
 
 
 class Settings(models.Model):
-    key = models.CharField(max_length=50, primary_key=True)
-    value = models.TextField()
+    key = models.CharField(_('key'), max_length=50, primary_key=True)
+    value = models.TextField(_('value'))
     class Meta:
         verbose_name = "Sozlama"
         verbose_name_plural = "Sozlamalar"
@@ -300,7 +300,7 @@ class Settings(models.Model):
 
 
 class About(models.Model):
-    description_uz = models.TextField(blank=True, null=True)
+    description_uz = models.TextField(_('description_uz'), blank=True, null=True)
     def str(self):
         return self.description_uz
 
@@ -308,8 +308,7 @@ class About(models.Model):
         verbose_name = "Biz Haqimizda"
 
 class AboutImage(models.Model):
-    name_uz = models.CharField(max_length=60, blank=True, null=True)
-    name_ru = models.CharField(max_length=60, blank=True, null=True)
-    image = models.ImageField(upload_to='media/about', blank=True, null=True)
+    name_uz = models.CharField(_('name_uz'), max_length=60, blank=True, null=True)
+    image = models.ImageField(_('image'), upload_to='media/about', blank=True, null=True)
     def str(self):
         return self.name_uz

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts', 
     'myprint',
     'rosetta',
+    'parler',
     'crispy_forms',
 ]
 
@@ -129,6 +130,17 @@ LANGUAGES = (
     ('ru', _('Russian')),
     ('uz', _('Uzbek')),
 )
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',}, # English
+        {'code': 'ru',}, # French
+        {'code': 'uz',}, # Spanish
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
 
 TIME_ZONE = 'UTC'
 
