@@ -1,24 +1,25 @@
 from django.contrib import admin
 from .models import *
+from parler.admin import TranslatableAdmin
 
 # Register your models here.
-admin.site.register(InfoType)
-admin.site.register(Type)
-admin.site.register(User)
-admin.site.register(Banner)
-admin.site.register(InfoProduct)
-admin.site.register(Product)
-admin.site.register(Printer)
-admin.site.register(Tariff)
-admin.site.register(MenuTariff)
-admin.site.register(CEO)
-admin.site.register(Sponsors)
-admin.site.register(Contact)
-admin.site.register(Portfolio)
-admin.site.register(SocialMedia)
-admin.site.register(Form)
-admin.site.register(OrderForm)
-admin.site.register(Customer)
+admin.site.register(InfoType , TranslatableAdmin)
+admin.site.register(Type, TranslatableAdmin)
+admin.site.register(User, TranslatableAdmin)
+admin.site.register(Banner, TranslatableAdmin)
+admin.site.register(InfoProduct, TranslatableAdmin)
+admin.site.register(Product, TranslatableAdmin)
+admin.site.register(Printer, TranslatableAdmin)
+admin.site.register(Tariff, TranslatableAdmin)
+admin.site.register(MenuTariff, TranslatableAdmin)
+admin.site.register(CEO, TranslatableAdmin)
+admin.site.register(Sponsors, TranslatableAdmin)
+admin.site.register(Contact, TranslatableAdmin)
+admin.site.register(Portfolio, TranslatableAdmin)
+admin.site.register(SocialMedia, TranslatableAdmin)
+admin.site.register(Form, TranslatableAdmin)
+admin.site.register(OrderForm, TranslatableAdmin)
+admin.site.register(Customer, TranslatableAdmin)
 
 
 class TypeServiceAdmin(admin.ModelAdmin):
@@ -30,7 +31,7 @@ class TypeServiceAdmin(admin.ModelAdmin):
     ]
     class Meta:
         model = TypeService
-admin.site.register(TypeService, TypeServiceAdmin)
+admin.site.register(TypeService, TypeServiceAdmin, TranslatableAdmin)
 
 
 class MenuServiceAdmin(admin.ModelAdmin):
@@ -43,7 +44,7 @@ class MenuServiceAdmin(admin.ModelAdmin):
     ]
     class Meta:
         model = MenuService
-admin.site.register(MenuService, MenuServiceAdmin)
+admin.site.register(MenuService, MenuServiceAdmin, TranslatableAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
     fields = [
@@ -58,7 +59,7 @@ class CategoryAdmin(admin.ModelAdmin):
     class Meta:
         model = Category
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, CategoryAdmin, TranslatableAdmin)
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -69,7 +70,7 @@ class SettingsAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Settings
-admin.site.register(Settings, SettingsAdmin)
+admin.site.register(Settings, SettingsAdmin, TranslatableAdmin)
 
 class AboutAdmin(admin.ModelAdmin):
     list_display = [
@@ -80,7 +81,7 @@ class AboutAdmin(admin.ModelAdmin):
     ]
     class Meta:
         model = About
-admin.site.register(About, AboutAdmin)
+admin.site.register(About, AboutAdmin, TranslatableAdmin)
 
 class AboutImageAdmin(admin.ModelAdmin):
     list_display = [
@@ -91,4 +92,4 @@ class AboutImageAdmin(admin.ModelAdmin):
     ]
     class Meta:
         model = AboutImage
-admin.site.register(AboutImage, AboutImageAdmin)
+admin.site.register(AboutImage, AboutImageAdmin, TranslatableAdmin)

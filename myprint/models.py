@@ -309,6 +309,7 @@ class About(models.Model):
 
 class AboutImage(models.Model):
     name_uz = models.CharField(max_length=60, blank=True, null=True)
+    name_ru = models.CharField(max_length=60, blank=True, null=True)
     image = models.ImageField(upload_to='media/about', blank=True, null=True)
     def str(self):
         return self.name_uz
