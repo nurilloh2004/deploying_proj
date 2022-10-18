@@ -65,7 +65,7 @@
 		 <div class="container">
 		   <div class="row">
 			 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center text-md-left">
-			   <a href="index-2.html" class="cat-1heading"><img src="{% static 'img/logo.svg' %}" width="220" alt=""></a>
+			   <a href="{% url 'myprint:home' %}" class="cat-1heading"><img src="{% static 'img/logo.svg' %}" width="220" alt=""></a>
 			 </div>
 			 <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 text-center">
 			   <div class="right-content">							
@@ -73,7 +73,12 @@
 				   <li class="pr-1 pb-2 border-0"><a href="https://www.facebook.com/myprintreklama/"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
 				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://t.me/MYPRINTUZ"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
 				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://www.instagram.com/myprintuz/"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="{{ phone}}" class="pb-0 pt-3 mb-0 font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg'%}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a></li>
+				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}"
+					class="pb-0 pt-3 mb-0 font-weight-normal"
+					style="font-size: 25px;"><img
+src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30"
+alt="">{{ phone }}</a>
+</li>
 	
 				 </ul>
 			   </div>

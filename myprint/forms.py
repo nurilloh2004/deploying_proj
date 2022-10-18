@@ -50,7 +50,7 @@ class OrdersForm(forms.ModelForm):
 
 class UserLoginForm(forms.Form):
     phone_number = forms.IntegerField(widget=forms.TextInput(attrs={
-        "class": 'form-control mb-2',
+        "class": 'form-control mb-2 form-control',
         'type': 'number',
         'placeholder': 'Телефон ...'
     }))

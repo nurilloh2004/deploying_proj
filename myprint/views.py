@@ -113,9 +113,19 @@ def poligraphy_product(request, pk):
     product = Product.objects.filter(category_id=pk)
     # categories = Category.objects.filter(parent=None).all()
     # children = Category.objects.filter(parent_id__in=[k.id for k in categories]).all()
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
     context = {
         "product": product,
-        'pk': pk
+        'pk': pk,
+        'form' : form
         # "children": children
     }
     return render(request, 'main/poligraphy-products.html', context=context)
