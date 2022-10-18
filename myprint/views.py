@@ -40,7 +40,13 @@ from django.contrib.auth import login as auth_login
 
 
 def home(request):
-    print(" ppp ---------->>>>>",request.user)
+    servistype = TypeService.objects.all()
+    menuservice = MenuService.objects.all()
+    print("Menyu------------>>>>>>>>", menuservice)
+    context = {
+        "servistype": servistype,
+        "menuservice": menuservice
+    }
     return render(request, 'main/index.html')
     
 
@@ -65,8 +71,16 @@ def promotional_products(request):
 def markirovka(request):
     return render(request, 'main/markirovka.html')
 
-def poligraphy_product(request):
-    return render(request, 'main/poligraphy-products.html')
+def poligraphy_product(request, pk):
+    product = Product.objects.filter(id=pk)
+    # categories = Category.objects.filter(parent=None).all()
+    # children = Category.objects.filter(parent_id__in=[k.id for k in categories]).all()
+    context = {
+        "product": product,
+        'pk': pk
+        # "children": children
+    }
+    return render(request, 'main/poligraphy-products.html', context=context)
 
 def printing_paper(request):
     return render(request, 'main/printing-paper.html')
@@ -83,14 +97,7 @@ def advertisement(request):
 def invoice(request):
     return render(request, 'main/invoice.html')
 
-# def application_order(request):
-#     orders = OrderForm.objects.all()
-#     form = OrderMForm()
-#     if request.method == "POST":
-#         form = OrderMForm
 
-#     context = {'orders' : orders, 'form' : form}
-#     return render(request, 'main/application_order.html', context=context)
 
 
 class OrderCreateView(CreateView):
@@ -276,3 +283,5 @@ def pdf_report_create(request):
     if pisa_status.err:
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
+
+

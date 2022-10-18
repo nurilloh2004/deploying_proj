@@ -74,19 +74,33 @@ class InfoProduct(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.size
 
 
 class Category(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    image = models.ImageField(_('image'), upload_to='media/category_image')
+    parent = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True, default=None)
+    name_uz = models.CharField(_('name'), max_length=65)
+    name_ru = models.CharField(_('name'), max_length=65)
+    image = models.ImageField(_('image'), upload_to='media/category_image', blank=True, null=True)
+
+
+    @property
+    def children(self):
+        return Category.objects.filter(parent=self)
+
+    def __str__(self):
+        return self.name_uz
+
+    class Meta:
+        verbose_name = "Kategoriya"
+        verbose_name_plural = "Kategoriyalar"
     
 
 #Product
 class Product(models.Model):
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/product')
-    info_product = models.ForeignKey(InfoProduct, on_delete=models.CASCADE)
+    info_product = models.ForeignKey(InfoProduct, on_delete=models.CASCADE, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField(_('description'), blank=True, null=True)
 
@@ -112,8 +126,7 @@ class InfoType(models.Model):
     double_site_print = models.CharField(_('double_site_print'), max_length=65)
     
 
-    def __str__(self) -> str:
-        return self.size
+    
 #Размер бумага 	Тип бумага 	Односторонняя печать (4+0) 	Двухсторонняя печать (4+4)
 
 class Type(models.Model):
@@ -268,3 +281,31 @@ class Form(models.Model):
 
     def __str__(self) -> str:
                 return self.full_name
+        
+
+        
+
+class Settings(models.Model):
+    key = models.CharField(max_length=50, primary_key=True)
+    value = models.TextField()
+    class Meta:
+        verbose_name = "Sozlama"
+        verbose_name_plural = "Sozlamalar"
+
+
+
+class About(models.Model):
+    description_uz = models.TextField(blank=True, null=True)
+    description_ru = models.TextField(blank=True, null=True)
+    def str(self):
+        return self.description_uz
+
+    class Meta:
+        verbose_name = "Biz Haqimizda"
+
+class AboutImage(models.Model):
+    name_uz = models.CharField(max_length=60, blank=True, null=True)
+    name_ru = models.CharField(max_length=60, blank=True, null=True)
+    image = models.ImageField(upload_to='media/about', blank=True, null=True)
+    def str(self):
+        return self.name_uz

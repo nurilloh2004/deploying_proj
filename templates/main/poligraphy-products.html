@@ -24,27 +24,22 @@
 			<div class="p-2 text-center">
 				<div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;"><h5 class="font-weight-bold">Категория</h5></div>
 			</div>
+			{% for par in allcategory %}
+                        {% for child in par.children %}
+                            {% if par.id == pk %}
+                                <a href="{% url 'myprint:poligraphy_product' par.id %}">
+
+                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6><img src=""
+                                                                                            width="20"
+                                                                                            alt="category-title-icon"
+                                                                                            class="mr-1">{{ child.name_uz }}
+                                    </h6>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
 			
-			<div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r6.png' %}" width="20" alt="category-title-icon" class="mr-1"> Блокноты с логотипом</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w2.png' %}" width="20" alt="category-title-icon" class="mr-1"> Брошюры</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w1.png' %}" width="20" alt="category-title-icon" class="mr-1"> Визитки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w5.png' %}" width="20" alt="category-title-icon" class="mr-1"> Бланки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r10.png' %}" width="20" alt="category-title-icon" class="mr-1"> Промо сумки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r7.png' %}" width="20" alt="category-title-icon" class="mr-1"> Магниты</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w9.png' %}" width="20" alt="category-title-icon" class="mr-1"> Упаковка</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r1.png' %}" width="20" alt="category-title-icon" class="mr-1"> Сувенирная продукция</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w11.png' %}" width="20" alt="category-title-icon" class="mr-1"> Каталоги</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w12.png' %}" width="20" alt="category-title-icon" class="mr-1"> Листовки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w11.png' %}" width="20" alt="category-title-icon" class="mr-1"> Пакеты</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w8.png' %}" width="20" alt="category-title-icon" class="mr-1"> Авторефераты</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w7.png' %}" width="20" alt="category-title-icon" class="mr-1"> Значки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r12.png' %}" width="20" alt="category-title-icon" class="mr-1"> Рекламные конструкции</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w4.png' %}" width="20" alt="category-title-icon" class="mr-1"> Буклеты и лифлеты</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r13.png' %}" width="20" alt="category-title-icon" class="mr-1"> Этикетки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w10.png' %}" width="20" alt="category-title-icon" class="mr-1"> Открытки и приглашения</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r10.png' %}" width="20" alt="category-title-icon" class="mr-1"> Конверты</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/w6.png' %}" width="20" alt="category-title-icon" class="mr-1"> Папки</h6></div>
-			<div class="pt-1 pb-1 pl-3 borderDashedBottom"><h6><img src="{% static 'img/type/r9.png' %}" width="20" alt="category-title-icon" class="mr-1"> Бирки</h6></div>
 		</div>
 		<div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-9 pl-4 pr-4 pt-0">
 			<div class="row gifts-card-wrapper">
@@ -59,56 +54,22 @@
                     </h6>
                 </div>
 
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-					<div class="card p-3 bg-transparent">
-						<a href="#!" data-toggle="modal" data-target="#productmodal">
-							<img src="{% static 'img/product/p4.jpg' %}" width="100%" height="220" alt="">
-							<h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom" style="height: 45px; overflow: hidden;">Настенный <br> планер календарь</h6>
-							<h6 class="colorBlack small pl-1">Артикул : ПП001</h6>
-						</a>
-							<button class="btn btn-sm pl-4 pr-4 bgOrange" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#orderModal">Заказать</button>
-					</div>
-				  </div>   
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-					<div class="card p-3 bg-transparent">
-						<a href="#!" data-toggle="modal" data-target="#productmodal">
-							<img src="{% static 'img/product/p5.jpg' %}" width="100%" height="220" alt="">
-							<h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom" style="height: 45px; overflow: hidden;">Настольный календарь</h6>
-							<h6 class="colorBlack small pl-1">Артикул : ПП002</h6>
-						</a>
-						<button class="btn btn-sm pl-4 pr-4 bgOrange" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#orderModal">Заказать</button>
-					</div>
-				  </div>   
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-					<div class="card p-3 bg-transparent">
-						<a href="#!" data-toggle="modal" data-target="#productmodal">
-							<img src="{% static 'img/product/p3.webp' %}" width="100%" height="220" alt="">
-							<h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom" style="height: 45px; overflow: hidden;">Настенный  календарь</h6>
-							<h6 class="colorBlack small pl-1">Артикул : ПП003</h6>
-						</a>
-							<button class="btn btn-sm pl-4 pr-4 bgOrange" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#orderModal">Заказать</button>
-					</div>
-				  </div>   
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-					<div class="card p-3 bg-transparent">
-						<a href="#!" data-toggle="modal" data-target="#productmodal">
-							<img src="{% static 'img/product/p1.webp' %}" width="100%" height="220" alt="">
-							<h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom" style="height: 45px; overflow: hidden;">Каталог</h6>
-							<h6 class="colorBlack small pl-1">Артикул : ПП004</h6>
-						</a>
-							<button class="btn btn-sm pl-4 pr-4 bgOrange" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#orderModal">Заказать</button>
-					</div>
-				  </div>   
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-					<div class="card p-3 bg-transparent">
-						<a href="#!" data-toggle="modal" data-target="#productmodal">
-							<img src="{% static 'img/product/p2.webp' %}" width="100%" height="220" alt="">
-							<h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom" style="height: 45px; overflow: hidden;">Door Hangers</h6>
-							<h6 class="colorBlack small pl-1">Артикул : ПП005</h6>
-						</a>
-							<button class="btn btn-sm pl-4 pr-4 bgOrange" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#orderModal">Заказать</button>
-					</div>
-				  </div>   
+				{% for pro in product %}
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
+                                <div class="card p-3 bg-transparent">
+                                    <a href="#!" data-toggle="modal" data-target="#productmodal">
+                                        <img src="{{ pro.image.url }}" width="100%" height="220" alt="">
+                                        <h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom"
+                                            style="height: 45px; overflow: hidden;">{{ pro.name_uz }}</h6>
+                                        <h6 class="colorBlack small pl-1">{{ pro.vendor_code }}</h6>
+                                    </a>
+                                    <button class="btn btn-sm pl-4 pr-4 bgOrange" type="button"
+                                            class="btn btn-secondary"
+                                            data-toggle="modal" data-target="#orderModal">Заказать
+                                    </button>
+                                </div>
+                            </div>
+                        {% endfor %} 
 
 
 
