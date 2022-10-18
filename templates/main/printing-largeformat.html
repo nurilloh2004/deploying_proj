@@ -64,45 +64,16 @@
                     
                     </tbody>
                   </table>
-                <div class="col-12 pt-3 pb-5 text-right">
-                  <button type="button" class="btn btn-success pl-5 pr-5" data-toggle="modal" data-target="#orderModal">Заказать печать</button>  
-                </div>    
+                  <form action="#" method="post">
+                    {% csrf_token  %}
+                    {{ form.as_p }}
+                    <button type="submit">ЖДУ ЗВОНОК!</button>
+                  </form>	
             </div>
 
         </div>
     </section>
 
-    <section class="console-container pt-5 pb-5" style="background-color: #efefef;">
-        <div class="container" style="border: 2px solid #000;">
-            <div class="row">
-                <div class="col-12 pt-5 pb-5 pl-5 text-center" style="">
-                    <h1 class="colorBlack">Загрузите файл на печать </h1>                       
-                    <input type="file" class="" width="100%" value=""> 
-            </div>
-            </div>
-        </div>
-    </section>
 
-
-<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered " role="document">
-    <div class="modal-content pl-3 pr-3">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Закрыть</button>
-      </div>
-      <div class="modal-body pt-2 pb-5 text-center">
-        <h6>Наш менеджер свяжется с вами в самое ближайшее время!</h6>
-
-        <input type="text" class="form-control mt-4" name="" id="" aria-describedby="" placeholder="Имя...">
-        <input type="tel" class="form-control mt-3" id="phone" name="phone" maxlength="13" placeholder="Телефон..."  pattern="+998-[0-9]{2}-[0-9]{3}-[0-9]{4}" value="+998">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-sm">Оставьте заявку</button>
-      </div>
-    </div>
-  </div>
-</div>
-    
 {% endblock content %}
 	

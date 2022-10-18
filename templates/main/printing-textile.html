@@ -41,7 +41,7 @@
                   </table>
               </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">
-                    <img src="img/bg/bg_textile1.jpg" width="100%"  alt="printer-textile-img">
+                    <img src="{% static 'img/bg/bg_textile1.jpg'%}" width="100%"  alt="printer-textile-img">
                 </div>
             </div>
         </div>
@@ -51,27 +51,21 @@
         <div class="container pb-5">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1 class="font-weight-bold h2 text-center pt-5 pb-3">Наши работы.</h1></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/1.jpg" width="100%"  height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/7.jpg" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/8.jpg" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/9.jpg" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/5.jpg" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/6.jpg" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/10.jpg" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="img/works/textile/4.jpg" width="100%" height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/1.jpg'%}" width="100%"  height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/7.jpg'%}" width="100%"   height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/8.jpg'%}" width="100%"   height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/9.jpg'%}" width="100%"   height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/5.jpg'%}" width="100%" height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/6.jpg'%}" width="100%" height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/10.jpg'%}" width="100%" height="200" alt=""></div></div>
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/works/textile/4.jpg'%}" width="100%" height="200" alt=""></div></div>
 			</div>
         </div>
     </section>
 
-
-    <section class="console-container pt-5 pb-5" style="background-color: #f7f5f5;">
-        <div class="container" style="border: 1px solid #000;">
-            <div class="row">
-                <div class="col-12 pt-5 pb-5 pl-5 text-center" style="">
-                    <h1 class="colorBlack">Загрузите файл на печать </h1>                       
-                    <input type="file" class="" width="100%" value=""> 
-            </div>
-            </div>
-        </div>
-    </section>
+    <form action="#" method="post">
+      {% csrf_token  %}
+      {{ form.as_p }}
+      <button type="submit">ЖДУ ЗВОНОК!</button>
+    </form>	
 {% endblock content %}

@@ -139,20 +139,25 @@ class Type(models.Model):
     
 # Reklama , Poligrafia, Suviner
 class TypeService(models.Model):
-    name = models.CharField(_('name'), max_length=65)
+    name_uz = models.CharField(_('name'), max_length=65)
+    image = models.ImageField(upload_to="media/typeserveis")
 
-
-    def __str__(self) -> str:
-        return self.name
+    def str(self) -> str:
+        return self.name_uz
+    class Meta:
+        verbose_name = "Xizmat turi"
 
 
 class MenuService(models.Model):
-    name = models.CharField(_('name'), max_length=65)
+    name_uz = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/menuservice')
-    type_service = models.ForeignKey(TypeService, on_delete=models.CASCADE)
+    type_service = models.ForeignKey(TypeService, on_delete=models.CASCADE, blank=True, null=True)
 
-    def __str__(self) -> str:
-        return self.name
+    def str(self) -> str:
+        return self.name_uz
+
+    class Meta:
+        verbose_name = "Menyu Xizmati"
 
 #Mы предлагаем
 class Tariff(models.Model):
@@ -283,7 +288,7 @@ class Form(models.Model):
                 return self.full_name
         
 
-        
+
 
 class Settings(models.Model):
     key = models.CharField(max_length=50, primary_key=True)
@@ -296,7 +301,6 @@ class Settings(models.Model):
 
 class About(models.Model):
     description_uz = models.TextField(blank=True, null=True)
-    description_ru = models.TextField(blank=True, null=True)
     def str(self):
         return self.description_uz
 
@@ -305,7 +309,6 @@ class About(models.Model):
 
 class AboutImage(models.Model):
     name_uz = models.CharField(max_length=60, blank=True, null=True)
-    name_ru = models.CharField(max_length=60, blank=True, null=True)
     image = models.ImageField(upload_to='media/about', blank=True, null=True)
     def str(self):
         return self.name_uz

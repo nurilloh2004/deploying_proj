@@ -19,15 +19,15 @@
 
     <div class="container-fluid" style="background-color: #fff;">
         <div class="container pt-5">
-            <div class="row">
+            <div class="row d-flex">
                 <div class="col-5">
                     <h6 class="font-weight-normal text-justify"><span class="text-danger h3">Цифровая печать</span> – это технология получения оттисков с использованием переменной печатной формы. Изменениями в печатной машине на каждом этапе управляет компьютер издательской системы. Так как в технологическом процессе не используются плёнки и формы, значительно снижается не только стоимость подготовительных процессов, но и риск потери качества на этих стадиях печати. Этот вид техники используют для печати малотиражных рекламных или коммерческих изданий, в которые могут быть внесены изменения в процессе изготовления тиража даже после печати каждого экземпляра. Это позволяет печатать неограниченное число копий от 1 до нескольких тысяч.</h6>
                 </div>
                  <div class="col-5 pt-5 pb-3 text-center">
-                  <img src="img/bg/heroxlogo2.png" width="" alt="">
+                  <img src="{% static 'img/bg/heroxlogo2.png'%}" width="" alt="">
                 </div> 
                 <div class="col-7 pt-3 pb-3 ">
-                  <img src="img/bg/herox.png" width="100%" alt="">
+                  <img src="{% static 'img/bg/herox.png'%}" width="100%" alt="">
                 </div>
             </div>
         </div>
@@ -84,15 +84,14 @@
         </div>
     </section>
 
-    <section class="console-container pt-5 pb-5 mt-5" style="background-color: #efefef;">
-        <div class="container" style="border: 2px solid #000;">
-            <div class="row">
-                <div class="col-12 pt-5 pb-5 text-center">
-                    <h1 class="colorBlack">Загрузите файл на печать </h1>                       
-                    <input type="file" class="m-auto" width="100%" value=""> 
-            </div>
-            </div>
-        </div>
+    <div class="col-12 pt-3 pb-5 text-right">
+      <form action="#" method="post">
+        {% csrf_token  %}
+        {{ form.as_p }}
+        <button type="submit">ЖДУ ЗВОНОК!</button>
+      </form>	
+    </div>    
+</div>  
     </section>
 
     {% endblock content %}

@@ -4,6 +4,12 @@ from django.forms import ModelForm
 
 from .models import *
 
+class OrForm(forms.ModelForm):
+    class Meta:
+        model = Form
+        fields = '__all__'
+
+
 class CustomerForm(forms.ModelForm):
 	class Meta:
 		model = Customer

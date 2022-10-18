@@ -43,18 +43,33 @@ def home(request):
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     print("Menyu------------>>>>>>>>", menuservice)
+
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
     context = {
         "servistype": servistype,
-        "menuservice": menuservice
+        "menuservice": menuservice,
+        'form' : form
     }
-    return render(request, 'main/index.html')
+    return render(request, 'main/index.html', context=context)
     
 
 def contact(request):
     return render(request, 'main/contact.html')
 
 def portfolio(request):
-    return render(request, 'main/portfolio.html')
+    image = AboutImage.objects.all()
+    context = {
+        "image": image
+    }
+    return render(request, 'main/portfolio.html', context=context)
 
 def gift_product(request):
     return render(request, 'main/gifts-products.html')
@@ -63,14 +78,37 @@ def design(request):
     return render(request, 'main/dizayn.html')
 
 def printing_large(request):
-    return render(request, 'main/printing-largeformat.html')
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'main/printing-largeformat.html' , context=context)
 
 def promotional_products(request):
     return render(request, 'main/promotional-products.html')
 
 def markirovka(request):
-    return render(request, 'main/markirovka.html')
-
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'main/markirovka.html', context=context)
 def poligraphy_product(request, pk):
     product = Product.objects.filter(id=pk)
     # categories = Category.objects.filter(parent=None).all()
@@ -83,21 +121,60 @@ def poligraphy_product(request, pk):
     return render(request, 'main/poligraphy-products.html', context=context)
 
 def printing_paper(request):
-    return render(request, 'main/printing-paper.html')
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'main/printing-paper.html' , context=context)
 
 def printing_textile(request):
-    return render(request, 'main/printing-textile.html')
+    form = OrForm()
+    if request.method == 'POST':
+        form = OrForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrForm()
+    context = {
+        'form' : form
+    }
+    return render(request, 'main/printing-textile.html', context=context)
 
 def textile_products(request):
     return render(request, 'main/textile-products.html')
 
 def advertisement(request):
-    return render(request, 'main/reklama.html')
+    return render(request, 'main/about.html')
 
 def invoice(request):
     return render(request, 'main/invoice.html')
 
+def aboutview(request):
+    about = About.objects.all()
+    image = AboutImage.objects.all()
+    context = {
+        "about": about,
+        "image": image
+    }
+    return render(request, 'main/about.html', context=context)
 
+
+def servicecategory(request):
+    page_service = MenuService.objects.all()
+    context = {
+        "page_service": page_service
+    }
+    return render(request, 'main/service_page.html', context=context)
 
 
 class OrderCreateView(CreateView):
