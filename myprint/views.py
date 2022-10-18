@@ -110,7 +110,7 @@ def markirovka(request):
     }
     return render(request, 'main/markirovka.html', context=context)
 def poligraphy_product(request, pk):
-    product = Product.objects.filter(id=pk)
+    product = Product.objects.filter(category_id=pk)
     # categories = Category.objects.filter(parent=None).all()
     # children = Category.objects.filter(parent_id__in=[k.id for k in categories]).all()
     context = {

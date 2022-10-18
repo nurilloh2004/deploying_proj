@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: .\templates\main\application_order.html:125
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-10 05:41+0500\n"
+"POT-Creation-Date: 2022-10-18 14:45+0500\n"
 "PO-Revision-Date: 2022-10-10 05:46+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: .\config\settings.py:123
+#: .\config\settings.py:129
 msgid "English"
 msgstr "Uzbek"
 
-#: .\config\settings.py:124
+#: .\config\settings.py:130
 msgid "Russian"
 msgstr "Uzbek"
 
-#: .\config\settings.py:125
+#: .\config\settings.py:131
 msgid "Uzbek"
 msgstr "Russian"
 
@@ -38,23 +39,24 @@ msgstr ""
 msgid "first_name"
 msgstr ""
 
-#: .\myprint\models.py:34
+#: .\myprint\models.py:34 .\myprint\models.py:284
 msgid "full_name"
 msgstr ""
 
-#: .\myprint\models.py:35
+#: .\myprint\models.py:35 .\myprint\models.py:285
 msgid "phone_number"
 msgstr ""
 
-#: .\myprint\models.py:65 .\myprint\models.py:81 .\myprint\models.py:87
-#: .\myprint\models.py:103 .\myprint\models.py:120 .\myprint\models.py:129
-#: .\myprint\models.py:137 .\myprint\models.py:146 .\myprint\models.py:153
-#: .\myprint\models.py:163 .\myprint\models.py:174 .\myprint\models.py:183
-#: .\myprint\models.py:195 .\myprint\models.py:203
+#: .\myprint\models.py:65 .\myprint\models.py:82 .\myprint\models.py:83
+#: .\myprint\models.py:101 .\myprint\models.py:117 .\myprint\models.py:133
+#: .\myprint\models.py:142 .\myprint\models.py:152 .\myprint\models.py:164
+#: .\myprint\models.py:171 .\myprint\models.py:181 .\myprint\models.py:192
+#: .\myprint\models.py:201 .\myprint\models.py:213 .\myprint\models.py:221
+#: .\myprint\models.py:252
 msgid "name"
 msgstr ""
 
-#: .\myprint\models.py:72 .\myprint\models.py:109
+#: .\myprint\models.py:72 .\myprint\models.py:123
 msgid "size"
 msgstr ""
 
@@ -62,36 +64,303 @@ msgstr ""
 msgid "element"
 msgstr ""
 
-#: .\myprint\models.py:82 .\myprint\models.py:88 .\myprint\models.py:105
-#: .\myprint\models.py:138 .\myprint\models.py:154 .\myprint\models.py:164
-#: .\myprint\models.py:175 .\myprint\models.py:187 .\myprint\models.py:196
-#: .\myprint\models.py:205
+#: .\myprint\models.py:84 .\myprint\models.py:102 .\myprint\models.py:119
+#: .\myprint\models.py:153 .\myprint\models.py:172 .\myprint\models.py:182
+#: .\myprint\models.py:193 .\myprint\models.py:205 .\myprint\models.py:214
+#: .\myprint\models.py:223 .\myprint\models.py:312
 msgid "image"
 msgstr ""
 
-#: .\myprint\models.py:91 .\myprint\models.py:104 .\myprint\models.py:166
-#: .\myprint\models.py:186
+#: .\myprint\models.py:105 .\myprint\models.py:118 .\myprint\models.py:184
+#: .\myprint\models.py:204
 msgid "description"
 msgstr ""
 
-#: .\myprint\models.py:110
+#: .\myprint\models.py:124
 msgid "type_paper"
 msgstr ""
 
-#: .\myprint\models.py:111
+#: .\myprint\models.py:125
 msgid "one_site_print"
 msgstr ""
 
-#: .\myprint\models.py:112
+#: .\myprint\models.py:126
 msgid "double_site_print"
 msgstr ""
 
-#: .\myprint\models.py:165 .\myprint\models.py:184 .\myprint\models.py:204
+#: .\myprint\models.py:183 .\myprint\models.py:202 .\myprint\models.py:222
 msgid "number"
 msgstr ""
 
-#: .\myprint\models.py:185
+#: .\myprint\models.py:203
 msgid "info"
+msgstr ""
+
+#: .\myprint\models.py:231
+msgid "id_name_order"
+msgstr ""
+
+#: .\myprint\models.py:232
+msgid "client"
+msgstr ""
+
+#: .\myprint\models.py:233
+msgid "client_phone_number"
+msgstr ""
+
+#: .\myprint\models.py:234
+msgid "manager_name"
+msgstr ""
+
+#: .\myprint\models.py:235
+msgid "date_order"
+msgstr ""
+
+#: .\myprint\models.py:236
+msgid "ready_product_date_order"
+msgstr ""
+
+#: .\myprint\models.py:253
+msgid "status_order"
+msgstr ""
+
+#: .\myprint\models.py:254
+msgid "amount"
+msgstr ""
+
+#: .\myprint\models.py:255
+msgid "price"
+msgstr ""
+
+#: .\myprint\models.py:256
+msgid "price_free_VAT"
+msgstr ""
+
+#: .\myprint\models.py:257
+msgid "VAT"
+msgstr ""
+
+#: .\myprint\models.py:258
+msgid "price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:259
+msgid "total"
+msgstr ""
+
+#: .\myprint\models.py:260
+msgid "total_price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:261
+msgid "total_price_ALL"
+msgstr ""
+
+#: .\myprint\models.py:294
+msgid "key"
+msgstr ""
+
+#: .\myprint\models.py:295
+msgid "value"
+msgstr ""
+
+#: .\myprint\models.py:303
+msgid "description_uz"
+msgstr ""
+
+#: .\myprint\models.py:311
+msgid "name_uz"
+msgstr ""
+
+#: .\templates\main\application_order.html:34
+msgid "ЗАЯВКА-ЗАКАЗ № "
+msgstr ""
+
+#: .\templates\main\application_order.html:35
+msgid ""
+"Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в "
+"размере и объеме, в указанном счет-заказе:"
+msgstr ""
+
+#: .\templates\main\application_order.html:44
+msgid "ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span>"
+msgstr ""
+
+#: .\templates\main\application_order.html:45
+msgid "Имя <br> ЗАКАЗЧИКА"
+msgstr ""
+
+#: .\templates\main\application_order.html:46
+msgid "Номер <br> ТЕЛЕФОНА"
+msgstr ""
+
+#: .\templates\main\application_order.html:47
+msgid "ОТВЕТСВЕННЫЙ <br> Менеджер"
+msgstr ""
+
+#: .\templates\main\application_order.html:48
+msgid "ДАТА ПРИЕМА ЗАКАЗА"
+msgstr ""
+
+#: .\templates\main\application_order.html:49
+msgid "ДАТА ОТГРУЗКИ ЗАКАЗА"
+msgstr ""
+
+#: .\templates\main\application_order.html:73
+msgid "№ "
+msgstr ""
+
+#: .\templates\main\application_order.html:74
+msgid "Наименование работ,услуг,изделий"
+msgstr ""
+
+#: .\templates\main\application_order.html:75
+msgid "Ед.изм."
+msgstr ""
+
+#: .\templates\main\application_order.html:76
+msgid "Кол-во"
+msgstr ""
+
+#: .\templates\main\application_order.html:77
+msgid "Цена за единицу"
+msgstr ""
+
+#: .\templates\main\application_order.html:78
+msgid "Цена без учета НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:79
+msgid "НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:80
+msgid "Цена с учетом НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:81
+msgid "Всего"
+msgstr ""
+
+#: .\templates\main\application_order.html:108
+msgid "Итого:"
+msgstr ""
+
+#: .\templates\main\application_order.html:123
+msgid "Mакет: "
+msgstr ""
+
+#: .\templates\main\application_order.html:124
+msgid ""
+"Пояснение к утверждению макета : "
+"_________________________________________________________________"
+msgstr ""
+
+#: .\templates\main\application_order.html:128
+msgid "Ознокомлен и согласен:  ___________________ "
+msgstr ""
+
+#: .\templates\main\application_order.html:128
+#: .\templates\main\application_order.html:129
+msgid "Подпись заказчика"
+msgstr ""
+
+#: .\templates\main\application_order.html:129
+msgid "Продукцию получил:  ______________________ "
+msgstr ""
+
+#: .\templates\main\application_order.html:132
+msgid "Менеджер _____________________"
+msgstr ""
+
+#: .\templates\main\application_order.html:133
+msgid "Кассир _________________________"
+msgstr ""
+
+#: .\templates\main\application_order.html:136
+msgid "    При получении продукции наличие счет-заказа обязательно."
+msgstr ""
+
+#: .\templates\main\contact.html:10
+msgid "Контакты."
+msgstr ""
+
+#: .\templates\main\contact.html:20
+msgid "Шайхантахурский филиал"
+msgstr ""
+
+#: .\templates\main\contact.html:28
+msgid "г.Ташкент,Шайхонтохурский район, ул. А. Наваий 6-дом (ориентир, "
+msgstr ""
+
+#: .\templates\main\contact.html:34
+msgid "Каждый день с 9:30 - 21:00 (офис Ўрда)"
+msgstr ""
+
+#: .\templates\main\contact.html:40
+msgid "Учтепинский филиал"
+msgstr ""
+
+#: .\templates\main\contact.html:48
+msgid "г.Ташкент, Учтепинский район, 14-квартал ул. 6-дом <br>(ориентир, "
+msgstr ""
+
+#: .\templates\main\contact.html:54
+msgid "Каждый день с 9:30 - 21:00 (офис Афруз)"
+msgstr ""
+
+#: .\templates\main\dizayn.html:12
+msgid "Дизайн студио."
+msgstr ""
+
+#: .\templates\main\dizayn.html:23
+msgid ""
+"Специалисты нашего Дизайн-бюро всегда готовы к решению любых самых сложных "
+"задач. Мы занимаемся всеми видами рекламной полиграфии, разработкой "
+"логотипов и фирменных стилей компаний, изготовлением оригинал-макетов любой "
+"полиграфической продукции, начиная от визитки, календаря и каталога и "
+"заканчивая разработкой упаковки и этикетки. Наши дизайнеры имеют большой "
+"опыт работы с рекламной и офисной полиграфической продукцией, они "
+"профессионально разрабатывают дизайн рекламных листовок для адресной "
+"рассылки, макеты рекламных модулей или полос для иллюстрированного журнала. "
+"Офис нашей компании находится со станцией метро Парк Победы. Мы приглашаем "
+"вас посетить нас и при личной встрече передать свои пожелания нашим "
+"дизайнерам. Перечень услуг, предлагаемых нашей дизайн-студией, вы найдете в "
+"разделе — дизайн и верстка."
+msgstr ""
+
+#: .\templates\main\dizayn.html:28
+msgid "Полиграфический Дизайн"
+msgstr ""
+
+#: .\templates\main\dizayn.html:35
+#, fuzzy
+#| msgid "Наружная реклама."
+msgid "Наружная реклама"
+msgstr "Tashqi reklama."
+
+#: .\templates\main\dizayn.html:42
+msgid "Брендинг"
+msgstr ""
+
+#: .\templates\main\dizayn.html:48
+msgid "Наши работы."
+msgstr ""
+
+#: .\templates\main\error.html:9
+msgid "LOGIN SUPPORT CENTER"
+msgstr ""
+
+#: .\templates\main\error.html:10
+msgid "ERROR !!!!!!!!!"
+msgstr ""
+
+#: .\templates\main\error.html:11
+msgid "Если вы еще не создали учетную запись"
+msgstr ""
+
+#: .\templates\main\error.html:12
+msgid "Try again"
 msgstr ""
 
 #: .\templates\main\reklama.html:13

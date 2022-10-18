@@ -31,22 +31,22 @@
       <div class="">
         <div class="row border p-3">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-5">
-                <h5 class="font-weight-bold text-center pb-3 pt-3">ЗАЯВКА-ЗАКАЗ № <span class="h5 font-weight-bold">00001</span></h5>
-                <h6>Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:</h6>
+                <h5 class="font-weight-bold text-center pb-3 pt-3">{% trans "ЗАЯВКА-ЗАКАЗ № " %}<span class="h5 font-weight-bold">00001</span></h5>
+                <h6>{% trans "Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:" %}</h6>
             </div>
             <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 text-center pt-5">
-                <img src="img/logo.png" width="100%" alt="">
+                <img src="{% static 'img/logo.png' %}" width="100%" alt="">
             </div>
             <div class="col-12 col-sm-12 col-md-3 col-lg-9 col-xl-10">
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold">ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span></th>
-                            <th class="font-weight-bold">Имя <br> ЗАКАЗЧИКА</th>
-                            <th class="font-weight-bold">Номер <br> ТЕЛЕФОНА</th>
-                            <th class="font-weight-bold">ОТВЕТСВЕННЫЙ <br> Менеджер</th>
-                            <th class="font-weight-bold">ДАТА ПРИЕМА ЗАКАЗА</th>
-                            <th class="font-weight-bold">ДАТА ОТГРУЗКИ ЗАКАЗА</th>
+                            <th class="font-weight-bold">{% trans "ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span>" %}</th>
+                            <th class="font-weight-bold">{% trans "Имя <br> ЗАКАЗЧИКА" %}</th>
+                            <th class="font-weight-bold">{% trans "Номер <br> ТЕЛЕФОНА" %}</th>
+                            <th class="font-weight-bold">{% trans "ОТВЕТСВЕННЫЙ <br> Менеджер" %}</th>
+                            <th class="font-weight-bold">{% trans "ДАТА ПРИЕМА ЗАКАЗА" %}</th>
+                            <th class="font-weight-bold">{% trans "ДАТА ОТГРУЗКИ ЗАКАЗА" %}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,15 +70,15 @@
                     <thead>
                         <tr>
                             
-                            <th class="font-weight-bold small">№ </th>
-                            <th class="font-weight-bold small">Наименование работ,услуг,изделий</th>
-                            <th class="font-weight-bold small">Ед.изм.</th>
-                            <th class="font-weight-bold small">Кол-во</th>
-                            <th class="font-weight-bold small">Цена за единицу</th>
-                            <th class="font-weight-bold small">Цена без учета НДС</th>
-                            <th class="font-weight-bold small">НДС</th>
-                            <th class="font-weight-bold small">Цена с учетом НДС</th>
-                            <th class="font-weight-bold small">Всего</th>
+                            <th class="font-weight-bold small">{% trans "№ " %}</th>
+                            <th class="font-weight-bold small">{% trans "Наименование работ,услуг,изделий" %}</th>
+                            <th class="font-weight-bold small">{% trans "Ед.изм." %}</th>
+                            <th class="font-weight-bold small">{% trans "Кол-во" %}</th>
+                            <th class="font-weight-bold small">{% trans "Цена за единицу" %}</th>
+                            <th class="font-weight-bold small">{% trans "Цена без учета НДС" %}</th>
+                            <th class="font-weight-bold small">{% trans "НДС" %}</th>
+                            <th class="font-weight-bold small">{% trans "Цена с учетом НДС" %}</th>
+                            <th class="font-weight-bold small">{% trans "Всего" %}</th>
                             
                         </tr>
                     </thead>
@@ -105,7 +105,7 @@
                     <tfoot>
                         <tr>
                             <td></td>
-                            <td>Итого:</td>
+                            <td>{% trans "Итого:" %}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -120,20 +120,20 @@
                 </table>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-5 pb-5">
-                <h5>Mакет: </h5>
-                <h5>Пояснение к утверждению макета : _________________________________________________________________</h5>
-                <h5>"Утверждаю" счет-заказ. С итоговой суммой заказа, условиями, размещенными на обороте, условиями утверждения макета</h5>
+                <h5>{% trans "Mакет: " %}</h5>
+                <h5>{% trans "Пояснение к утверждению макета : _________________________________________________________________" %}</h5>
+                <h5>{% trans ""Утверждаю" счет-заказ. С итоговой суммой заказа, условиями, размещенными на обороте, условиями утверждения макета" %}</h5>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <h5 class="pb-3">Ознокомлен и согласен:  ___________________ <sub class="small">Подпись заказчика</sub></h5>
-                <h5>Продукцию получил:  ______________________  <sub class="small">Подпись заказчика</sub></h5>
+                <h5 class="pb-3">{% trans "Ознокомлен и согласен:  ___________________ " %}<sub class="small">{% trans "Подпись заказчика" %}</sub></h5>
+                <h5>{% trans "Продукцию получил:  ______________________ " %} <sub class="small">{% trans "Подпись заказчика" %}</sub></h5>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <h5 class="pb-3">Менеджер _____________________</h5>
-                <h5>Кассир _________________________</h5>
+                <h5 class="pb-3">{% trans "Менеджер _____________________" %}</h5>
+                <h5>{% trans "Кассир _________________________" %}</h5>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-5">
-                <h5>    При получении продукции наличие счет-заказа обязательно.</h5>
+                <h5>{% trans "    При получении продукции наличие счет-заказа обязательно." %}</h5>
             </div>
 
         <br>
@@ -153,8 +153,8 @@
     <div class="">
       <div class="row border p-3">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-5">
-              <h5 class="font-weight-bold text-center pb-3 pt-3">ЗАЯВКА-ЗАКАЗ № <span class="h5 font-weight-bold">00001</span></h5>
-              <h6>Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:</h6>
+              <h5 class="font-weight-bold text-center pb-3 pt-3">{% trans "ЗАЯВКА-ЗАКАЗ № <span class="h5 font-weight-bold">00001</span></h5>
+              <h6>{% trans "Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в размере и объеме, в указанном счет-заказе:</h6>
           </div>
           
       <br>
@@ -197,8 +197,8 @@
                     <input type="text" class="form-control" placeholder="Наименование работ,услуг,изделий	" aria-label="Наименование работ,услуг,изделий	">
                   </div>
                   <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this </option>
-                    <option value="1">One</option>
+                    <option selected>{% trans "Open this </option>
+                    <option value="1">{% trans "One</option>
                   </select>
                     <div class="col">
                       <input type="text" class="form-control" placeholder="Кол-во" aria-label="Кол-во">
