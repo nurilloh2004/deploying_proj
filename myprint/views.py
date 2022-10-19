@@ -40,9 +40,12 @@ from django.contrib.auth import login as auth_login
 
 
 def home(request):
+    sponsor = Sponsors.objects.all()
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     print("Menyu------------>>>>>>>>", menuservice)
+
+
 
     form = OrForm()
     if request.method == 'POST':
@@ -56,7 +59,8 @@ def home(request):
     context = {
         "servistype": servistype,
         "menuservice": menuservice,
-        'form' : form
+        'form' : form,
+        'sponsor':sponsor
     }
     return render(request, 'main/index.html', context=context)
     
@@ -383,5 +387,4 @@ def pdf_report_create(request):
     if pisa_status.err:
        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
-
 

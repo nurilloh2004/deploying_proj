@@ -93,3 +93,16 @@ class AboutImageAdmin(admin.ModelAdmin):
     class Meta:
         model = AboutImage
 admin.site.register(AboutImage, AboutImageAdmin)
+
+
+
+
+
+# class BookInLineAdmin(admin.TabularInline):
+#     model = Book
+
+
+# class AuthorAdmin(admin.ModelAdmin):
+#     inlines = [BookInLineAdmin]
+
+# admin.site.register(Author, AuthorAdmin)
