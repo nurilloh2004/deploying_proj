@@ -145,10 +145,9 @@ alt="">{{ phone }}</a>
 			<img src="{% static 'img/logo.png' %}" width="100%" alt="">
 		  </div>
 		  <div class="offset-3 offset-sm-0 col-9 col-sm-12 col-md-6 col-lg-6 col-xl-7 footer_menu">
-			<h5 class="ml-3 mr-3"><a href="poligraphy-products.html" class="colorBlack">Полиграфия</a></h5>
-			<h5 class="ml-3 mr-3"><a href="gifts-products.html" class="colorBlack">Сувениры</a></h5>
-			<h5 class="ml-3 mr-3"><a href="promotional-products.html" class="colorBlack">Реклама</a></h5>
-			<h5 class="ml-3"><a href="dizayn.html" class="colorBlack">Дизайн</a></h5>
+			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:gift_product' %}" class="colorBlack">Сувениры</a></h5>
+			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:promotional_products' %}" class="colorBlack">Реклама</a></h5>
+			<h5 class="ml-3"><a href="{% url 'myprint:design' %}" class="colorBlack">Дизайн</a></h5>
 		  </div>
 		  <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center text-md-right">
 			<span class="ml-2"><i class="fab fa-2x fa-telegram colorBlack"></i></span>

@@ -247,29 +247,26 @@ class OrderCreateView(CreateView):
 #     return render(request, 'Reddit_app/order_from_post.html', {"form": form})
 
 
-@csrf_exempt
-@login_required(login_url='login')
-def listView(request):
-    if request.user.is_authenticated:
-        if OrderForm.objects.filter(manager=request.user.id):
-            orders = OrderForm.objects.filter(manager=request.user.id).order_by('-id').first()
-            total = 0
-            all_price = orders.price * orders.amount
-            percent_sum = (all_price / 100) * orders.VAT
-            sum_list = all_price + percent_sum
-            total = total + sum_list
-            context = {}
 
-            context['orders'] = orders
-            context['sum_list'] = sum_list
-            context['all_price'] = all_price
-            context['total'] = total
-            if orders.VAT:
-                total = total + (total*orders.percent/100)
-                context['total_sum']=total
-        else:
-            context = {}
-        return render(request, 'invoice.html', context=context)
+def listView(request):
+    order = OrderForm.objects.filter(amount='amount', price='price',VAT='VAT')
+    total = 0
+    all_price = order.price * order.amount
+    percent_sum = (all_price / 100) * order.VAT
+    sum_list = all_price + percent_sum
+    total = total + sum_list
+    context = {}
+
+    context['order'] = order
+    context['sum_list'] = sum_list
+    context['all_price'] = all_price
+    context['total'] = total
+    if order.VAT:
+        total = total + (total*order.VAT/100)
+        context['total_sum']=total
+    else:
+        context = {}
+    return render(request, 'invoice.html', context=context)
 
 
 
@@ -306,6 +303,22 @@ def createView(request):
 
 def list(request):
     datas = OrderForm.objects.all()
+    # order = OrderForm.objects.values_list('price', 'VAT', 'amount')
+    # total = 0
+    # all_price = order.price * order.amount
+    # percent_sum = (all_price / 100) * order.VAT
+    # sum_list = all_price + percent_sum
+    # total = total + sum_list
+    # context = {}
+
+    # context['sum_list'] = sum_list
+    # context['all_price'] = all_price
+    # context['total'] = total
+    # if order.VAT:
+    #     total = total + (total*order.VAT/100)
+    #     context['total_sum']=total
+    # else:
+    #     context = {}
     context = {'datas' : datas}
     return render(request, 'multi_forms/list.html', context=context)
 

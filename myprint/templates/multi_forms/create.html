@@ -40,45 +40,44 @@
                                 </tr>
                                 
                             </tbody>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            
-                            <br>
+                        </table>
+                <table class="table form-table table-bordered table-sm">
+                            <thead class="text-center">
+                                <tr>
+                                    <th class="font-weight-bold">Name</span></th>
+                                    <th class="font-weight-bold">Select</th>
+                                    <th class="font-weight-bold">Amount</th>
+                                    <th class="font-weight-bold">Price</th>
+                                    <th class="font-weight-bold">Wtihout Price VAT</th>
+                                    <th class="font-weight-bold">VAT</th>
+                                    <th class="font-weight-bold">Price VAT</th>
+                                    <th class="font-weight-bold">Total</th>
+                                </tr>
+                            </thead>
                             <tbody>
                             {% for form_data in formset %}
                                 <tr class="item">
                                     <td>
-                                        <label>Name</label>
                                         {{ form_data.name }}
                                     </td>
                                     <td>
-                                        <label>Select</label>
                                     	<select class="p-2" name="" id="">
                                             <option class="small p-2" selected value="шт">{{form_data.status_order}}</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <label>Amount</label>
                                     	{{ form_data.amount }}
                                     </td>
                                     <td>
-                                        <label>Price</label>
                                     	{{ form_data.price }}
                                     </td>
                                     <td>
-                                        <label>Wtihout Price VAT</label>
                                     	{{ form_data.price_free_VAT }}
                                     </td>
                                     <td>
-                                        <label>VAT</label>
                                     	{{ form_data.VAT }}
                                     </td>
                                     <td>
-                                        <label>Price VAT</label>
                                     	{{ form_data.price_with_VAT }}
                                     </td>
                                     <td><label>Total</label>
@@ -94,6 +93,7 @@
                                     </td>
                                 </tr>
                             {% endfor %}
+                        </table>
                             <tr>
                                 <td colspan="9"
                                     style="border-left: none!important; border-right: none !important; border-bottom: none!important;">

@@ -1,20 +1,40 @@
 from dataclasses import fields
+from pyexpat import model
 from django import forms
 from django.forms import ModelForm
 
 from .models import *
 
-class OrForm(forms.ModelForm):
+class OrForm(forms.Form):
     class Meta:
         model = Form
-        fields = '__all__'
+
+    full_name = forms.IntegerField(widget=forms.TextInput(attrs={
+        "class": 'form-control',
+        'type': 'text',
+        'placeholder': 'ФИШ'
+    }))
+    phone_number = forms.CharField(max_length=20,widget=forms.TextInput(attrs={
+        "class": 'form-control mt-3 mb-3',
+        'type': 'number',
+        'placeholder': 'Telefon'
+    }))
+
+
 
 
 class CustomerForm(forms.ModelForm):
-	class Meta:
-		model = Customer
+    id_name_order = forms.CharField(required=True)
+    client = forms.CharField(required=True)
+    client_phone_number = forms.CharField(required=True)
+    manager_name = forms.CharField(required=True)
+    date_order = forms.CharField(required=True)
+    ready_product_date_order = forms.CharField(required=True)
 
-		fields = [
+    class Meta:
+        model = Customer
+        
+        fields = [
 			'id_name_order',
 			'client',
 			'client_phone_number',
