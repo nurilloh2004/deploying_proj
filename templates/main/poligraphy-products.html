@@ -29,7 +29,7 @@
                             {% if par.id == pk %}
                                 <a href="{% url 'myprint:poligraphy_product' par.id %}">
 
-                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6><img src=""
+                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6><img src="{{child.image.url}}"
                                                                                             width="20"
                                                                                             alt="category-title-icon"
                                                                                             class="mr-1">{{ child.name_uz }}

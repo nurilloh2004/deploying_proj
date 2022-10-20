@@ -70,9 +70,9 @@
 			 <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 text-center">
 			   <div class="right-content">							
 				 <ul class="list-main pt-3">
-				   <li class="pr-1 pb-2 border-0"><a href="https://www.facebook.com/myprintreklama/"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://t.me/MYPRINTUZ"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-2 border-0"><a href="https://www.instagram.com/myprintuz/"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pr-1 pb-2 border-0"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ telegram }}"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
+				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ instagram }}"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
 				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}"
 					class="pb-0 pt-3 mb-0 font-weight-normal"
 					style="font-size: 25px;"><img
@@ -162,7 +162,7 @@ alt="">{{ phone }}</a>
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 form-inline justify-content-between">
 					<p class="small">&copy; 2020 Все права защищены.</p>                          
-					<p class="small">Сайт разработан в студио инновационныx разработок <a href="http://myweb.uz/" class="text-white text-decoration-none font-weight-bold"> MYWEB.UZ.</a></p>             
+					<p class="small">Сайт разработан в студио инновационныx разработок <a href="https://datasite.uz" class="text-white text-decoration-none font-weight-bold">DataSite.uz</a></p>             
 				  </div>
 			</div>
 		</div>
@@ -203,7 +203,7 @@ else
 });
 
 
-consoleText(['MYPRINT.UZ', 'Реклама', 'Полиграфия', 'Сувениры'], 'text',['#ffffff','#ffffff','#ffffff','#ffffff']);
+consoleText(['Реклама', 'Полиграфия', 'Сувениры'], 'text',['#ffffff','#ffffff','#ffffff','#ffffff']);
 function consoleText(words, id, colors) {
  if (colors === undefined) colors = ['#fff'];
  var visible = true;

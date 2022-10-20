@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.utils.translation import gettext_lazy as _
 from unicodedata import category
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
@@ -294,6 +295,7 @@ class Form(models.Model):
 class Settings(models.Model):
     key = models.CharField(_('key'), max_length=50, primary_key=True)
     value = models.TextField(_('value'))
+    logo = models.ImageField(_('logo'), upload_to='media/logo')
     class Meta:
         verbose_name = "Sozlama"
         verbose_name_plural = "Sozlamalar"
