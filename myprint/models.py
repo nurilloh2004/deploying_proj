@@ -189,6 +189,7 @@ class CEO(models.Model):
 
 
 class Sponsors(models.Model):
+    
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/sponsor')
 
