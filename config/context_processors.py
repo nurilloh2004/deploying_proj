@@ -1,6 +1,6 @@
 
 
-from myprint.models import Category, Settings, CEO
+from myprint.models import Category, Settings
 
 
 
@@ -12,5 +12,8 @@ def all_category(request):
         "facebook":Settings.objects.get(key='facebook').value,
         "telegram":Settings.objects.get(key='telegram').value,
         "Logo":Settings.objects.get(key='Logo').logo,
+        "work_info":Settings.objects.get(key='work_info').value,
+        "location1":Settings.objects.get(key='location1').value,
+        "location2":Settings.objects.get(key='location2').value,
     }
  

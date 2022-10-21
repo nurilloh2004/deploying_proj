@@ -1,3 +1,4 @@
+from cgitb import html
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views.generic import (TemplateView, ListView, CreateView, DetailView, FormView)
@@ -365,26 +366,33 @@ def user_login(request):
                 return render(request, template_name='main/error.html', context={'login': auth_login})
 
 
+# def pdf_report_create(request):
+#     order = OrderForm.objects.all()
+
+#     template_path = 'pdf_convert/pdfReport.html'
+
+#     context = {'order': order}
+
+#     response = HttpResponse(content_type='application/pdf')
+
+#     response['Content-Disposition'] = 'filename="orders_report.pdf"'
+
+#     template = get_template(template_path)
+
+#     html = template.render(context)
+
+#     # create a pdf
+#     pisa_status = pisa.CreatePDF(
+#        html, dest=response)
+#     # if error then show some funy view
+#     if pisa_status.err:
+#        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+#     return response
+
+
+from .pdf import html2pdf
+
+
 def pdf_report_create(request):
-    order = OrderForm.objects.all()
-
-    template_path = 'pdf_convert/pdfReport.html'
-
-    context = {'order': order}
-
-    response = HttpResponse(content_type='application/pdf')
-
-    response['Content-Disposition'] = 'filename="orders_report.pdf"'
-
-    template = get_template(template_path)
-
-    html = template.render(context)
-
-    # create a pdf
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
-    # if error then show some funy view
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
-    return response
-
+    pdf = html2pdf("pdf_convert/pdfReport.html")
+    return HttpResponse(pdf,content_type="application/pdf")

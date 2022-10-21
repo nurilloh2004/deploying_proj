@@ -61,12 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         self.set_password(password)
         return super(User,self).save(*args, **kwargs)
 
-#Banner
-class Banner(models.Model):
-    name = models.CharField(_('name'), max_length=65)
 
-    def __str__(self):
-        return self.name
 
 #detail product
 class InfoProduct(models.Model):
@@ -114,10 +109,7 @@ class Product(models.Model):
 
 
 #печать.
-class Printer(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    description = models.TextField(_('description'), blank=True, null=True)
-    image = models.ImageField(_('image'), upload_to='media/printer')
+
 
 
 class InfoType(models.Model):
@@ -178,16 +170,6 @@ class MenuTariff(models.Model):
             return self.name
 
 
-class CEO(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    image = models.ImageField(_('image'), upload_to='media/ceo')
-    number = models.IntegerField(_('number'), )
-    description = models.TextField(_('description'), blank=True, null=True)
-
-
-    def __str__(self) -> str:
-                return self.name
-
 
 class Sponsors(models.Model):
     
@@ -214,15 +196,6 @@ class Contact(models.Model):
 class Portfolio(models.Model):
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/portfolio')
-
-    def __str__(self) -> str:
-                return self.name
-
-
-class SocialMedia(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    number = models.IntegerField(_('number'))
-    image = models.ImageField(_('image'), upload_to='media/social_media')
 
     def __str__(self) -> str:
                 return self.name

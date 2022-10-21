@@ -9,17 +9,16 @@ class OrForm(forms.Form):
     class Meta:
         model = Form
 
-    full_name = forms.IntegerField(widget=forms.TextInput(attrs={
-        "class": 'form-control',
-        'type': 'text',
-        'placeholder': 'ФИШ'
-    }))
-    phone_number = forms.CharField(max_length=20,widget=forms.TextInput(attrs={
-        "class": 'form-control mt-3 mb-3',
-        'type': 'number',
-        'placeholder': 'Telefon'
-    }))
-
+    widgets = {
+            'full_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'ФИШ'
+            }),
+            'phone_number': forms.NumberInput(attrs={
+                'class': 'form-control mt-3 mb-3',
+                'placeholder': 'Telefon',
+            })
+        }
 
 
 

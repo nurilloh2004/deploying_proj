@@ -6,45 +6,20 @@ from parler.admin import TranslatableAdmin
 admin.site.register(InfoType )
 admin.site.register(Type)
 admin.site.register(User)
-admin.site.register(Banner)
-admin.site.register(InfoProduct)
-admin.site.register(Product)
-admin.site.register(Printer)
+# admin.site.register(InfoProduct)
+# admin.site.register(Product)
 admin.site.register(Tariff)
 admin.site.register(MenuTariff)
-admin.site.register(CEO)
 admin.site.register(Sponsors)
 admin.site.register(Contact)
 admin.site.register(Portfolio)
-admin.site.register(SocialMedia)
 admin.site.register(Form)
-admin.site.register(OrderForm)
-admin.site.register(Customer)
+# admin.site.register(OrderForm)x
+# admin.site.register(Customer)
 
 
-class TypeServiceAdmin(admin.ModelAdmin):
-    list_display = [
-        'name_uz', 'image'
-    ]
-    list_display_links = [
-        'name_uz'
-    ]
-    class Meta:
-        model = TypeService
-admin.site.register(TypeService, TypeServiceAdmin)
 
 
-class MenuServiceAdmin(admin.ModelAdmin):
-    list_display = [
-        'name_uz', 'image',
-        'type_service'
-    ]
-    list_display_links = [
-        'name_uz',
-    ]
-    class Meta:
-        model = MenuService
-admin.site.register(MenuService, MenuServiceAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
     fields = [
@@ -59,7 +34,7 @@ class CategoryAdmin(admin.ModelAdmin):
     class Meta:
         model = Category
 
-admin.site.register(Category, CategoryAdmin)
+# admin.site.register(Category, CategoryAdmin)
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -98,11 +73,38 @@ admin.site.register(AboutImage, AboutImageAdmin)
 
 
 
-# class BookInLineAdmin(admin.TabularInline):
-#     model = Book
+class BookInLineAdmin(admin.TabularInline):
+    model = OrderForm
 
 
-# class AuthorAdmin(admin.ModelAdmin):
-#     inlines = [BookInLineAdmin]
+class AuthorAdmin(admin.ModelAdmin):
+    inlines = [BookInLineAdmin]
 
-# admin.site.register(Author, AuthorAdmin)
+admin.site.register(Customer, AuthorAdmin)
+
+
+
+
+class BookIneLineAdmin(admin.TabularInline):
+    model = Product
+
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    inlines = [BookIneLineAdmin]
+
+admin.site.register(Category, AuthorAdmin)
+
+
+
+
+
+class ServiceIneLineAdmin(admin.TabularInline):
+    model = MenuService
+
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    inlines = [ServiceIneLineAdmin]
+
+admin.site.register(TypeService, AuthorAdmin)

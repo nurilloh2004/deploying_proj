@@ -25,13 +25,13 @@
 					<div class="media pt-3 borderDashedBottom">
 						<span><i class="fa fa-map-marked-alt text-secondary fa-2x"></i></span>
 						<div class="media-body">
-							<h6 class="pl-3 pt-2">{% trans "г.Ташкент,Шайхонтохурский район, ул. А. Наваий 6-дом (ориентир, DINAMO). " %}</h6>
+							<h6 class="pl-3 pt-2">{{location1}}</h6>
 						</div>	
 					</div>
 					<div class="media pt-3">
 						<span><i class="fa fa-phone-alt text-secondary fa-2x"></i></span>
 						<div class="media-body">
-							<h5 class="font-weight-bold pl-3">+998 (55) 500-15-05  <h6 class="pl-4">{% trans "Каждый день с 9:30 - 21:00 (офис Ўрда)" %}</h6></h5>
+							<h5   class="font-weight-bold pl-3"><a href="tel:{{ phone }}">{{ phone }}</a><h6 class="pl-4">{{work_info}}</h6></h5>
 						</div>	
 					</div>
 				</div>
@@ -45,13 +45,13 @@
 					<div class="media pt-3">
 						<span><i class="fa fa-map-marked-alt text-secondary fa-2x"></i></span>
 						<div class="media-body">
-							<h6 class="pl-3 pt-2">{% trans "г.Ташкент, Учтепинский район, 14-квартал ул. 6-дом <br>(ориентир, ресторан Афруз). " %}</h6>
+							<h6 class="pl-3 pt-2">{{location2}}</h6>
 						</div>	
 					</div>
 					<div class="media pt-3">
 						<span><i class="fa fa-phone-alt text-secondary fa-2x"></i></span>
 						<div class="media-body">
-							<h5 class="font-weight-bold pl-3">+998  (90) 109-15-00  <h6 class="pl-4">{% trans "Каждый день с 9:30 - 21:00 (офис Афруз)" %}</h6></h5>
+							<h5 class="font-weight-bold pl-3"><a href="tel:{{ phone }}">{{ phone }}</a><h6 class="pl-4">{{work_info}}</h6></h5>
 						</div>	
 					</div>
 				</div>
