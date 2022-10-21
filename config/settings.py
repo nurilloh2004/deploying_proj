@@ -165,7 +165,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1']
 MEDIA_URL = '/media/'
 # Default primary key field type

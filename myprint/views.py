@@ -214,16 +214,6 @@ class OrderCreateView(CreateView):
 
 
 
-# @csrf_exempt
-# def test_form(request):
-#     form = OrderMForm()
-#     if request.method == 'POST':
-#         form = OrderMForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#     context = {"form": form}
-#     return render(request, "main/testform.html", context)
-
 
 # @csrf_exempt
 # def test_form(request):
@@ -253,25 +243,25 @@ class OrderCreateView(CreateView):
 
 
 
-def listView(request):
-    order = OrderForm.objects.filter(amount='amount', price='price',VAT='VAT')
-    total = 0
-    all_price = order.price * order.amount
-    percent_sum = (all_price / 100) * order.VAT
-    sum_list = all_price + percent_sum
-    total = total + sum_list
-    context = {}
+# def listView(request):
+#     order = OrderForm.objects.filter(amount='amount', price='price',VAT='VAT')
+#     total = 0
+#     all_price = order.price * order.amount
+#     percent_sum = (all_price / 100) * order.VAT
+#     sum_list = all_price + percent_sum
+#     total = total + sum_list
+#     context = {}
 
-    context['order'] = order
-    context['sum_list'] = sum_list
-    context['all_price'] = all_price
-    context['total'] = total
-    if order.VAT:
-        total = total + (total*order.VAT/100)
-        context['total_sum']=total
-    else:
-        context = {}
-    return render(request, 'invoice.html', context=context)
+#     context['order'] = order
+#     context['sum_list'] = sum_list
+#     context['all_price'] = all_price
+#     context['total'] = total
+#     if order.VAT:
+#         total = total + (total*order.VAT/100)
+#         context['total_sum']=total
+#     else:
+#         context = {}
+#     return render(request, 'invoice.html', context=context)
 
 
 
@@ -308,22 +298,6 @@ def createView(request):
 
 def list(request):
     datas = OrderForm.objects.all()
-    # order = OrderForm.objects.values_list('price', 'VAT', 'amount')
-    # total = 0
-    # all_price = order.price * order.amount
-    # percent_sum = (all_price / 100) * order.VAT
-    # sum_list = all_price + percent_sum
-    # total = total + sum_list
-    # context = {}
-
-    # context['sum_list'] = sum_list
-    # context['all_price'] = all_price
-    # context['total'] = total
-    # if order.VAT:
-    #     total = total + (total*order.VAT/100)
-    #     context['total_sum']=total
-    # else:
-    #     context = {}
     context = {'datas' : datas}
     return render(request, 'multi_forms/list.html', context=context)
 
@@ -390,9 +364,57 @@ def user_login(request):
 #     return response
 
 
-from .pdf import html2pdf
+import os
+from django.conf import settings
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.contrib.staticfiles import finders
+from config import settings
 
+def link_callback(uri, rel):
+        """
+        Convert HTML URIs to absolute system paths so xhtml2pdf can access those
+        resources
+        """
+        result = finders.find(uri)
+        if result:
+                if not isinstance(result, (list, tuple)):
+                        result = [result]
+                result = list(os.path.realpath(path) for path in result)
+                path=result[0]
+        else:
+                sUrl = settings.STATIC_URL        # Typically /static/
+                sRoot = settings.STATIC_ROOT      # Typically /home/userX/project_static/
+                mUrl = settings.MEDIA_URL         # Typically /media/
+                mRoot = settings.MEDIA_ROOT       # Typically /home/userX/project_static/media/
+                if uri.startswith(mUrl):
+                        path = os.path.join(mRoot, uri.replace(mUrl, ""))
+                elif uri.startswith(sUrl):
+                        path = os.path.join(sRoot, uri.replace(sUrl, ""))
+                else:
+                        return uri
+        # make sure that file exists
+        if not os.path.isfile(path):
+                raise Exception(
+                        'media URI must start with %s or %s' % (sUrl, mUrl)
+                )
+        return path
 
-def pdf_report_create(request):
-    pdf = html2pdf("pdf_convert/pdfReport.html")
-    return HttpResponse(pdf,content_type="application/pdf")
+def render_pdf_view(request):
+    template_path = 'multi_forms/list.html'
+    context = {'myvar': 'this is your template context'}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response, link_callback=link_callback)
+    # if error then show some funny view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response

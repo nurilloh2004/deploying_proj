@@ -75,8 +75,8 @@ class InfoProduct(models.Model):
 
 class Category(models.Model):
     parent = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True, default=None)
-    name_uz = models.CharField(_('name'), max_length=65)
-    name_ru = models.CharField(_('name'), max_length=65)
+    name_uz = models.CharField(_('name'), max_length=65, null=True, blank=True)
+    name_ru = models.CharField(_('name'), max_length=65, null=True, blank=True)
     image = models.ImageField(_('image'), upload_to='media/category_image', blank=True, null=True)
 
 
