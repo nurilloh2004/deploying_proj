@@ -44,66 +44,47 @@
         </tbody>
     </table>
     <table class="table form-table table-bordered table-sm">
-        <thead class="text-center">
-            <tr>
-                <th class="font-weight-bold">Name</span></th>
-                <th class="font-weight-bold">Select</th>
-                <th class="font-weight-bold">Amount</th>
-                <th class="font-weight-bold">Price</th>
-                <th class="font-weight-bold">Wtihout Price VAT</th>
-                <th class="font-weight-bold">VAT</th>
-                <th class="font-weight-bold">Price VAT</th>
-                <th class="font-weight-bold">Total</th>
-            </tr>
-        </thead>
+        
         <tbody>
+            {{ formset.management_form }}
             {% for form_data in formset %}
-            <tr class="text-center">
-                <td>
-                    {{ form_data.name }}
-                </td>
-                <td>
-                    <select class="p-2" name="" id="">
-                        <option class="small p-2" selected value="шт">{{form_data.status_order}}</option>
-                    </select>
-                </td>
-                <td>
-                    {{ form_data.amount }}
-                </td>
-                <td>
-                    {{ form_data.price }}
-                </td>
-                <td>
-                    {{ form_data.price_free_VAT }}
-                </td>
-                <td>
-                    {{ form_data.VAT }}
-                </td>
-                <td>
-                    {{ form_data.price_with_VAT }}
-                </td>
-                <td><label>Total</label>
+                <tr class="item">
+                    <td>
+                        <label>Nomi</label>
+                        {{ form_data.name }}
+                    </td>
+                    <td>
+                        <label>Soni</label>
+                        {{ form_data.amount }}
+                    </td>
+                    <td>
+                        <label>Narxi</label>
+                        {{ form_data.price }}
+                    </td>
+                    <td>
+                        <label>Foizi</label>
+                        {{ form_data.VAT }}
+                    </td>
+                    <td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm remove-form-row"
+                                id="{{ formset.prefix }}">
 
-                    {{ form_data.total }}
-                </td>
-                <td>
-                    <button type="button" class="btn btn-danger btn-sm remove-form-row" id="{{ formset.prefix }}">
-
-                        Delete
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="9"
+                    style="border-left: none!important; border-right: none !important; border-bottom: none!important;">
+                    <button type="button" class="btn btn-sm btn-success add-form-row"
+                            id="{{ formset.prefix }}">
+                        Add
                     </button>
                 </td>
             </tr>
-            {% endfor %}
-    </table>
-    <tr>
-        <td colspan="9"
-            style="border-left: none!important; border-right: none !important; border-bottom: none!important;">
-            <button type="button" class="btn btn-sm btn-success add-form-row" id="{{ formset.prefix }}">
-                Add
-            </button>
-        </td>
-    </tr>
-    </tbody>
+            </tbody>
     </table>
     {{ formset.management_form }}
 
