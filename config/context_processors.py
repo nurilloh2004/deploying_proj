@@ -1,6 +1,6 @@
 
 
-from myprint.models import Category, Settings
+from myprint.models import Category, Settings, Type
 
 
 
@@ -15,5 +15,6 @@ def all_category(request):
         "work_info":Settings.objects.get(key='work_info').value,
         "location1":Settings.objects.get(key='location1').value,
         "location2":Settings.objects.get(key='location2').value,
+        "servicecategory": Type.objects.all(),
     }
  

@@ -100,11 +100,11 @@ alt="">{{ phone }}</a>
 					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">О компании</a></li>
 												<li><a href="#!">УСЛУГИ</a>
 						  <ul class="dropdown">
-							  <li style="list-style-type: none;"><a href="{% url 'myprint:design' %}">Дизайн</a></li>
-							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_paper' %}">Цифровая печать</a></li>
-							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_large' %}">Широкоформатная печать</a></li>
-							  <li style="list-style-type: none;"><a href="{% url 'myprint:printing_textile' %}">Текстильная печать</a></li>
-							  <li style="list-style-type: none;"><a href="{% url 'myprint:markirovka' %}">Лазерная маркировка</a></li>
+							{% for col in servicecategory %}
+							<li style="list-style-type: none;"><a href="{% url 'myprint:type_service' col.pk %}">{{ col.name_uz }}</a>
+								
+							</li>
+							{% endfor%}
 						  </ul>
 					  </li>
 					  <li><a href="#!">ПРОДУКЦИЯ</a>

@@ -123,12 +123,23 @@ class InfoType(models.Model):
 #Размер бумага 	Тип бумага 	Односторонняя печать (4+0) 	Двухсторонняя печать (4+4)
 
 class Type(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    infotype = models.ForeignKey(InfoType, on_delete=models.CASCADE, related_name="types")
-
-
+    name_uz = models.CharField(_('name'), max_length=65)
     def __str__(self) -> str:
-        return self.name
+        return self.name_uz
+
+    class Meta:
+        verbose_name = "Xizmat ko'rsatish turlari"
+
+class Image(models.Model):
+    type_sevice = models.ForeignKey(Type, on_delete=models.SET_NULL, blank=True, null=True)
+    image = models.ImageField(upload_to='media/service', blank=True, null=True)
+
+    def __str__(self):
+        return str(self.type_sevice)
+
+    class Meta:
+        verbose_name = "Rasm"
+        verbose_name_plural = "Rasmlar"
 
 # Reklama , Poligrafia, Suviner
 class TypeService(models.Model):
@@ -288,3 +299,39 @@ class AboutImage(models.Model):
     image = models.ImageField(_('image'), upload_to='media/about', blank=True, null=True)
     def str(self):
         return self.name_uz
+
+
+class Type_Services(models.Model):
+    type = models.ForeignKey(Type, on_delete=models.CASCADE, related_name="types", blank=True, null=True)
+    shiroki_size = models.CharField(verbose_name="shiroki_size", max_length=65, null=True, blank=True, default=None)
+    shiroki_name = models.CharField(verbose_name="shiroki_name", max_length=65, null=True, blank=True, default=None)
+    shiroki_price = models.CharField(verbose_name='shiroki_price', max_length=65, null=True, blank=True, default=None)
+    tekstil_size = models.CharField(verbose_name='tekstil_size', max_length=65, null=True, blank=True, default=None)
+    tekstil_price = models.CharField(verbose_name='tekstil_price', max_length=65, null=True, blank=True, default=None)
+    lazer_size = models.CharField(verbose_name='lazer_size', max_length=65, null=True, blank=True, default=None)
+    lazer_price = models.CharField(verbose_name='lazer_price', max_length=65, null=True, blank=True, default=None)
+    type_paper = models.CharField(verbose_name="qog'oz_turi", max_length=65, null=True, blank=True)
+    size = models.CharField(verbose_name="razmeri", max_length=65, null=True, blank=True, default=None)
+    one_site_print = models.CharField(verbose_name='bir tomonlama chop etish', max_length=65, null=True, blank=True)
+    double_site_print = models.CharField(verbose_name='ikki tomonlama chop etish', max_length=65, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    image1 = models.ImageField(upload_to='media/service', blank=True, null=True)
+    image2 = models.ImageField(upload_to='media/service', blank=True, null=True)
+    image3 = models.ImageField(upload_to='media/service', blank=True, null=True)
+
+
+    # def __str__(self) -> str:
+    #     return self.
+    class Meta:
+        verbose_name = "Bizning xizmatlar"
+
+class OrderService(models.Model):
+    order_type = models.ForeignKey(Type, on_delete=models.CASCADE, blank=True, null=True)
+    username = models.CharField(_('full_name'), max_length=65)
+    phone_number = models.CharField(_('phone_number'), max_length=15)
+    creat_add = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.username
+    class Meta:
+        verbose_name = "Xizmat ko'rsatish zakazlari"

@@ -5,20 +5,50 @@ from django.forms import ModelForm
 
 from .models import *
 
-class OrForm(forms.Form):
-    class Meta:
-        model = Form
+# class OrForm(forms.ModelForm):
+#     class Meta:
+#         model = Form
+#         fields = [
+# 			'full_name',
+# 			'phone_number',
+# 		]
 
-    widgets = {
-            'full_name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'ФИШ'
+
+class OrderServiceForm(forms.ModelForm):
+    class Meta:
+        model = OrderService
+        exclude = ['creat_add']
+
+        widgets = {
+            'order_type': forms.Select(attrs={
+                'class': 'custom-select',
+
+            }),
+            'username': forms.TextInput(attrs={
+                'class': 'form-control mt-4',
+                'placeholder': 'Имя...'
             }),
             'phone_number': forms.NumberInput(attrs={
-                'class': 'form-control mt-3 mb-3',
-                'placeholder': 'Telefon',
+                'class': 'form-control mt-3',
+                'maxlength': '13',
+                'placeholder': 'Телефон...',
+                'value': '+998'
             })
         }
+# class OrForm(forms.Form):
+#     class Meta:
+#         model = Form
+
+#     widgets = {
+#             'full_name': forms.TextInput(attrs={
+#                 'class': 'form-control',
+#                 'placeholder': 'ФИШ'
+#             }),
+#             'phone_number': forms.NumberInput(attrs={
+#                 'class': 'form-control mt-3 mb-3',
+#                 'placeholder': 'Telefon',
+#             })
+#         }
 
 
 

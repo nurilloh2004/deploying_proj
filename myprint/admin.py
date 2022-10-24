@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 from parler.admin import TranslatableAdmin
+from django.utils.html import format_html
 
 # Register your models here.
 admin.site.register(InfoType )
@@ -95,16 +96,41 @@ class AuthorAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, AuthorAdmin)
 
+admin.site.register(OrderService)
 
 
 
-
-class ServiceIneLineAdmin(admin.TabularInline):
-    model = MenuService
-
+# class ServiceIneLineAdmin(admin.TabularInline):
+#     model = MenuService
 
 
-class AuthorAdmin(admin.ModelAdmin):
-    inlines = [ServiceIneLineAdmin]
 
-admin.site.register(TypeService, AuthorAdmin)
+# class AuthorAdmin(admin.ModelAdmin):
+#     inlines = [ServiceIneLineAdmin]
+
+# admin.site.register(TypeService, AuthorAdmin)
+
+
+class TypeAdminService(admin.ModelAdmin):
+    readonly_fields = ('photo_tag1', 'photo_tag2', 'photo_tag3')
+    list_display = [
+        'id', 'size', 'type_paper', 'one_site_print',
+        'double_site_print', 'shiroki_size', 'shiroki_name', 'shiroki_price',
+        'tekstil_size', 'tekstil_price', 'lazer_size', 'lazer_price',
+        'photo_tag1', 'photo_tag2', 'photo_tag3'
+    ]
+    list_display_links = [
+        'size', 'type_paper', 'one_site_print',
+        'double_site_print'
+    ]
+    list_filter = ('type', )
+    list_per_page = 1
+    def photo_tag1(self, obj):
+        return format_html(f'<img src="{obj.image1.url}" style="height:100px; width:100px; border-radius: 50%">')
+    def photo_tag2(self, obj):
+        return format_html(f'<img src="{obj.image2.url}" style="height:100px; width:100px; border-radius: 50%">')
+    def photo_tag3(self, obj):
+        return format_html(f'<img src="{obj.image3.url}" style="height:100px; width:100px; border-radius: 50%">')
+    class Meta:
+        model = Type_Services
+admin.site.register(Type_Services, TypeAdminService)

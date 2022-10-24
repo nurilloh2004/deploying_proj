@@ -48,19 +48,10 @@ def home(request):
 
 
 
-    form = OrForm()
-    if request.method == 'POST':
-        form = OrForm(request.POST)
-        print("<-----------------------__>>>>", request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-        else:
-            form = OrForm()
+
     context = {
         "servistype": servistype,
         "menuservice": menuservice,
-        'form' : form,
         'sponsor':sponsor
     }
     return render(request, 'main/index.html', context=context)
@@ -81,6 +72,19 @@ def gift_product(request):
 
 def design(request):
     return render(request, 'main/dizayn.html')
+
+# def service_type(request, pk):
+#     service = Type_Services.objects.filter(type_id=pk)
+#     image = Image.objects.filter(type_sevice_id=pk)
+#     context = {
+#         'service': service,
+#         'pk': pk,
+#         'image': image
+#     }
+#     return render(request, 'main/service_type.html', context=context)
+
+
+
 
 def printing_large(request):
     form = OrForm()
@@ -118,19 +122,19 @@ def poligraphy_product(request, pk):
     product = Product.objects.filter(category_id=pk)
     # categories = Category.objects.filter(parent=None).all()
     # children = Category.objects.filter(parent_id__in=[k.id for k in categories]).all()
-    form = OrForm()
-    if request.method == 'POST':
-        form = OrForm(request.POST)
-        print("<-----------------------__>>>>", request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-        else:
-            form = OrForm()
+    # form = OrForm()
+    # if request.method == 'POST':
+    #     form = OrForm(request.POST)
+    #     print("<-----------------------__>>>>", request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('/')
+    #     else:
+    #         form = OrForm()
     context = {
         "product": product,
         'pk': pk,
-        'form' : form
+        # 'form' : form
         # "children": children
     }
     return render(request, 'main/poligraphy-products.html', context=context)
@@ -150,20 +154,20 @@ def printing_paper(request):
     }
     return render(request, 'main/printing-paper.html' , context=context)
 
-def printing_textile(request):
-    form = OrForm()
-    if request.method == 'POST':
-        form = OrForm(request.POST)
-        print("<-----------------------__>>>>", request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-        else:
-            form = OrForm()
-    context = {
-        'form' : form
-    }
-    return render(request, 'main/printing-textile.html', context=context)
+# def printing_textile(request):
+#     form = OrForm()
+#     if request.method == 'POST':
+#         form = OrForm(request.POST)
+#         print("<-----------------------__>>>>", request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/')
+#         else:
+#             form = OrForm()
+#     context = {
+#         'form' : form
+#     }
+#     return render(request, 'main/printing-textile.html', context=context)
 
 def textile_products(request):
     return render(request, 'main/textile-products.html')
@@ -296,7 +300,7 @@ def createView(request):
     context['formset'] = formset
     return render(request, 'multi_forms/create.html', context=context)
 
-def list(request):
+def listView(request):
     datas = OrderForm.objects.all()
     context = {'datas' : datas}
     return render(request, 'multi_forms/list.html', context=context)
