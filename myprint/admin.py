@@ -7,7 +7,7 @@ from django.utils.html import format_html
 admin.site.register(InfoType )
 admin.site.register(Type)
 admin.site.register(User)
-# admin.site.register(InfoProduct)
+admin.site.register(InfoProduct)
 # admin.site.register(Product)
 admin.site.register(Tariff)
 admin.site.register(MenuTariff)
@@ -17,23 +17,52 @@ admin.site.register(Portfolio)
 admin.site.register(Form)
 # admin.site.register(OrderForm)x
 # admin.site.register(Customer)
+class TypeServiceAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'image'
+    ]
+    list_display_links = [
+        'name'
+    ]
+    list_per_page = 2
+    class Meta:
+        model = TypeService
 
+
+admin.site.register(TypeService, TypeServiceAdmin)
+
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = [
+        'category', 'name',  'image', 'info_product',
+        'vendor_code', 'description'
+    ]
+    list_display_links = [
+        'category', 'name'
+    ]
+    list_per_page = 2
+    class Meta:
+        model = Product
+
+
+admin.site.register(Product, ProductAdmin)
 
 
 
 
 class CategoryAdmin(admin.ModelAdmin):
     fields = [
-        'parent', 'name_uz', 'image'
+        'parent', 'name', 'image'
     ]
     list_display = [
-        'id', 'parent', 'name_uz','image'
+        'id', 'parent', 'name','image'
     ]
     list_display_links = [
-        'parent', 'name_uz',
+        'parent', 'name',
     ]
     list_per_page = 2
-    search_fields = ('parent', 'name_uz')
+    search_fields = ('parent', 'name')
     class Meta:
         model = Category
 
@@ -53,26 +82,26 @@ admin.site.register(Settings, SettingsAdmin)
 
 class AboutAdmin(admin.ModelAdmin):
     list_display = [
-        "description_uz"
+        "description"
     ]
     list_display_links = [
-        "description_uz"
+        "description"
     ]
     list_per_page = 1
-    search_fields = ('description_uz','')
+    search_fields = ('description','')
     class Meta:
         model = About
 admin.site.register(About, AboutAdmin)
 
 class AboutImageAdmin(admin.ModelAdmin):
     list_display = [
-        "name_uz", "image"
+        "name", "image"
     ]
     list_display_links = [
-        "name_uz",
+        "name",
     ]
     list_per_page = 1
-    search_fields = ('name_uz','image')
+    search_fields = ('name','image')
     class Meta:
         model = AboutImage
 admin.site.register(AboutImage, AboutImageAdmin)

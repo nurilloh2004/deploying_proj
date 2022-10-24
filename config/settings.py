@@ -272,7 +272,7 @@ JAZZMIN_SETTINGS = {
         {"model": "myprint.AboutImage"},
         {"model": "myprint.About"},
         {"model": "myprint.Settings"},
-        {"model": "myprint.Type_Service"},
+        {"model": "myprint.TypeService"},
     ],
     
     #############

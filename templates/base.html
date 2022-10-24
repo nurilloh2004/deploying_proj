@@ -101,7 +101,7 @@ alt="">{{ phone }}</a>
 												<li><a href="#!">УСЛУГИ</a>
 						  <ul class="dropdown">
 							{% for col in servicecategory %}
-							<li style="list-style-type: none;"><a href="{% url 'myprint:type_service' col.pk %}">{{ col.name_uz }}</a>
+							<li style="list-style-type: none;"><a href="{% url 'myprint:type_service' col.pk %}">{{ col.name }}</a>
 								
 							</li>
 							{% endfor%}
@@ -109,9 +109,11 @@ alt="">{{ phone }}</a>
 					  </li>
 					  <li><a href="#!">ПРОДУКЦИЯ</a>
 						  <ul class="dropdown">
-							{% for row in allcategory %}
-							<a href="{% url 'myprint:poligraphy_product' row.pk %}">{{ row.name_uz }}</a>
-							{% endfor %}
+							<li style="list-style-type: none;">
+								{% for row in allcategory %}
+								<a href="{% url 'myprint:poligraphy_product' row.pk %}">{{ row.name }}</a>
+								{% endfor %}
+							</li>
 						  </ul>
 					  </li>								
 					  <li><a href="{% url 'myprint:portfolio' %}">НАШИ РАБОТЫ</a></li>

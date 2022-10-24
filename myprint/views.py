@@ -120,27 +120,21 @@ def markirovka(request):
     return render(request, 'main/markirovka.html', context=context)
 def poligraphy_product(request, pk):
     product = Product.objects.filter(category_id=pk)
-    # categories = Category.objects.filter(parent=None).all()
-    # children = Category.objects.filter(parent_id__in=[k.id for k in categories]).all()
-    # form = OrForm()
-    # if request.method == 'POST':
-    #     form = OrForm(request.POST)
-    #     print("<-----------------------__>>>>", request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect('/')
-    #     else:
-    #         form = OrForm()
+    form = OrderServiceForm()
+    if request.method == 'POST':
+        form = OrderServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {
         "product": product,
         'pk': pk,
-        # 'form' : form
-        # "children": children
+        'form' : form
     }
     return render(request, 'main/poligraphy-products.html', context=context)
 
 def printing_paper(request):
-    form = OrForm()
+    form = OrderServiceForm()
     if request.method == 'POST':
         form = OrForm(request.POST)
         print("<-----------------------__>>>>", request.POST)

@@ -27,6 +27,5 @@ urlpatterns = [
     path('create-pdf/', pdf_report_create, name='create_pdf'),
     path('aboutview/', aboutview, name='aboutview'),
     path('servicecategory/', servicecategory, name='servicecategory'),
-    path('servicecategory/', servicecategory, name='servicecategory'),  
     path('type-service/<int:pk>/', service_type, name='type_service'),
 ]
