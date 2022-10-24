@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)_$fpec2weywx@__(!*=o)br5u7#@y!@t$bisf)q^=(p@zl(v6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 AUTH_USER_MODEL = 'myprint.User'
@@ -243,8 +243,8 @@ JAZZMIN_SETTINGS = {
     # Copyright on the footer
     "copyright": "Library MYPRINT.uz",
 
-    # The model admin to search from the search bar, search bar omitted if excluded
-    "search_model": "myprint.product",
+    # # The model admin to search from the search bar, search bar omitted if excluded
+    # "search_model": "myprint.Product",
 
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,
@@ -272,7 +272,7 @@ JAZZMIN_SETTINGS = {
         {"model": "myprint.AboutImage"},
         {"model": "myprint.About"},
         {"model": "myprint.Settings"},
-        {"model": "myprint.TypeService"},
+        {"model": "myprint.Type_Service"},
     ],
     
     #############

@@ -422,3 +422,9 @@ def pdf_report_create(request):
 #     if pisa_status.err:
 #        return HttpResponse('We had some errors <pre>' + html + '</pre>')
 #     return response
+
+
+
+
+def not_found_page(request, exception):
+    return render(request, 'main.not_found.html')

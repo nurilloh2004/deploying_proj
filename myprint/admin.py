@@ -33,6 +33,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'parent', 'name_uz',
     ]
     list_per_page = 2
+    search_fields = ('parent', 'name_uz')
     class Meta:
         model = Category
 
@@ -45,6 +46,7 @@ class SettingsAdmin(admin.ModelAdmin):
         'value'
     ]
     list_per_page = 1
+    search_fields = ('key', 'value')
     class Meta:
         model = Settings
 admin.site.register(Settings, SettingsAdmin)
@@ -57,6 +59,7 @@ class AboutAdmin(admin.ModelAdmin):
         "description_uz"
     ]
     list_per_page = 1
+    search_fields = ('description_uz','')
     class Meta:
         model = About
 admin.site.register(About, AboutAdmin)
@@ -69,6 +72,7 @@ class AboutImageAdmin(admin.ModelAdmin):
         "name_uz",
     ]
     list_per_page = 1
+    search_fields = ('name_uz','image')
     class Meta:
         model = AboutImage
 admin.site.register(AboutImage, AboutImageAdmin)
@@ -79,7 +83,6 @@ admin.site.register(AboutImage, AboutImageAdmin)
 
 class BookInLineAdmin(admin.TabularInline):
     model = OrderForm
-
 
 class AuthorAdmin(admin.ModelAdmin):
     inlines = [BookInLineAdmin]
@@ -128,6 +131,7 @@ class TypeAdminService(admin.ModelAdmin):
     ]
     list_filter = ('type', )
     list_per_page = 1
+    search_fields = ('type_paper','size')
     def photo_tag1(self, obj):
         return format_html(f'<img src="{obj.image1.url}" style="height:100px; width:100px; border-radius: 50%">')
     def photo_tag2(self, obj):
@@ -147,7 +151,7 @@ class OrderServiceAdmin(admin.ModelAdmin):
     list_display_links = [
         'order_type', 'username'
     ]
-
+    search_fields = ('username','phone_number')
     class Meta:
         model = OrderService
     list_per_page = 2
