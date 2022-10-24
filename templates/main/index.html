@@ -234,14 +234,16 @@
 			<div class="row">
 			  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-5">
 				<div class="card bg-transparent border-0 pt-3">
-				  <h1 class="" style="padding-top: 130px; color: red; font-weight: normal;">Остались Вопросы? </h1>
-				  <h5 class="pt-3 pb-3">Оставляйте свой номер телефона и  мы перезвоним Вам в течение 50 секунд!</h5>
-				<form action="#" method="post">
+				  <form action="" method="POST">
 					{% csrf_token %}
-					{{form.full_name}}
-                    {{form.phone_number}}
-					<button class="btn bgRed w-100 mb-3 text-dark font-weight-bold" type="submit">ЖДУ ЗВОНОК!</button>
-				</form>	
+					<h1 class="" style="padding-top: 130px; color: red; font-weight: normal;">Остались
+						Вопросы? </h1>
+					<h5 class="pt-3 pb-3">Оставляйте свой номер телефона и мы перезвоним Вам в течение 50
+						секунд!</h5>
+					{{ form.username }}
+					{{ form.phone_number }}
+					<button type="submit" class="btn btn-success pl-3 pr-3 mt-3 ">ЖДУ ЗВОНОК!</button>
+				</form>
 			</div>
 			  </div>
 			  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-right pb-0">

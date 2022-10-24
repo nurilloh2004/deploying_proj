@@ -32,10 +32,11 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = [
         'parent', 'name_uz',
     ]
+    list_per_page = 2
     class Meta:
         model = Category
 
-# admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, CategoryAdmin)
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -43,7 +44,7 @@ class SettingsAdmin(admin.ModelAdmin):
         'key',
         'value'
     ]
-
+    list_per_page = 1
     class Meta:
         model = Settings
 admin.site.register(Settings, SettingsAdmin)
@@ -55,6 +56,7 @@ class AboutAdmin(admin.ModelAdmin):
     list_display_links = [
         "description_uz"
     ]
+    list_per_page = 1
     class Meta:
         model = About
 admin.site.register(About, AboutAdmin)
@@ -66,6 +68,7 @@ class AboutImageAdmin(admin.ModelAdmin):
     list_display_links = [
         "name_uz",
     ]
+    list_per_page = 1
     class Meta:
         model = AboutImage
 admin.site.register(AboutImage, AboutImageAdmin)
@@ -80,23 +83,23 @@ class BookInLineAdmin(admin.TabularInline):
 
 class AuthorAdmin(admin.ModelAdmin):
     inlines = [BookInLineAdmin]
-
+    list_per_page = 1
 admin.site.register(Customer, AuthorAdmin)
 
 
 
 
-class BookIneLineAdmin(admin.TabularInline):
-    model = Product
+# class BookIneLineAdmin(admin.TabularInline):
+#     model = Product
 
 
 
-class AuthorAdmin(admin.ModelAdmin):
-    inlines = [BookIneLineAdmin]
+# class AuthorAdmin(admin.ModelAdmin):
+#     inlines = [BookIneLineAdmin]
 
-admin.site.register(Category, AuthorAdmin)
+# admin.site.register(Category, AuthorAdmin)
 
-admin.site.register(OrderService)
+# admin.site.register(OrderService)
 
 
 
@@ -134,3 +137,19 @@ class TypeAdminService(admin.ModelAdmin):
     class Meta:
         model = Type_Services
 admin.site.register(Type_Services, TypeAdminService)
+
+
+class OrderServiceAdmin(admin.ModelAdmin):
+    list_display = [
+        'order_type', 'username', 'phone_number',
+        'creat_add'
+    ]
+    list_display_links = [
+        'order_type', 'username'
+    ]
+
+    class Meta:
+        model = OrderService
+    list_per_page = 2
+
+admin.site.register(OrderService, OrderServiceAdmin)
