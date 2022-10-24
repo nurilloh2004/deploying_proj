@@ -62,22 +62,56 @@
                                 </tbody>
                             </table>
                         {% endif %}
-                        <table class="p-5">
-                            <thead>
-                            <tr>
-                                <th scope="col">Nomi</th>
-                                <th scope="col">Razmer</th>
-                                <th scope="col">Chop etish narxi</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-{#                            <tr>#}
-{#                                <td>{{ ser }}</td>#}
-{#                                <td>{{ ser.size }}<sup>2</sup></td>#}
-{#                                <td>{{ ser.one_site_print }}</td>#}
-{#                            </tr>#}
-                            </tbody>
-                        </table>
+                        {% if ser.shiroki_name and ser.shiroki_size and ser.shiroki_price %}
+                            <table class="p-5">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Nomi</th>
+                                    <th scope="col">Razmer</th>
+                                    <th scope="col">Chop etish narxi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ ser.shiroki_name }}</td>
+                                    <td>{{ ser.shiroki_size }}<sup>2</sup></td>
+                                    <td>{{ ser.shiroki_price }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
+                        {% if ser.tekstil_size and ser.tekstil_price %}
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th scope="col">Razmeri</th>
+                                    <th scope="col">Narxi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td scope="row" data-label="Размер">{{ ser.tekstil_size }}</td>
+                                    <td data-label="Цена">{{ ser.tekstil_price }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
+                        {% if ser.lazer_price and ser.lazer_size %}
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th scope="col">Razmeri</th>
+                                    <th scope="col">Narxi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td scope="row" data-label="Размер">{{ ser.lazer_size }}</td>
+                                    <td data-label="Цена">{{ ser.lazer_price }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
                         <div class="col-12 pt-3 pb-5 text-right">
                             <button type="button" class="btn btn-success pl-5 pr-5" data-toggle="modal"
                                     data-target="#orderModal">Bosib chiqarishga buyurtma bering
