@@ -15,6 +15,7 @@ admin.site.register(Sponsors)
 admin.site.register(Contact)
 admin.site.register(Portfolio)
 admin.site.register(Form)
+# admin.site.register(AboutImage)
 # admin.site.register(OrderForm)x
 # admin.site.register(Customer)
 class TypeServiceAdmin(admin.ModelAdmin):

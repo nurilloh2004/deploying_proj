@@ -57,8 +57,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return str(self.phone_number)
 
     def save(self, *args, **kwargs):
-        password = self.password
-        self.set_password(password)
+        # password = self.password
+        # self.set_password(password)
         return super(User,self).save(*args, **kwargs)
 
 
@@ -278,7 +278,6 @@ class Form(models.Model):
 class Settings(models.Model):
     key = models.CharField(_('key'), max_length=50, primary_key=True)
     value = models.TextField(_('value'))
-    logo = models.ImageField(_('logo'), upload_to='media/logo')
     class Meta:
         verbose_name = "Sozlama"
         verbose_name_plural = "Sozlamalar"

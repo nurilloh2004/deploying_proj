@@ -43,6 +43,7 @@ from django.contrib.auth import login as auth_login
 def home(request):
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
+    sponsor = Sponsors.objects.all()
     form = OrderServiceForm()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST)
@@ -53,6 +54,7 @@ def home(request):
         'form': form,
         "servistype": servistype,
         "menuservice": menuservice,
+        'sponsor': sponsor
     }
     return render(request, 'main/index.html', context=context)
     
