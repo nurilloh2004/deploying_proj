@@ -15,7 +15,7 @@ class MyUserManager(BaseUserManager):
         user = self.model(
             first_name=first_name,
             phone_number = phone_number
-           
+
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -42,13 +42,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = MyUserManager()
 
     def get_full_name(self):
-        return self.full_name 
-        
+        return self.full_name
+
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_superadmin = models.BooleanField(default=False)
-    
+
     class Meta:
         verbose_name = 'Manager'
         verbose_name_plural = 'Managers'
@@ -90,7 +90,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Kategoriya"
         verbose_name_plural = "Kategoriyalar"
-    
+
 
 #Product
 class Product(models.Model):
@@ -117,19 +117,19 @@ class InfoType(models.Model):
     type_paper = models.CharField(_('type_paper'), max_length=65)
     one_site_print = models.CharField(_('one_site_print'), max_length=65)
     double_site_print = models.CharField(_('double_site_print'), max_length=65)
-    
 
-    
+
+
 #Размер бумага 	Тип бумага 	Односторонняя печать (4+0) 	Двухсторонняя печать (4+4)
 
 class Type(models.Model):
     name = models.CharField(_('name'), max_length=65)
     infotype = models.ForeignKey(InfoType, on_delete=models.CASCADE, related_name="types")
-    
+
 
     def __str__(self) -> str:
         return self.name
-    
+
 # Reklama , Poligrafia, Suviner
 class TypeService(models.Model):
     name_uz = models.CharField(_('name'), max_length=65)
@@ -172,7 +172,7 @@ class MenuTariff(models.Model):
 
 
 class Sponsors(models.Model):
-    
+
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/sponsor')
 
@@ -192,7 +192,7 @@ class Contact(models.Model):
     def __str__(self) -> str:
                 return self.name
 
-#Наши работы.   
+#Наши работы.
 class Portfolio(models.Model):
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/portfolio')
@@ -231,10 +231,10 @@ class OrderForm(models.Model):
     price_free_VAT = models.PositiveIntegerField(_('price_free_VAT'), blank=True, null=True)
     VAT = models.FloatField(_('VAT'), blank=True, null=True)
     price_with_VAT = models.PositiveIntegerField(_('price_with_VAT'), blank=True, null=True)
-    total = models.PositiveIntegerField(_('total'), blank=True, null=True)    
-    total_price_with_VAT = models.PositiveIntegerField(_('total_price_with_VAT'), blank=True, null=True)    
+    total = models.PositiveIntegerField(_('total'), blank=True, null=True)
+    total_price_with_VAT = models.PositiveIntegerField(_('total_price_with_VAT'), blank=True, null=True)
     total_price_ALL = models.PositiveIntegerField(_('total_price_ALL'), blank=True, null=True)
-    
+
     @property
     def total_sum(self):
         summ = self.price * self.amount
@@ -247,13 +247,13 @@ class OrderForm(models.Model):
 
     def __str__(self) -> str:
                 return self.name
-    
+
     class Meta:
         db_table = 'orders'
-    
 
 
-    
+
+
 
 class Form(models.Model):
     full_name = models.CharField(_('full_name'), max_length=65)
@@ -261,7 +261,7 @@ class Form(models.Model):
 
     def __str__(self) -> str:
                 return self.full_name
-        
+
 
 
 
