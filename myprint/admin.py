@@ -15,6 +15,93 @@ admin.site.register(Sponsors)
 admin.site.register(Contact)
 admin.site.register(Portfolio)
 admin.site.register(Form)
+
+###################################################################
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    list_display_links = ['name']
+    class Model:
+        model = Type2
+admin.site.register(Type2, TypeAdmin)
+
+class ImageAdmin(admin.ModelAdmin):
+    list_display = [
+        'type_sevice', 'image'
+    ]
+    list_display_links = [
+        'type_sevice',
+    ]
+    list_per_page = 2
+    class Meta:
+        model = Image2
+
+
+admin.site.register(Image2, ImageAdmin)
+
+class DesigneAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'slug', 'description',
+        'image1', 'image2', 'image3'
+    ]
+    list_display_links = ['name']
+
+    class Meta:
+        model = Design
+
+admin.site.register(Design, DesigneAdmin)
+
+
+class DigitalPrintAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'slug', 'description', 'size',
+        'type', 'on_site_print', 'double_site_print', 'image'
+    ]
+    list_display_links = ['name']
+
+    class Meta:
+        model = DigitalPrint
+
+admin.site.register(DigitalPrint, DigitalPrintAdmin)
+
+
+class LargeFormatAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'slug', 'description', 'product_name',
+        'type', 'price', 'image1', 'image2', 'image3'
+    ]
+    list_display_links = ['name']
+
+    class Meta:
+        model = LargeFormat
+
+admin.site.register(LargeFormat, LargeFormatAdmin)
+
+class TextPrintAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'slug', 'size', 'price',
+        'description', 'image'
+    ]
+    list_display_links = ['name']
+
+    class Meta:
+        model = TextPrint
+
+admin.site.register(TextPrint, TextPrintAdmin)
+
+class LaserPrintAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'slug', 'size', 'price',
+        'description', 'image'
+    ]
+    list_display_links = ['name']
+
+    class Meta:
+        model = LaserPrint
+
+admin.site.register(LaserPrint, LaserPrintAdmin)
+###################################################################
+# admin.site.register(HomeDescription)/
+
 # admin.site.register(AboutImage)
 # admin.site.register(OrderForm)x
 # admin.site.register(Customer)

@@ -18,7 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}">
 	<style>
 
-.hidden {
+.hidden { 
   opacity:0;
 }
 .console-container { 
@@ -100,11 +100,13 @@ alt="">{{ phone }}</a>
 					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">О компании</a></li>
 												<li><a href="#!">УСЛУГИ</a>
 						  <ul class="dropdown">
-							{% for col in servicecategory %}
-							<li style="list-style-type: none;"><a href="{% url 'myprint:type_service' col.pk %}">{{ col.name }}</a>
-								
+							<li style="list-style-type: none;">
+								<li style="list-style-type: none;"><a href="dizayn.html">Дизайн</a></li>
+                				<li style="list-style-type: none;"><a href="printing-paper.html">Цифровая печать</a></li>
+                				<li style="list-style-type: none;"><a href="printing-largeformat.html">Широкоформатная печать</a></li>
+                				<li style="list-style-type: none;"><a href="printing-textile.html">Текстильная печать</a></li>
+                				<li style="list-style-type: none;"><a href="markirovka.html">Лазерная маркировка</a></li>	
 							</li>
-							{% endfor%}
 						  </ul>
 					  </li>
 					  <li><a href="#!">ПРОДУКЦИЯ</a>

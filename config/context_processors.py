@@ -15,5 +15,6 @@ def all_category(request):
         "location1":Settings.objects.get(key='location1').value,
         "location2":Settings.objects.get(key='location2').value,
         "servicecategory": Type.objects.all(),
+        "description": Settings.objects.get(key='description').value,
     }
  

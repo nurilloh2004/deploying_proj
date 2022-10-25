@@ -24,7 +24,7 @@
                                 <div class="card bg-transparent border-0 text-center p-2">
                                     <img src="{{ service.image.url }}" width="95%" height="220"
                                          class="m-auto">
-                                    <a class="pt-3 text-dark" href="{% url 'myprint:servicecategory' %}">{{ service.name_uz }}</a>
+                                    <a class="pt-3 text-dark" href="{% url 'myprint:portfolio' %}">{{ service.name }}</a>
                                 </div>
                             </a>
                         </li>
@@ -50,12 +50,7 @@
 		  </div>
 		  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pt-5 pb-2">
 			<h1 class="pad_top_about" style=" color: red; font-weight: bold;">Кто мы ?</h1>
-			<h5 class="text-justify">
-				ООО “MyPrint” работает для Вас с 2013 года! <br> Мы ведущая полиграфическая компания Ташкенте, с большим опытом реализации успешных проектов по печати рекламной продукции.
-			</h5>
-			<h5 class="text-justify">
-				“MyPrint” создает полиграфическую продукцию, которая отражает в себе талант дизайнеров, стабильность и качество современного производства, в самый короткий срок. Офис и производство расположены в центре Ташкенте.
-			</h5>
+			<h5 class="text-justify">{{description}}</h5>
 		  </div>
 		</div>
 	</div>
@@ -235,11 +230,12 @@
 			  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-5">
 				<div class="card bg-transparent border-0 pt-3">
 				  <form action="" method="POST">
-					{% csrf_token %}
+					
 					<h1 class="" style="padding-top: 130px; color: red; font-weight: normal;">Остались
 						Вопросы? </h1>
 					<h5 class="pt-3 pb-3">Оставляйте свой номер телефона и мы перезвоним Вам в течение 50
 						секунд!</h5>
+						{% csrf_token %}
 					{{ form.username }}
 					{{ form.phone_number }}
 					<button type="submit" class="btn btn-success pl-3 pr-3 mt-3 ">ЖДУ ЗВОНОК!</button>

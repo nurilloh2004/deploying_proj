@@ -4,6 +4,8 @@ from unicodedata import category
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+from django.core.validators import FileExtensionValidator
+
 
 
 class MyUserManager(BaseUserManager):
@@ -162,12 +164,13 @@ class MenuService(models.Model):
     class Meta:
         verbose_name = "Menyu Xizmati"
 
-#Mы предлагаем
+
 class Tariff(models.Model):
     name = models.CharField(_('name'), max_length=65)
 
     def __str__(self) -> str:
         return self.name
+
 
 
 class MenuTariff(models.Model):
@@ -184,7 +187,7 @@ class MenuTariff(models.Model):
 class Sponsors(models.Model):
 
     name = models.CharField(_('name'), max_length=65)
-    image = models.ImageField(_('image'), upload_to='media/sponsor')
+    image = models.FileField(upload_to="media/pictures/%Y/%m/", validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
 
 
     def __str__(self) -> str:
@@ -333,3 +336,103 @@ class OrderService(models.Model):
         return self.username
     class Meta:
         verbose_name = "Xizmat ko'rsatish zakazlari"
+
+#####################################################################################################################################
+
+class Design(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    slug = models.SlugField(max_length=50, blank=True, null=True)
+    description = models.TextField()
+    image1 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+    image2 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+    image3 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+
+    def str(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Dizayn"
+
+
+class DigitalPrint(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    slug = models.SlugField(max_length=50, blank=True, null=True)
+    description = models.TextField()
+    size = models.CharField(max_length=100)
+    type = models.CharField(max_length=50)
+    on_site_print = models.CharField(max_length=50)
+    double_site_print = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+
+    def str(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Raqamli chop etish"
+
+
+class LargeFormat(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    slug = models.SlugField(max_length=50)
+    description = models.TextField()
+    product_name = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    image1 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+    image2 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+    image3 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
+
+    def str(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Katta formatda chop etish'
+
+
+
+class TextPrint(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    slug = models.SlugField(max_length=50, blank=True, null=True)
+    size = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    description = models.TextField()
+    image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
+    
+    def str(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Tekstilni chop etish"
+
+class LaserPrint(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    slug = models.SlugField(max_length=50, blank=True, null=True)
+    size = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    description = models.TextField()
+    image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
+    
+    def str(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Lazerni chop etish"
+
+
+class Type2(models.Model):
+    name = models.CharField(max_length=65)
+    def str(self) -> str:
+        return self.name
+
+    class Meta:
+        verbose_name = "Xizmat turlari"
+
+class Image2(models.Model):
+    type_sevice = models.ForeignKey(Type, on_delete=models.SET_NULL, blank=True, null=True)
+    image = models.ImageField(upload_to='media/service', blank=True, null=True)
+
+    def str(self):
+        return str(self.type_sevice)
+
+    class Meta:
+        verbose_name = "Xizmat ko'rsatish rasmlari"

@@ -44,6 +44,8 @@ def home(request):
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()
+    menutarif = MenuTariff.objects.all()
+    tarif = Tariff.objects.all()
     form = OrderServiceForm()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST)
@@ -54,7 +56,9 @@ def home(request):
         'form': form,
         "servistype": servistype,
         "menuservice": menuservice,
-        'sponsor': sponsor
+        'sponsor': sponsor,
+        'menutarif': menutarif,
+        'tarif': tarif,
     }
     return render(request, 'main/index.html', context=context)
     
@@ -340,28 +344,28 @@ def user_login(request):
                 return render(request, template_name='main/error.html', context={'login': auth_login})
 
 
-def pdf_report_create(request):
-    order = OrderForm.objects.all()
+# def pdf_report_create(request):
+#     order = OrderForm.objects.all()
 
-    template_path = 'pdf_convert/pdfReport.html'
+#     template_path = 'pdf_convert/pdfReport.html'
 
-    context = {'order': order}
+#     context = {'order': order}
 
-    response = HttpResponse(content_type='application/pdf')
+#     response = HttpResponse(content_type='application/pdf')
 
-    response['Content-Disposition'] = 'filename="orders_report.pdf"'
+#     response['Content-Disposition'] = 'filename="orders_report.pdf"'
 
-    template = get_template(template_path)
+#     template = get_template(template_path)
 
-    html = template.render(context)
+#     html = template.render(context)
 
-    # create a pdf
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
-    # if error then show some funy view
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
-    return response
+#     # create a pdf
+#     pisa_status = pisa.CreatePDF(
+#        html, dest=response)
+#     # if error then show some funy view
+#     if pisa_status.err:
+#        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+#     return response
 
 
 # import os
@@ -424,3 +428,43 @@ def pdf_report_create(request):
 
 def not_found_page(request, exception):
     return render(request, 'main.not_found.html')
+
+#Rendering html page to pdf
+
+
+from django.shortcuts import render
+from io import BytesIO
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.views import View
+from xhtml2pdf import pisa
+
+def render_to_pdf(template_src, context_dict={}):
+	template = get_template(template_src)
+	html  = template.render(context_dict)
+	result = BytesIO()
+	pdf = pisa.pisaDocument(BytesIO(html.encode("cp1252")), result)
+	if not pdf.err:
+		return HttpResponse(result.getvalue(), content_type='application/pdf')
+	return None
+
+
+data = {
+	"company": "Dennnis Ivanov Company",
+	"address": "123 Street name",
+	"city": "Vancouver",
+	"state": "WA",
+	"zipcode": "98663",
+
+
+	"phone": "555-555-2345",
+	"email": "youremail@dennisivy.com",
+	"website": "dennisivy.com",
+	}
+
+#Opens up page as PDF
+class ViewPDF(View):
+	def get(self, request, *args, **kwargs):
+
+		pdf = render_to_pdf('pdf_convert/pdfReport.html', data)
+		return HttpResponse(pdf, content_type='application/pdf')

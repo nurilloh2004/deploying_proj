@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #: .\templates\main\application_order.html:125
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-18 14:45+0500\n"
+"POT-Creation-Date: 2022-10-25 11:50+0500\n"
 "PO-Revision-Date: 2022-10-10 09:21+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,144 +33,140 @@ msgstr "English"
 msgid "Uzbek"
 msgstr "English"
 
-#: .\config\urls.py:24
+#: .\config\urls.py:25
 msgid "admin/"
 msgstr ""
 
-#: .\myprint\models.py:33
+#: .\myprint\models.py:36
 msgid "first_name"
 msgstr ""
 
-#: .\myprint\models.py:34 .\myprint\models.py:284
+#: .\myprint\models.py:37 .\myprint\models.py:272 .\myprint\models.py:331
 msgid "full_name"
 msgstr ""
 
-#: .\myprint\models.py:35 .\myprint\models.py:285
+#: .\myprint\models.py:38 .\myprint\models.py:273 .\myprint\models.py:332
 msgid "phone_number"
 msgstr ""
 
-#: .\myprint\models.py:65 .\myprint\models.py:82 .\myprint\models.py:83
-#: .\myprint\models.py:101 .\myprint\models.py:117 .\myprint\models.py:133
-#: .\myprint\models.py:142 .\myprint\models.py:152 .\myprint\models.py:164
-#: .\myprint\models.py:171 .\myprint\models.py:181 .\myprint\models.py:192
-#: .\myprint\models.py:201 .\myprint\models.py:213 .\myprint\models.py:221
-#: .\myprint\models.py:252
-msgid "name"
-msgstr ""
-
-#: .\myprint\models.py:72 .\myprint\models.py:123
+#: .\myprint\models.py:70 .\myprint\models.py:117
 msgid "size"
 msgstr ""
 
-#: .\myprint\models.py:73
+#: .\myprint\models.py:71
 msgid "element"
 msgstr ""
 
-#: .\myprint\models.py:84 .\myprint\models.py:102 .\myprint\models.py:119
-#: .\myprint\models.py:153 .\myprint\models.py:172 .\myprint\models.py:182
-#: .\myprint\models.py:193 .\myprint\models.py:205 .\myprint\models.py:214
-#: .\myprint\models.py:223 .\myprint\models.py:312
+#: .\myprint\models.py:80 .\myprint\models.py:98 .\myprint\models.py:127
+#: .\myprint\models.py:147 .\myprint\models.py:157 .\myprint\models.py:169
+#: .\myprint\models.py:177 .\myprint\models.py:189 .\myprint\models.py:198
+#: .\myprint\models.py:210 .\myprint\models.py:240
+msgid "name"
+msgstr ""
+
+#: .\myprint\models.py:81 .\myprint\models.py:99 .\myprint\models.py:158
+#: .\myprint\models.py:178 .\myprint\models.py:202 .\myprint\models.py:211
+#: .\myprint\models.py:300
 msgid "image"
 msgstr ""
 
-#: .\myprint\models.py:105 .\myprint\models.py:118 .\myprint\models.py:184
-#: .\myprint\models.py:204
+#: .\myprint\models.py:103 .\myprint\models.py:201
 msgid "description"
 msgstr ""
 
-#: .\myprint\models.py:124
+#: .\myprint\models.py:118
 msgid "type_paper"
 msgstr ""
 
-#: .\myprint\models.py:125
+#: .\myprint\models.py:119
 msgid "one_site_print"
 msgstr ""
 
-#: .\myprint\models.py:126
+#: .\myprint\models.py:120
 msgid "double_site_print"
 msgstr ""
 
-#: .\myprint\models.py:183 .\myprint\models.py:202 .\myprint\models.py:222
+#: .\myprint\models.py:199
 msgid "number"
 msgstr ""
 
-#: .\myprint\models.py:203
+#: .\myprint\models.py:200
 msgid "info"
 msgstr ""
 
-#: .\myprint\models.py:231
+#: .\myprint\models.py:219
 msgid "id_name_order"
 msgstr ""
 
-#: .\myprint\models.py:232
+#: .\myprint\models.py:220
 msgid "client"
 msgstr ""
 
-#: .\myprint\models.py:233
+#: .\myprint\models.py:221
 msgid "client_phone_number"
 msgstr ""
 
-#: .\myprint\models.py:234
+#: .\myprint\models.py:222
 msgid "manager_name"
 msgstr ""
 
-#: .\myprint\models.py:235
+#: .\myprint\models.py:223
 msgid "date_order"
 msgstr ""
 
-#: .\myprint\models.py:236
+#: .\myprint\models.py:224
 msgid "ready_product_date_order"
 msgstr ""
 
-#: .\myprint\models.py:253
+#: .\myprint\models.py:241
 msgid "status_order"
 msgstr ""
 
-#: .\myprint\models.py:254
+#: .\myprint\models.py:242
 msgid "amount"
 msgstr ""
 
-#: .\myprint\models.py:255
+#: .\myprint\models.py:243
 msgid "price"
 msgstr ""
 
-#: .\myprint\models.py:256
+#: .\myprint\models.py:244
 msgid "price_free_VAT"
 msgstr ""
 
-#: .\myprint\models.py:257
+#: .\myprint\models.py:245
 msgid "VAT"
 msgstr ""
 
-#: .\myprint\models.py:258
+#: .\myprint\models.py:246
 msgid "price_with_VAT"
 msgstr ""
 
-#: .\myprint\models.py:259
+#: .\myprint\models.py:247
 msgid "total"
 msgstr ""
 
-#: .\myprint\models.py:260
+#: .\myprint\models.py:248
 msgid "total_price_with_VAT"
 msgstr ""
 
-#: .\myprint\models.py:261
+#: .\myprint\models.py:249
 msgid "total_price_ALL"
 msgstr ""
 
-#: .\myprint\models.py:294
+#: .\myprint\models.py:282
 msgid "key"
 msgstr ""
 
-#: .\myprint\models.py:295
+#: .\myprint\models.py:283
 msgid "value"
 msgstr ""
 
-#: .\myprint\models.py:303
+#: .\myprint\models.py:291
 msgid "description_uz"
 msgstr ""
 
-#: .\myprint\models.py:311
+#: .\myprint\models.py:299
 msgid "name_uz"
 msgstr ""
 
@@ -291,24 +287,8 @@ msgstr ""
 msgid "Шайхантахурский филиал"
 msgstr ""
 
-#: .\templates\main\contact.html:28
-msgid "г.Ташкент,Шайхонтохурский район, ул. А. Наваий 6-дом (ориентир, "
-msgstr ""
-
-#: .\templates\main\contact.html:34
-msgid "Каждый день с 9:30 - 21:00 (офис Ўрда)"
-msgstr ""
-
 #: .\templates\main\contact.html:40
 msgid "Учтепинский филиал"
-msgstr ""
-
-#: .\templates\main\contact.html:48
-msgid "г.Ташкент, Учтепинский район, 14-квартал ул. 6-дом <br>(ориентир, "
-msgstr ""
-
-#: .\templates\main\contact.html:54
-msgid "Каждый день с 9:30 - 21:00 (офис Афруз)"
 msgstr ""
 
 #: .\templates\main\dizayn.html:12
@@ -361,10 +341,6 @@ msgstr ""
 
 #: .\templates\main\error.html:12
 msgid "Try again"
-msgstr ""
-
-#: .\templates\main\reklama.html:13
-msgid "Наружная реклама."
 msgstr ""
 
 #: .\templates\main\reklama.html:14
