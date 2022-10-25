@@ -2,15 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-#: .\templates\main\application_order.html:125
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-25 11:50+0500\n"
-"PO-Revision-Date: 2022-10-25 11:28+0500\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2022-10-25 12:05+0000\n"
+"Last-Translator: admin User <None>\n"
 "Language-Team: \n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\config\settings.py:129
 msgid "English"
@@ -25,42 +25,42 @@ msgstr "Uzbek"
 
 #: .\config\settings.py:130
 msgid "Russian"
-msgstr "Uzbek"
+msgstr "Russian"
 
 #: .\config\settings.py:131
 msgid "Uzbek"
-msgstr "Russian"
+msgstr "Uzbek"
 
 #: .\config\urls.py:25
 msgid "admin/"
-msgstr ""
+msgstr "admin"
 
 #: .\myprint\models.py:36
 msgid "first_name"
-msgstr ""
+msgstr "Ism"
 
 #: .\myprint\models.py:37 .\myprint\models.py:272 .\myprint\models.py:331
 msgid "full_name"
-msgstr ""
+msgstr "To'liq ismi"
 
 #: .\myprint\models.py:38 .\myprint\models.py:273 .\myprint\models.py:332
 msgid "phone_number"
-msgstr ""
+msgstr "Telefon raqami"
 
 #: .\myprint\models.py:70 .\myprint\models.py:117
 msgid "size"
-msgstr ""
+msgstr "o'lchami"
 
 #: .\myprint\models.py:71
 msgid "element"
-msgstr ""
+msgstr "element"
 
 #: .\myprint\models.py:80 .\myprint\models.py:98 .\myprint\models.py:127
 #: .\myprint\models.py:147 .\myprint\models.py:157 .\myprint\models.py:169
 #: .\myprint\models.py:177 .\myprint\models.py:189 .\myprint\models.py:198
 #: .\myprint\models.py:210 .\myprint\models.py:240
 msgid "name"
-msgstr ""
+msgstr "ism"
 
 #: .\myprint\models.py:81 .\myprint\models.py:99 .\myprint\models.py:158
 #: .\myprint\models.py:178 .\myprint\models.py:202 .\myprint\models.py:211
@@ -331,7 +331,7 @@ msgstr ""
 
 #: .\templates\main\error.html:10
 msgid "ERROR !!!!!!!!!"
-msgstr ""
+msgstr "XATO !!!!!!!!!"
 
 #: .\templates\main\error.html:11
 msgid "Если вы еще не создали учетную запись"
@@ -339,7 +339,7 @@ msgstr ""
 
 #: .\templates\main\error.html:12
 msgid "Try again"
-msgstr ""
+msgstr "Qayta harakat qiling "
 
 #: .\templates\main\reklama.html:14
 msgid ""

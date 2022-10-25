@@ -5,21 +5,16 @@
 {% block content %}
 
   <section class="console-container" style="background-image: url(img/bg/head.jpg); background-size: cover;">
-    <div class="container pt-5 pb-5">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
-              <h1 class="text-white font-weight-bold text-left text_h1">Лазерная маркировка.</h1>
-            </div>
-        </div>
-    </div>
 </section>
 
 
     <section class="container-fluid" style="background-color: #fff;">
         <div class="container pt-5">
             <div class="row">
+              {% for ls in laser %}
               <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-3">
-                  <h6 class="font-weight-normal text-justify pb-4"><span class="h5 colorRed font-weight-bold">Лазерная гравировка </span> — это метод нанесения изображения на какое-либо изделие с помощью сфокусированного лазерного луча. Как правило, это изображение имеет некоторую глубину (рельеф), и в этом заключается основное отличие лазерной гравировки от лазерной маркировки. Лазерной гравировкой часто называют само изображение, полученное на изделии. Как правило, это логотипы, надписи, какой-либо орнамент или рисунок.</h6>
+                  <h6 class="font-weight-normal text-justify pb-4"><span class="h5 colorRed font-weight-bold">{{ls.name}}</span> — {{ls.description}}</h6>
+                  {% endfor %}
                   <table>
                     <thead>
                       <tr>
@@ -28,17 +23,18 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td scope="row" data-label="Размер">Гравировка ручки</td><td data-label="Цена">1 500</td></tr>
-                      <tr><td scope="row" data-label="Размер">Гравировка PowerBank</td><td data-label="Цена">5 000</td></tr>
-                      <tr><td scope="row" data-label="Размер">Гравировка термокружка</td><td data-label="Цена">45 00</td></tr>
-                      <tr><td scope="row" data-label="Размер">Гравировка термос</td><td data-label="Цена">10 000</td></tr>
-                     
-                     
+                      {% for ls in laser %}
+                      <tr><td scope="row" data-label="Размер">{{ls.size}}</td><td data-label="Цена">{{ls.price}}</td></tr>
+                      <tr><td scope="row" data-label="Размер">{{ls.size1}}</td><td data-label="Цена">{{ls.price1}}</td></tr>
+                      <tr><td scope="row" data-label="Размер">{{ls.size2}}</td><td data-label="Цена">{{ls.price2}}</td></tr>
+                      {% endfor %}
                     </tbody>
                   </table>
               </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-3">
-                    <img src="{% static 'img/bg/markirovka.jpg'%}" width="100%" alt="">
+                  {% for ls in laser %}  
+                  <img src="{% static 'img/bg/markirovka.jpg'%}" width="100%" alt="">
+                  {% endfor %}
                 </div>
             </div>
         </div>
@@ -46,19 +42,45 @@
 
     <section class="container-fluid">
         <div class="container pb-5">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1 class="font-weight-bold h2 text-center pt-5 pb-3">Наши работы.</h1></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t5.jpg'%}" width="100%"  height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t6.jpg'%}" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t7.jpg'%}" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t1.jpg'%}" width="100%"   height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t3.jpg'%}" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/t4.jpg'%}" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/p2.webp'%}" width="100%" height="200" alt=""></div></div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{% static 'img/markirovka/p1.webp'%}" width="100%" height="200" alt=""></div></div>
-			</div>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1 class="font-weight-bold h2 text-center pt-5 pb-3">{% trans "Наши работы." %}</h1></div>
+            {% for add in  image %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="border p-2"><img src="{{add.image.url}}" width="100%" height="200" alt=""></div></div>
+            {% endfor %}
+          </div>
         </div>
     </section>
+    <div class="col-12 pt-3 pb-5 text-right">
+      <button type="button" class="btn btn-success pl-5 pr-5" data-toggle="modal"
+              data-target="#orderModal">Bosib chiqarishga buyurtma bering
+      </button>
+  </div>
+</div>
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog"
+   aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+      <div class="modal-content pl-3 pr-3">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                        Закрыть
+                    </button>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body pt-2 pb-5 text-center">
+                        <h6>Menejerimiz imkon qadar tezroq siz bilan bog'lanadi!</h6>
+                        <h6>Iltimos xizmat turini tanlang!</h6>
+                        {{ form.order_type }}
+                        {{ form.username }}
+                        {{ form.phone_number }}
+                        <button type="submit" class="mt-3 btn btn-success btn-sm">So'rov qoldiring
+                        </button>
+                    </div>
+                </form>
 
+            </div>
+        </div>
+    </div>
 
     {% endblock content %}

@@ -198,14 +198,21 @@ admin.site.register(AboutImage, AboutImageAdmin)
 
 
 
-class BookInLineAdmin(admin.TabularInline):
-    model = OrderForm
+# class BookInLineAdmin(admin.TabularInline):
+#     model = LargeFormat
 
-class AuthorAdmin(admin.ModelAdmin):
-    inlines = [BookInLineAdmin]
-    list_per_page = 1
-admin.site.register(Customer, AuthorAdmin)
+# class AuthorAdmin(admin.ModelAdmin):
+#     inlines = [BookInLineAdmin]
+#     list_per_page = 1
+# admin.site.register(TableLarge, AuthorAdmin)
+# class BookInLineAdmin(admin.TabularInline):
+#     model = Book
 
+
+# class AuthorAdmin(admin.ModelAdmin):
+#     inlines = [BookInLineAdmin]
+
+# admin.site.register(Author, AuthorAdmin)
 
 
 

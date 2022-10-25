@@ -16,7 +16,7 @@ urlpatterns = [
     path('markirovka/', markirovka, name='markirovka'),
     path('poligraphy_product/<int:pk>/', poligraphy_product,  name='poligraphy_product'),
     path('printing_paper/', printing_paper,  name='printing_paper'),
-    # path('printing_textile/', printing_textile, name='printing_textile'),
+    path('printing_textile/', printing_textile, name='printing_textile'),
     path('textile_products/', textile_products, name='textile_products'),
     path('advertisement/', aboutview, name='advertisement'),
     # path('application_order/', test_form, name='application_order'),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('aboutview/', aboutview, name='aboutview'),
     path('servicecategory/', servicecategory, name='servicecategory'),
     path('type-service/<int:pk>/', service_type, name='type_service'),
+    path('typeimage/<int:pk>',typeimage,name='typeimage'),
 ]

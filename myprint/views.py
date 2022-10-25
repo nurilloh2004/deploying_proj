@@ -67,7 +67,7 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def portfolio(request):
-    image = AboutImage.objects.all()
+    image = Portfolio.objects.all()
     context = {
         "image": image
     }
@@ -77,7 +77,13 @@ def gift_product(request):
     return render(request, 'main/gifts-products.html')
 
 def design(request):
-    return render(request, 'main/dizayn.html')
+    desig = Design.objects.filter()
+    image = Image2.objects.filter()
+    context = {
+        'desig': desig,
+        'image': image
+    }
+    return render(request, 'main/dizayn.html', context=context)
 
 # def service_type(request, pk):
 #     service = Type_Services.objects.filter(type_id=pk)
@@ -93,17 +99,19 @@ def design(request):
 
 
 def printing_large(request):
-    form = OrForm()
+    large = LargeFormat.objects.all()
+    form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrForm(request.POST)
+        form = OrderServiceForm(request.POST)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
         else:
-            form = OrForm()
+            form = OrderServiceForm()
     context = {
-        'form' : form
+        'form' : form,
+        'large' : large
     }
     return render(request, 'main/printing-largeformat.html' , context=context)
 
@@ -111,17 +119,21 @@ def promotional_products(request):
     return render(request, 'main/promotional-products.html')
 
 def markirovka(request):
-    form = OrForm()
+    laser = LaserPrint.objects.all()
+    image = Image2.objects.filter()
+    form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrForm(request.POST)
+        form = OrderServiceForm(request.POST)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
         else:
-            form = OrForm()
+            form = OrderServiceForm()
     context = {
-        'form' : form
+        'form' : form,
+        'laser': laser,
+        'image': image,
     }
     return render(request, 'main/markirovka.html', context=context)
 def poligraphy_product(request, pk):
@@ -140,34 +152,42 @@ def poligraphy_product(request, pk):
     return render(request, 'main/poligraphy-products.html', context=context)
 
 def printing_paper(request):
+    dgprint = DigitalPrint.objects.all()
+    image = Image2.objects.filter()
     form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrForm(request.POST)
+        form = OrderServiceForm(request.POST)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
         else:
-            form = OrForm()
+            form = OrderServiceForm()
     context = {
-        'form' : form
+        'form' : form,
+        'dgprint': dgprint,
+        'image': image,
     }
     return render(request, 'main/printing-paper.html' , context=context)
 
-# def printing_textile(request):
-#     form = OrForm()
-#     if request.method == 'POST':
-#         form = OrForm(request.POST)
-#         print("<-----------------------__>>>>", request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('/')
-#         else:
-#             form = OrForm()
-#     context = {
-#         'form' : form
-#     }
-#     return render(request, 'main/printing-textile.html', context=context)
+def printing_textile(request):
+    text = TextPrint.objects.all()
+    image = Image2.objects.filter()
+    form = OrderServiceForm()
+    if request.method == 'POST':
+        form = OrderServiceForm(request.POST)
+        print("<-----------------------__>>>>", request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            form = OrderServiceForm()
+    context = {
+        'form' : form,
+        'image': image,
+        'text' : text,
+    }
+    return render(request, 'main/printing-textile.html', context=context)
 
 def textile_products(request):
     return render(request, 'main/textile-products.html')
@@ -468,3 +488,11 @@ class ViewPDF(View):
 
 		pdf = render_to_pdf('pdf_convert/pdfReport.html', data)
 		return HttpResponse(pdf, content_type='application/pdf')
+
+
+def typeimage(request, pk):
+    t_image = Image.objects.filter(type_sevice_id=pk)
+    context = {
+        't_image': t_image
+    }
+    return render(request, 'main/reklama_image.html', context=context)

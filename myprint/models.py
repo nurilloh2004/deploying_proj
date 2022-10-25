@@ -59,8 +59,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return str(self.phone_number)
 
     def save(self, *args, **kwargs):
-        # password = self.password
-        # self.set_password(password)
+        password = self.password
+        self.set_password(password)
         return super(User,self).save(*args, **kwargs)
 
 
@@ -357,11 +357,19 @@ class Design(models.Model):
 class DigitalPrint(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50, blank=True, null=True)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     size = models.CharField(max_length=100)
     type = models.CharField(max_length=50)
     on_site_print = models.CharField(max_length=50)
     double_site_print = models.CharField(max_length=50)
+    size1 = models.CharField(max_length=100, blank=True, null=True)
+    type1 = models.CharField(max_length=50, blank=True, null=True)
+    on_site_print1 = models.CharField(max_length=50)
+    double_site_print1 = models.CharField(max_length=50)
+    size2 = models.CharField(max_length=100, blank=True, null=True)
+    type2 = models.CharField(max_length=50, blank=True, null=True)
+    on_site_print2 = models.CharField(max_length=50)
+    double_site_print2 = models.CharField(max_length=50)
     image = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
 
     def str(self):
@@ -378,6 +386,19 @@ class LargeFormat(models.Model):
     product_name = models.CharField(max_length=50)
     type = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
+    product_name1 = models.CharField(max_length=50)
+    type1 = models.CharField(max_length=50, blank=True, null=True)
+    price1 = models.CharField(max_length=50, blank=True, null=True)
+    product_name2 = models.CharField(max_length=50)
+    type2 = models.CharField(max_length=50, blank=True, null=True)
+    price2 = models.CharField(max_length=50, blank=True, null=True)
+    product_name2 = models.CharField(max_length=50)
+    type3 = models.CharField(max_length=50, blank=True, null=True)
+    price3 = models.CharField(max_length=50, blank=True, null=True)
+    product_name4 = models.CharField(max_length=50)
+    type4 = models.CharField(max_length=50, blank=True, null=True)
+    price4 = models.CharField(max_length=50, blank=True, null=True)
+    image = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image1 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image2 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image3 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
@@ -395,6 +416,10 @@ class TextPrint(models.Model):
     slug = models.SlugField(max_length=50, blank=True, null=True)
     size = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
+    size1 = models.CharField(max_length=50, blank=True, null=True)
+    price1 = models.CharField(max_length=50, blank=True, null=True)
+    size2 = models.CharField(max_length=50, blank=True, null=True)
+    price2 = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField()
     image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
     
@@ -409,6 +434,10 @@ class LaserPrint(models.Model):
     slug = models.SlugField(max_length=50, blank=True, null=True)
     size = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
+    size1 = models.CharField(max_length=50, blank=True, null=True)
+    price1 = models.CharField(max_length=50, blank=True, null=True)
+    size2 = models.CharField(max_length=50, blank=True, null=True)
+    price2 = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField()
     image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
     

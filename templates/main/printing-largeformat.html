@@ -5,27 +5,32 @@
   <section class="console-container" style="background-image: url(); background-size: cover;">
     <div class="container pt-5 pb-5">
         <div class="row">
+          
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
-              <h1 class="text-white font-weight-bold text-left text_h1">Широкоформатная печать.</h1>
+              <h1 class="text-white font-weight-bold text-left text_h1">{{inn.name}}</h1>
             </div>
-        </div>
+            
+          </div>
     </div>
 </section>
 
     <section class="container-fluid">
         <div class="container pt-5">
             <div class="row">
+              {% for inn in large %}
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <h5 class="font-weight-normal text-justify"><span class="h5 colorRed font-weight-bold">Широкоформатная печать</span> — Эта технология пользуется широкой популярностью при изготовлении различных видов рекламы – как наружной, так и интерьерной. Такая печать совмещает в себе множество вариантов оформления и материалов изготовления, что делает ее наиболее доступной и востребованной для производства рекламы, привлекающей внимание потенциальных клиентов. Ее можно использовать для рекламы на баннерах, афишах, в офисах, на выставках и ТРЦ.</h5>
+                    <h5 class="font-weight-normal text-justify"><span class="h5 colorRed font-weight-bold">{{inn.name}}</span> — {{inn.description}}</h5>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <img src="{% static 'img/bg/largeFormatPrint.png'%}" width="100%" alt="">
+                    <img src="{{ inn.image.url}}" width="100%" alt="">
                 </div> 
-
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{% static 'img/bg/large-format-1.png'%}" width="100%" height="250" alt=""></div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{% static 'img/bg/large-format-2.jpg'%}" width="100%" height="250" alt=""></div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{% static 'img/bg/large-format-3.jpg'%}" width="100%" height="250" alt=""></div>
-            </div>
+                {% endfor %}
+                {% for inn in large %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{{ inn.image1.url}}" width="100%" height="250" alt=""></div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{{ inn.image2.url}}" width="100%" height="250" alt=""></div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 p-3"><img src="{{ inn.image3.url}}" width="100%" height="250" alt=""></div>
+                {% endfor %}
+              </div>
         </div>
       </section>
 
@@ -41,37 +46,60 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {% for inn in large %}
                       <tr>
-                        <td scope="row" data-label="Наименования">Баннер</td>
-                        <td data-label="Ед.изм">m <sup>2</sup></td>
-                        <td data-label="Печать цена">25 000</td>
+                        <td scope="row" data-label="Наименования">{{inn.product_name}}</td>
+                        <td data-label="Ед.изм">{{inn.type}}</td>
+                        <td data-label="Печать цена">{{inn.price}}</td>
+                        
                       </tr>
                       <tr>
-                        <td scope="row" data-label="Наименования">Оракал</td>
-                        <td data-label="Ед.изм">m <sup>2</sup></td>
-                        <td data-label="Печать цена">35 000</td>
+                        <td scope="row" data-label="Наименования">{{inn.product_name1}}</td>
+                        <td data-label="Ед.изм">{{inn.type1}}</td>
+                        <td data-label="Печать цена">{{inn.price1}}</td>
+                        
                       </tr>
                       <tr>
-                        <td scope="row" data-label="Наименования">Матовый оракал</td>
-                        <td data-label="Ед.изм">m <sup>2</sup></td>
-                        <td data-label="Печать цена">55 000</td>
+                        <td scope="row" data-label="Наименования">{{inn.product_name2}}</td>
+                        <td data-label="Ед.изм">{{inn.type2}}</td>
+                        <td data-label="Печать цена">{{inn.price2}}</td>
+                        
                       </tr>
-                      <tr>
-                        <td scope="row" data-label="Наименования">Cеточный оракал</td>
-                        <td data-label="Ед.изм">m <sup>2</sup></td>
-                        <td data-label="Печать цена">55 000</td>
-                      </tr>
-                    
+                      {% endfor %}
                     </tbody>
                   </table>
-                  <form action="#" method="post">
-                    {% csrf_token  %}
-                    {{ form.as_p }}
-                    <button type="submit">ЖДУ ЗВОНОК!</button>
-                  </form>	
-            </div>
-
-        </div>
+                  <div class="col-12 pt-3 pb-5 text-right">
+                    <button type="button" class="btn btn-success pl-5 pr-5" data-toggle="modal"
+                            data-target="#orderModal">Bosib chiqarishga buyurtma bering
+                    </button>
+                </div>
+              </div>
+              <div class="modal fade" id="orderModal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered " role="document">
+                    <div class="modal-content pl-3 pr-3">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                  <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                                      Закрыть
+                                  </button>
+                              </div>
+                              <form action="" method="POST">
+                                  {% csrf_token %}
+                                  <div class="modal-body pt-2 pb-5 text-center">
+                                      <h6>Menejerimiz imkon qadar tezroq siz bilan bog'lanadi!</h6>
+                                      <h6>Iltimos xizmat turini tanlang!</h6>
+                                      {{ form.order_type }}
+                                      {{ form.username }}
+                                      {{ form.phone_number }}
+                                      <button type="submit" class="mt-3 btn btn-success btn-sm">So'rov qoldiring
+                                      </button>
+                                  </div>
+                              </form>
+              
+                          </div>
+                      </div>
+                  </div>
     </section>
 
 

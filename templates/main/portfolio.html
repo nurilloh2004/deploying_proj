@@ -1,27 +1,67 @@
 {% extends 'base.html' %}
-{% load i18n %}
+
 {% load static %}
 
 {% block content %}
-	<section class="console-container" style="background-image: url({% static 'img/bg/head.jpg'); background-size: cover;">
-		<div class="container pt-5 pb-5">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
-				  <h1 class="text-white font-weight-bold text-left text_h1">Наши работы.</h1>
-				</div>
-			</div>
-		</div>
-	</section>
-	
+    {#  <section class="console-container" style="background-image: url({% static 'img/bg/head.jpg' %}); background-size: cover;">#}
+    {#    <div class="container pt-5 pb-5">#}
+    {#      <div class="row">#}
+    {#        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">#}
+    {#          <h1 class="text-white font-weight-bold text-left text_h1">Наши работы.</h1>#}
+    {#        </div>#}
+    {#      </div>#}
+    {#    </div>#}
+    {#  </section>#}
+    {% comment %} <div class="container mt-3">
+        <ul class="nav justify-content-center">
+            {% comment %} {% for cat in servicecategory %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'myprint:typeimage' cat.pk %}">{{ cat.name }}</a>
+                </li>
+            {% endfor %} 
+    </div> {% endcomment %}
+
 
     <section class="container-fluid">
         <div class="container pt-5 pb-5">
-			<div class="row">
-                {% for i in image %}
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2"><div class="p-2 border"><img  src='{{i.image.url}}' width="100%" height="200" alt=""></div></div>
+            <div class="row">
+                {% for img in image %}
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="p-2 border"><img src="{{ img.image.url }}" width="100%" height="200" alt=""></div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-{% endblock content %}
+    {% comment %} <div class="container">
+        <div class="row">
+            <div class="col justify-content-center">
+                {% for contact in page_obj %}
+                    {# Each "contact" is a Contact model object. #}
+                    {{ contact.full_name|upper }}<br>
+                    ...
+                {% endfor %}
 
+                
+                </div>
+            </div>
+        </div>
+		<div class="row justify-content-center pt-2 pb-2"> {% endcomment %}
+                {% comment %} <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}">««</a>
+                        {% endif %}
+
+                        <span class="current">
+                            {{ page_obj.number }} - sahifa {{ page_obj.paginator.num_pages }}.
+                        </span>
+
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">»»</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div> {% endcomment %}
+{% endblock content %}

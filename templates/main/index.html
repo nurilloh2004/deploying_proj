@@ -20,11 +20,11 @@
 		  <ul class="nav nav-tabs" role="tablist">
 			{% for service in servistype %}
                         <li class="nav-item col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                            <a class="text-dark" href="">
+                            <a class="text-dark" href="{% url 'myprint:portfolio' %}">
                                 <div class="card bg-transparent border-0 text-center p-2">
-                                    <img src="{{ service.image.url }}" width="95%" height="220"
+                                    <img src="{{ service.image.url }}"  width="95%" height="220"
                                          class="m-auto">
-                                    <a class="pt-3 text-dark" href="{% url 'myprint:portfolio' %}">{{ service.name }}</a>
+                                    <a href="{% url 'myprint:servicecategory' %}" class="pt-3 text-dark" >{{ service.name }}</a>
                                 </div>
                             </a>
                         </li>
@@ -126,7 +126,9 @@
 							<h1 class="font-weight-bold text_h1">Есть вопросы ?</h1>
 							<h2>
 								<img src="{% static 'img/type/phone-white.svg' %}" class="mb-2" style="color: #0fa123;" width="40" alt="">
-								<span class="h2 font-weight-bold text_h1" ><a href="tel:{{ phone }}">{{ phone }}</a></span>
+								<span class="h2 font-weight-bold text_h1 font-weight-normal" ><a href="tel:{{ phone }}"
+									class="pb-0 pt-3 mb-0 font-weight-normal"
+									style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a></span>
 							</h2>
 							</div>
 						<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-white">
