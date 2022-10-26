@@ -96,7 +96,8 @@ def design(request):
 #     return render(request, 'main/service_type.html', context=context)
 
 
-
+ #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 
+ # B 🔻 🔻
 
 def printing_large(request):
     large = LargeFormat.objects.all()

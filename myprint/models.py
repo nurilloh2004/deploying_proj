@@ -120,6 +120,10 @@ class InfoType(models.Model):
     double_site_print = models.CharField(_('double_site_print'), max_length=65)
 
 
+    def __str__(self):
+        return self.size
+    
+
 
 #Размер бумага 	Тип бумага 	Односторонняя печать (4+0) 	Двухсторонняя печать (4+4)
 
