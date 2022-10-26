@@ -41,6 +41,8 @@ from django.contrib.auth import login as auth_login
 
 
 def home(request):
+    categories = Category.objects.all()
+    
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()
@@ -59,6 +61,8 @@ def home(request):
         'sponsor': sponsor,
         'menutarif': menutarif,
         'tarif': tarif,
+        'categories': categories,
+        'products': products,
     }
     return render(request, 'main/index.html', context=context)
     

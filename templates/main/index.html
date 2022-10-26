@@ -95,24 +95,18 @@
 	 </div>
 
 	 <div class="row pb-4 pt-3">
-	   <div class="m-auto text-center">
-		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="all">Все</button>
-		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="poligraphy">Полиграфия</button>
-		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="gifts">Сувениры</button>
-		 <button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="textile">Текстиль</button>
-	   </div> 
+		<div class="m-auto text-center">
+			<button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="all">Все</button>
+		{% for cat in categories %}
+			<button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="{{cat.name}}">{{cat.name}}</button>
+		{% endfor %}
+		  </div>
 	 </div>
-		   <div class="row">
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter textile"><img src="{% static 'img/products/textile/kepka.jpg' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/reklama/eurorollup1.jpg' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter textile"><img src="{% static 'img/products/textile/jiletka.jpg' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter gifts"><img src="{% static 'img/products/ruchka/r1.png' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/reklama/pauk2.webp' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter gifts"><img src="{% static 'img/products/suviner/hub.jpg' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/katalog.png' %}" width="100%" height="230" class="img-responsive"></div>
-			   <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter poligraphy"><img src="{% static 'img/products/vizitka.png' %}" width="100%" height="230" class="img-responsive"></div>
-						
-		   </div> 
+		  <div class="row">
+    {% for product in products %}
+    <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter {{product.category.name}}"><img src="{{product.image.url}}" width="100%" height="230" class="img-responsive"></div>
+    {% endfor %}
+</div>
 </div>
 </section> 
 
