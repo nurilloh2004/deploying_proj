@@ -41,8 +41,8 @@ from django.contrib.auth import login as auth_login
 
 
 def home(request):
-    categories = Category.objects.all()
-    
+    categories = Category.objects.filter(parent=None)
+    products = Product.objects.all()
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()

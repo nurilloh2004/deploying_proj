@@ -98,13 +98,13 @@
 		<div class="m-auto text-center">
 			<button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="all">Все</button>
 		{% for cat in categories %}
-			<button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="{{cat.name}}">{{cat.name}}</button>
+			<button class="btn mt-1 bgBlack text-white pl-5 pr-5 filter-button" data-filter="{{cat.name}}">{{cat.name}}{{ cat.id }}</button>
 		{% endfor %}
 		  </div>
 	 </div>
 		  <div class="row">
     {% for product in products %}
-    <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter {{product.category.name}}"><img src="{{product.image.url}}" width="100%" height="230" class="img-responsive"></div>
+    <div class="gallery_product col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 border p-3 filter {{product.category.name}}"><img src="{{product.image.url}}" width="100%" height="230" class="img-responsive">{{ product.id }}</div>
     {% endfor %}
 </div>
 </div>
