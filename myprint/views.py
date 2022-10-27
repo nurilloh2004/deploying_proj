@@ -20,6 +20,7 @@ from django.views.generic import TemplateView, CreateView
 from django.forms import modelformset_factory
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import login as auth_login
+from .help_views import handle_upload_file
 
 
 
@@ -85,7 +86,7 @@ def design(request):
 
 
  #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 
- #🔻 🔻
+ #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻
 
 
 @csrf_exempt
@@ -95,9 +96,10 @@ def printing_large(request):
     lar = LargeFormat.objects.all()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST, request.FILES)
-        print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
-            form.save()
+            handle_upload_file(request.FILES['files'])
+            model_instance = form.save(commit=False)
+            model_instance.save()
             return redirect('/')
         else:
             form = OrderServiceForm()
