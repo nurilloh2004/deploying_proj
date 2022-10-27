@@ -1,7 +1,7 @@
 from unicodedata import name
 from django.urls import path
 from .views import *
-from .help_views import *
+
  
 app_name = "myprint"
 
@@ -27,6 +27,6 @@ urlpatterns = [
     path('create-pdf/', ViewPDF.as_view(), name="create_pdf"),
     path('aboutview/', aboutview, name='aboutview'),
     path('servicecategory/', servicecategory, name='servicecategory'),
-    path('type-service/<int:pk>/', service_type, name='type_service'),
+    # path('type-service/<int:pk>/', service_type, name='type_service'),
     path('typeimage/<int:pk>',typeimage,name='typeimage'),
 ]

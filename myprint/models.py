@@ -306,34 +306,12 @@ class AboutImage(models.Model):
         return self.name
 
 
-class Type_Services(models.Model):
-    type = models.ForeignKey(Type, on_delete=models.CASCADE, related_name="types", blank=True, null=True)
-    shiroki_size = models.CharField(verbose_name="shiroki_size", max_length=65, null=True, blank=True, default=None)
-    shiroki_name = models.CharField(verbose_name="shiroki_name", max_length=65, null=True, blank=True, default=None)
-    shiroki_price = models.CharField(verbose_name='shiroki_price', max_length=65, null=True, blank=True, default=None)
-    tekstil_size = models.CharField(verbose_name='tekstil_size', max_length=65, null=True, blank=True, default=None)
-    tekstil_price = models.CharField(verbose_name='tekstil_price', max_length=65, null=True, blank=True, default=None)
-    lazer_size = models.CharField(verbose_name='lazer_size', max_length=65, null=True, blank=True, default=None)
-    lazer_price = models.CharField(verbose_name='lazer_price', max_length=65, null=True, blank=True, default=None)
-    type_paper = models.CharField(verbose_name="qog'oz_turi", max_length=65, null=True, blank=True)
-    size = models.CharField(verbose_name="razmeri", max_length=65, null=True, blank=True, default=None)
-    one_site_print = models.CharField(verbose_name='bir tomonlama chop etish', max_length=65, null=True, blank=True)
-    double_site_print = models.CharField(verbose_name='ikki tomonlama chop etish', max_length=65, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
-    image1 = models.ImageField(upload_to='media/service', blank=True, null=True)
-    image2 = models.ImageField(upload_to='media/service', blank=True, null=True)
-    image3 = models.ImageField(upload_to='media/service', blank=True, null=True)
-
-
-    # def __str__(self) -> str:
-    #     return self.
-    class Meta:
-        verbose_name = "Bizning xizmatlar"
 
 class OrderService(models.Model):
     order_type = models.ForeignKey(Type, on_delete=models.CASCADE, blank=True, null=True)
     username = models.CharField(_('full_name'), max_length=65)
     phone_number = models.CharField(_('phone_number'), max_length=15)
+    files = models.FileField(_('files'), upload_to='media/file', max_length=100, blank=True, null=True)
     creat_add = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -362,18 +340,6 @@ class DigitalPrint(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    size = models.CharField(max_length=100)
-    type = models.CharField(max_length=50)
-    on_site_print = models.CharField(max_length=50)
-    double_site_print = models.CharField(max_length=50)
-    size1 = models.CharField(max_length=100, blank=True, null=True)
-    type1 = models.CharField(max_length=50, blank=True, null=True)
-    on_site_print1 = models.CharField(max_length=50)
-    double_site_print1 = models.CharField(max_length=50)
-    size2 = models.CharField(max_length=100, blank=True, null=True)
-    type2 = models.CharField(max_length=50, blank=True, null=True)
-    on_site_print2 = models.CharField(max_length=50)
-    double_site_print2 = models.CharField(max_length=50)
     image = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
 
     def str(self):
@@ -383,47 +349,49 @@ class DigitalPrint(models.Model):
         verbose_name = "Raqamli chop etish"
 
 
+class SubDigitalPrint(models.Model):
+    size = models.CharField(max_length=100)
+    type = models.CharField(max_length=50)
+    on_site_print = models.CharField(max_length=50)
+    double_site_print = models.CharField(max_length=50)
+    all1 = models.ForeignKey(DigitalPrint, on_delete=models.CASCADE)
+
+    def str(self):
+            return self.product_name
+
+
 class LargeFormat(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50)
     description = models.TextField()
-    product_name = models.CharField(max_length=50)
-    type = models.CharField(max_length=50)
-    price = models.CharField(max_length=50)
-    product_name1 = models.CharField(max_length=50)
-    type1 = models.CharField(max_length=50, blank=True, null=True)
-    price1 = models.CharField(max_length=50, blank=True, null=True)
-    product_name2 = models.CharField(max_length=50)
-    type2 = models.CharField(max_length=50, blank=True, null=True)
-    price2 = models.CharField(max_length=50, blank=True, null=True)
-    product_name2 = models.CharField(max_length=50)
-    type3 = models.CharField(max_length=50, blank=True, null=True)
-    price3 = models.CharField(max_length=50, blank=True, null=True)
-    product_name4 = models.CharField(max_length=50)
-    type4 = models.CharField(max_length=50, blank=True, null=True)
-    price4 = models.CharField(max_length=50, blank=True, null=True)
     image = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image1 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image2 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
     image3 = models.ImageField(upload_to="media/serviceee", blank=True, null=True)
-
+    
+    
     def str(self):
         return self.name
 
-    class Meta:
-        verbose_name = 'Katta formatda chop etish'
+
+
+class SubLargeFormat(models.Model):
+    product_name = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    
+    all = models.ForeignKey(LargeFormat, on_delete=models.CASCADE)
+
+    def str(self):
+            return self.product_name
 
 
 
-class TextPrint(models.Model):
+
+
+class   TextPrint(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50, blank=True, null=True)
-    size = models.CharField(max_length=50)
-    price = models.CharField(max_length=50)
-    size1 = models.CharField(max_length=50, blank=True, null=True)
-    price1 = models.CharField(max_length=50, blank=True, null=True)
-    size2 = models.CharField(max_length=50, blank=True, null=True)
-    price2 = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField()
     image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
     
@@ -433,15 +401,18 @@ class TextPrint(models.Model):
     class Meta:
         verbose_name = "Tekstilni chop etish"
 
+
+class SUbTextPrint(models.Model):
+    size = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    txt = models.ForeignKey(TextPrint, on_delete=models.CASCADE)
+
+    def str(self):
+        return self.size
+
 class LaserPrint(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50, blank=True, null=True)
-    size = models.CharField(max_length=50)
-    price = models.CharField(max_length=50)
-    size1 = models.CharField(max_length=50, blank=True, null=True)
-    price1 = models.CharField(max_length=50, blank=True, null=True)
-    size2 = models.CharField(max_length=50, blank=True, null=True)
-    price2 = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField()
     image = models.ImageField(max_length=50, upload_to="media/serviceee", blank=True, null=True)
     
@@ -450,6 +421,12 @@ class LaserPrint(models.Model):
     
     class Meta:
         verbose_name = "Lazerni chop etish"
+
+
+class SubLaserPrint(models.Model):
+    size = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+    chain = models.ForeignKey(LaserPrint, on_delete=models.CASCADE)
 
 
 class Type2(models.Model):

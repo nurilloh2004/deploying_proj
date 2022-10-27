@@ -20,6 +20,11 @@ class OrderServiceForm(forms.ModelForm):
         exclude = ['creat_add']
 
         widgets = {
+            'files': forms.FileInput(attrs={
+                "accept": ".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf",
+                "type": "file"
+            }),
+
             'order_type': forms.Select(attrs={
                 'class': 'custom-select',
 

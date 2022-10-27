@@ -51,60 +51,8 @@ class DesigneAdmin(admin.ModelAdmin):
 admin.site.register(Design, DesigneAdmin)
 
 
-class DigitalPrintAdmin(admin.ModelAdmin):
-    list_display = [
-        'name', 'slug', 'description', 'size',
-        'type', 'on_site_print', 'double_site_print', 'image'
-    ]
-    list_display_links = ['name']
-
-    class Meta:
-        model = DigitalPrint
-
-admin.site.register(DigitalPrint, DigitalPrintAdmin)
-
-
-class LargeFormatAdmin(admin.ModelAdmin):
-    list_display = [
-        'name', 'slug', 'description', 'product_name',
-        'type', 'price', 'image1', 'image2', 'image3'
-    ]
-    list_display_links = ['name']
-
-    class Meta:
-        model = LargeFormat
-
-admin.site.register(LargeFormat, LargeFormatAdmin)
-
-class TextPrintAdmin(admin.ModelAdmin):
-    list_display = [
-        'name', 'slug', 'size', 'price',
-        'description', 'image'
-    ]
-    list_display_links = ['name']
-
-    class Meta:
-        model = TextPrint
-
-admin.site.register(TextPrint, TextPrintAdmin)
-
-class LaserPrintAdmin(admin.ModelAdmin):
-    list_display = [
-        'name', 'slug', 'size', 'price',
-        'description', 'image'
-    ]
-    list_display_links = ['name']
-
-    class Meta:
-        model = LaserPrint
-
-admin.site.register(LaserPrint, LaserPrintAdmin)
 ###################################################################
-# admin.site.register(HomeDescription)/
 
-# admin.site.register(AboutImage)
-# admin.site.register(OrderForm)x
-# admin.site.register(Customer)
 class TypeServiceAdmin(admin.ModelAdmin):
     list_display = [
         'name', 'image'
@@ -198,73 +146,63 @@ admin.site.register(AboutImage, AboutImageAdmin)
 
 
 
-# class BookInLineAdmin(admin.TabularInline):
-#     model = LargeFormat
-
-# class AuthorAdmin(admin.ModelAdmin):
-#     inlines = [BookInLineAdmin]
-#     list_per_page = 1
-# admin.site.register(TableLarge, AuthorAdmin)
-# class BookInLineAdmin(admin.TabularInline):
-#     model = Book
 
 
-# class AuthorAdmin(admin.ModelAdmin):
-#     inlines = [BookInLineAdmin]
-
-# admin.site.register(Author, AuthorAdmin)
+##################################################
+class ServiceeIneLineAdmin(admin.TabularInline):
+    model = SubDigitalPrint
 
 
 
-# class BookIneLineAdmin(admin.TabularInline):
-#     model = Product
+class AuthoreAdmin(admin.ModelAdmin):
+    inlines = [ServiceeIneLineAdmin]
+
+admin.site.register(DigitalPrint, AuthoreAdmin)
+
+
+##################################################
+
+class ServiceIneLineAdmin(admin.TabularInline):
+    model = SubLargeFormat
 
 
 
-# class AuthorAdmin(admin.ModelAdmin):
-#     inlines = [BookIneLineAdmin]
+class AuthorAdmin(admin.ModelAdmin):
+    inlines = [ServiceIneLineAdmin]
 
-# admin.site.register(Category, AuthorAdmin)
-
-# admin.site.register(OrderService)
+admin.site.register(LargeFormat, AuthorAdmin)
 
 
+##################################################
 
-# class ServiceIneLineAdmin(admin.TabularInline):
-#     model = MenuService
-
-
-
-# class AuthorAdmin(admin.ModelAdmin):
-#     inlines = [ServiceIneLineAdmin]
-
-# admin.site.register(TypeService, AuthorAdmin)
+##################################################
+class ServiceeIneLineAdminn(admin.TabularInline):
+    model = SUbTextPrint
 
 
-class TypeAdminService(admin.ModelAdmin):
-    readonly_fields = ('photo_tag1', 'photo_tag2', 'photo_tag3')
-    list_display = [
-        'id', 'size', 'type_paper', 'one_site_print',
-        'double_site_print', 'shiroki_size', 'shiroki_name', 'shiroki_price',
-        'tekstil_size', 'tekstil_price', 'lazer_size', 'lazer_price',
-        'photo_tag1', 'photo_tag2', 'photo_tag3'
-    ]
-    list_display_links = [
-        'size', 'type_paper', 'one_site_print',
-        'double_site_print'
-    ]
-    list_filter = ('type', )
-    list_per_page = 1
-    search_fields = ('type_paper','size')
-    def photo_tag1(self, obj):
-        return format_html(f'<img src="{obj.image1.url}" style="height:100px; width:100px; border-radius: 50%">')
-    def photo_tag2(self, obj):
-        return format_html(f'<img src="{obj.image2.url}" style="height:100px; width:100px; border-radius: 50%">')
-    def photo_tag3(self, obj):
-        return format_html(f'<img src="{obj.image3.url}" style="height:100px; width:100px; border-radius: 50%">')
-    class Meta:
-        model = Type_Services
-admin.site.register(Type_Services, TypeAdminService)
+
+class AuthoreAdminn(admin.ModelAdmin):
+    inlines = [ServiceeIneLineAdminn]
+
+admin.site.register(TextPrint, AuthoreAdminn)
+
+
+##################################################
+
+
+##################################################
+class ServiceeIneLineAdminn(admin.TabularInline):
+    model = SubLaserPrint
+
+
+
+class AuthoreAdminn(admin.ModelAdmin):
+    inlines = [ServiceeIneLineAdminn]
+
+admin.site.register(LaserPrint, AuthoreAdminn)
+
+
+##################################################
 
 
 class OrderServiceAdmin(admin.ModelAdmin):

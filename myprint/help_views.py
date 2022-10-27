@@ -3,19 +3,19 @@ from .models import Type_Services, Image
 from .forms import OrderServiceForm
 
 
-def service_type(request, pk):
-    service = Type_Services.objects.filter(type_id=pk)
-    image = Image.objects.filter(type_sevice_id=pk)
-    form = OrderServiceForm()
-    if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    context = {
-        'form': form,
-        'service': service,
-        'pk': pk,
-        'image': image,
-    }
-    return render(request, 'main/service_type.html', context=context)
+# def service_type(request, pk):
+#     service = Type_Services.objects.filter(type_id=pk)
+#     image = Image.objects.filter(type_sevice_id=pk)
+#     form = OrderServiceForm()
+#     if request.method == 'POST':
+#         form = OrderServiceForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/')
+#     context = {
+#         'form': form,
+#         'service': service,
+#         'pk': pk,
+#         'image': image,
+#     }
+#     return render(request, 'main/service_type.html', context=context)

@@ -1,40 +1,24 @@
 from cgitb import html
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views.generic import (TemplateView, ListView, CreateView, DetailView, FormView)
 from django.contrib import messages
 from django.urls import reverse
-from django.views.generic.detail import SingleObjectMixin
 from django.http import HttpResponseRedirect
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView, CreateView
-from django.forms import modelformset_factory
 from django.db import transaction, IntegrityError
-from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import login as auth_login
 from django.contrib.auth import  authenticate
 from multiprocessing import context
 from unicodedata import name
-from django.shortcuts import render, redirect
-from django.views.generic import (TemplateView, ListView, CreateView, DetailView, FormView)
-from django.contrib import messages
-from django.urls import reverse
 from django.views.generic.detail import SingleObjectMixin
-from django.http import HttpResponse
 from .models import *
 from .forms import *
-from django.shortcuts import render
-from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
-from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, CreateView
 from django.forms import modelformset_factory
-from django.db import transaction, IntegrityError
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import  authenticate
 from django.contrib.auth import login as auth_login
 
 
@@ -101,13 +85,16 @@ def design(request):
 
 
  #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 
- # B 🔻 🔻
+ #🔻 🔻
 
+
+@csrf_exempt
 def printing_large(request):
-    large = LargeFormat.objects.all()
     form = OrderServiceForm()
+    sub = SubLargeFormat.objects.all()
+    lar = LargeFormat.objects.all()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = OrderServiceForm(request.POST, request.FILES)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
@@ -116,19 +103,21 @@ def printing_large(request):
             form = OrderServiceForm()
     context = {
         'form' : form,
-        'large' : large
+        'sub': sub,
+        'lar': lar,
     }
     return render(request, 'main/printing-largeformat.html' , context=context)
 
 def promotional_products(request):
     return render(request, 'main/promotional-products.html')
-
+@csrf_exempt
 def markirovka(request):
     laser = LaserPrint.objects.all()
+    sub = SubLaserPrint.objects.all()
     image = Image2.objects.filter()
     form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = OrderServiceForm(request.POST, request.FILES)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
@@ -139,6 +128,7 @@ def markirovka(request):
         'form' : form,
         'laser': laser,
         'image': image,
+        'sub': sub
     }
     return render(request, 'main/markirovka.html', context=context)
 def poligraphy_product(request, pk):
@@ -156,12 +146,15 @@ def poligraphy_product(request, pk):
     }
     return render(request, 'main/poligraphy-products.html', context=context)
 
+
+@csrf_exempt
 def printing_paper(request):
     dgprint = DigitalPrint.objects.all()
+    sub = SubDigitalPrint.objects.all()
     image = Image2.objects.filter()
     form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = OrderServiceForm(request.POST, request.FILES)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
@@ -172,15 +165,19 @@ def printing_paper(request):
         'form' : form,
         'dgprint': dgprint,
         'image': image,
+        'sub': sub,
     }
     return render(request, 'main/printing-paper.html' , context=context)
 
+
+@csrf_exempt
 def printing_textile(request):
     text = TextPrint.objects.all()
+    subb = SUbTextPrint.objects.all()
     image = Image2.objects.filter()
     form = OrderServiceForm()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = OrderServiceForm(request.POST, request.FILES)
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
@@ -191,6 +188,7 @@ def printing_textile(request):
         'form' : form,
         'image': image,
         'text' : text,
+        'subb': subb,
     }
     return render(request, 'main/printing-textile.html', context=context)
 
