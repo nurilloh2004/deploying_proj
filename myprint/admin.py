@@ -1,19 +1,55 @@
 from django.contrib import admin
 from .models import *
-from parler.admin import TranslatableAdmin
 from django.utils.html import format_html
-
+from modeltranslation.admin import TranslationAdmin
 # Register your models here.
-admin.site.register(OrderForm)
-admin.site.register(Customer)
-admin.site.register(Type)
+@admin.register(OrderForm)
+class OrderFormAdmin(TranslationAdmin):
+    list_display = [
+        'name', 'student', 'status_order',
+        'amount', 'price', 'price_free_VAT','VAT',
+        'price_with_VAT', 'total', 'total_price_with_VAT', 'total_price_ALL'
+    ]
+    list_display_links = ['name']
+
+@admin.register(Customer)
+class CustomerAdmin(TranslationAdmin):
+    list_display = [
+        'id_name_order', 'client', 'client_phone_number',
+        'manager_name', 'date_order', 'ready_product_date_order'
+    ]
+    list_display_links = ['client']
+
+
+@admin.register(Type)
+class TypeAdmin(TranslationAdmin):
+    list_display = [
+        'name',
+    ]
+    list_display_links = [
+        'name',
+    ]
+    list_per_page = 3
+
+
+
 admin.site.register(User)
 admin.site.register(InfoProduct)
 # admin.site.register(Product)
 # admin.site.register(Tariff)
 # admin.site.register(MenuTariff)
 admin.site.register(Sponsors)
-admin.site.register(Portfolio)
+
+
+@admin.register(Portfolio)
+class PortfolioAdmin(TranslationAdmin):
+    list_display = [
+        'name', 'image'
+    ]
+    list_display_links = [
+        'name',
+    ]
+    list_per_page = 3
 ###################################################################
 
 
@@ -31,34 +67,28 @@ class ImageAdmin(admin.ModelAdmin):
 
 admin.site.register(Image2, ImageAdmin)
 
-class DesigneAdmin(admin.ModelAdmin):
+
+@admin.register(Design)
+class DesigneAdmin(TranslationAdmin):
     list_display = [
         'name', 'slug', 'description',
         'image1', 'image2', 'image3'
     ]
     list_display_links = ['name']
 
-    class Meta:
-        model = Design
-
-admin.site.register(Design, DesigneAdmin)
 
 
 ###################################################################
-
-class TypeServiceAdmin(admin.ModelAdmin):
+@admin.register(TypeService)
+class TypeServiceAdmin(TranslationAdmin):
     list_display = [
         'name', 'image'
     ]
     list_display_links = [
         'name'
     ]
-    list_per_page = 2
-    class Meta:
-        model = TypeService
+    list_per_page = 3
 
-
-admin.site.register(TypeService, TypeServiceAdmin)
 
 
 
@@ -79,8 +109,8 @@ admin.site.register(Product, ProductAdmin)
 
 
 
-
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
     fields = [
         'parent', 'name', 'image'
     ]
@@ -92,10 +122,9 @@ class CategoryAdmin(admin.ModelAdmin):
     ]
     list_per_page = 2
     search_fields = ('parent', 'name')
-    class Meta:
-        model = Category
 
-admin.site.register(Category, CategoryAdmin)
+
+
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -109,7 +138,8 @@ class SettingsAdmin(admin.ModelAdmin):
         model = Settings
 admin.site.register(Settings, SettingsAdmin)
 
-class AboutAdmin(admin.ModelAdmin):
+@admin.register(About)
+class AboutAdmin(TranslationAdmin):
     list_display = [
         "description"
     ]
@@ -118,9 +148,7 @@ class AboutAdmin(admin.ModelAdmin):
     ]
     list_per_page = 1
     search_fields = ('description','')
-    class Meta:
-        model = About
-admin.site.register(About, AboutAdmin)
+
 
 class AboutImageAdmin(admin.ModelAdmin):
     list_display = [
@@ -142,23 +170,19 @@ admin.site.register(AboutImage, AboutImageAdmin)
 
 
 ##################################################
+# @admin.register(DigitalPrint)
 class ServiceeIneLineAdmin(admin.TabularInline):
     model = SubDigitalPrint
-
-
 
 class AuthoreAdmin(admin.ModelAdmin):
     inlines = [ServiceeIneLineAdmin]
 
 admin.site.register(DigitalPrint, AuthoreAdmin)
 
-
 ##################################################
 
 class ServiceIneLineAdmin(admin.TabularInline):
     model = SubLargeFormat
-
-
 
 class AuthorAdmin(admin.ModelAdmin):
     inlines = [ServiceIneLineAdmin]
@@ -171,7 +195,6 @@ admin.site.register(LargeFormat, AuthorAdmin)
 ##################################################
 class ServiceeIneLineAdminn(admin.TabularInline):
     model = SUbTextPrint
-
 
 
 class AuthoreAdminn(admin.ModelAdmin):

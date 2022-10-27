@@ -35,6 +35,7 @@ AUTH_USER_MODEL = 'myprint.User'
 
 INSTALLED_APPS = [
     'jazzmin',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', 
     'myprint',
     'rosetta',
-    'parler',
     'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
@@ -123,25 +124,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ru'
 LANGUAGES = (
-    ('en', _('English')),
-    ('ru', _('Russian')),
     ('uz', _('Uzbek')),
+    ('ru', _('Russian')),
+    
 )
-PARLER_LANGUAGES = {
-    None: (
-        {'code': 'en',}, # English
-        {'code': 'ru',}, # French
-        {'code': 'uz',}, # Spanish
-    ),
-    'default': {
-        'fallbacks': ['en'],
-        'hide_untranslated': False,
-    }
-}
 
-TIME_ZONE = 'UTC'
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'ru'
+
+
+
+
+
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
