@@ -4,25 +4,18 @@ from parler.admin import TranslatableAdmin
 from django.utils.html import format_html
 
 # Register your models here.
-admin.site.register(InfoType )
+admin.site.register(OrderForm)
+admin.site.register(Customer)
 admin.site.register(Type)
 admin.site.register(User)
 admin.site.register(InfoProduct)
 # admin.site.register(Product)
-admin.site.register(Tariff)
-admin.site.register(MenuTariff)
+# admin.site.register(Tariff)
+# admin.site.register(MenuTariff)
 admin.site.register(Sponsors)
-admin.site.register(Contact)
 admin.site.register(Portfolio)
-admin.site.register(Form)
-
 ###################################################################
-class TypeAdmin(admin.ModelAdmin):
-    list_display = ['name']
-    list_display_links = ['name']
-    class Model:
-        model = Type2
-admin.site.register(Type2, TypeAdmin)
+
 
 class ImageAdmin(admin.ModelAdmin):
     list_display = [

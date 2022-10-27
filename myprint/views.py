@@ -31,8 +31,8 @@ def home(request):
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()
-    menutarif = MenuTariff.objects.all()
-    tarif = Tariff.objects.all()
+    # menutarif = MenuTariff.objects.all()
+    # tarif = Tariff.objects.all()
     form = OrderServiceForm()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST)
@@ -44,8 +44,6 @@ def home(request):
         "servistype": servistype,
         "menuservice": menuservice,
         'sponsor': sponsor,
-        'menutarif': menutarif,
-        'tarif': tarif,
         'categories': categories,
         'products': products,
     }
@@ -53,7 +51,7 @@ def home(request):
     
 
 def contact(request):
-    return render(request, 'main/contact.html')
+    return render(request, 'main/contact.html') 
 
 def portfolio(request):
     image = Portfolio.objects.all()
@@ -85,9 +83,9 @@ def design(request):
 #     return render(request, 'main/service_type.html', context=context)
 
 
- #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 
+#🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 
  #🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻 🔻
-
+# 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞 🎞
 
 @csrf_exempt
 def printing_large(request):
@@ -120,7 +118,6 @@ def markirovka(request):
     form = OrderServiceForm()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST, request.FILES)
-        print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')

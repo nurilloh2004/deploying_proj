@@ -40,21 +40,6 @@ class OrderServiceForm(forms.ModelForm):
                 'value': '+998'
             })
         }
-# class OrForm(forms.Form):
-#     class Meta:
-#         model = Form
-
-#     widgets = {
-#             'full_name': forms.TextInput(attrs={
-#                 'class': 'form-control',
-#                 'placeholder': 'ФИШ'
-#             }),
-#             'phone_number': forms.NumberInput(attrs={
-#                 'class': 'form-control mt-3 mb-3',
-#                 'placeholder': 'Telefon',
-#             })
-#         }
-
 
 
 class CustomerForm(forms.ModelForm):

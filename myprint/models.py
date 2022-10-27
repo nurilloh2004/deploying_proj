@@ -113,15 +113,15 @@ class Product(models.Model):
 
 
 
-class InfoType(models.Model):
-    size = models.CharField(_('size'), max_length=65)
-    type_paper = models.CharField(_('type_paper'), max_length=65)
-    one_site_print = models.CharField(_('one_site_print'), max_length=65)
-    double_site_print = models.CharField(_('double_site_print'), max_length=65)
+# class InfoType(models.Model):
+#     size = models.CharField(_('size'), max_length=65)
+#     type_paper = models.CharField(_('type_paper'), max_length=65)
+#     one_site_print = models.CharField(_('one_site_print'), max_length=65)
+#     double_site_print = models.CharField(_('double_site_print'), max_length=65)
 
 
-    def __str__(self):
-        return self.size
+#     def __str__(self):
+#         return self.size
     
 
 
@@ -169,23 +169,6 @@ class MenuService(models.Model):
         verbose_name = "Menyu Xizmati"
 
 
-class Tariff(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-
-    def __str__(self) -> str:
-        return self.name
-
-
-
-class MenuTariff(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    image = models.ImageField(_('image'), upload_to='media/imagesTariff')
-    tariff = models.ForeignKey(Tariff, on_delete=models.CASCADE)
-
-
-    def __str__(self) -> str:
-            return self.name
-
 
 
 class Sponsors(models.Model):
@@ -198,16 +181,7 @@ class Sponsors(models.Model):
                 return self.name
 
 
-class Contact(models.Model):
-    name = models.CharField(_('name'), max_length=65)
-    number = models.IntegerField(_('number'))
-    info = models.CharField(_('info'), max_length=65)
-    description = models.TextField(_('description'), blank=True, null=True)
-    image = models.ImageField(_('image'), upload_to='media/contact')
 
-
-    def __str__(self) -> str:
-                return self.name
 
 #Наши работы.
 class Portfolio(models.Model):
@@ -232,7 +206,7 @@ class Customer(models.Model):
         return self.client
 
     class Meta:
-        db_table = 'customers'
+        db_table = 'customers'  
 
 
 class OrderForm(models.Model):
@@ -269,15 +243,6 @@ class OrderForm(models.Model):
         db_table = 'orders'
 
 
-
-
-
-class Form(models.Model):
-    full_name = models.CharField(_('full_name'), max_length=65)
-    phone_number = models.CharField(_('phone_number'), max_length=15)
-
-    def __str__(self) -> str:
-                return self.full_name
 
 
 
@@ -429,13 +394,7 @@ class SubLaserPrint(models.Model):
     chain = models.ForeignKey(LaserPrint, on_delete=models.CASCADE)
 
 
-class Type2(models.Model):
-    name = models.CharField(max_length=65)
-    def str(self) -> str:
-        return self.name
 
-    class Meta:
-        verbose_name = "Xizmat turlari"
 
 class Image2(models.Model):
     type_sevice = models.ForeignKey(Type, on_delete=models.SET_NULL, blank=True, null=True)
@@ -446,3 +405,5 @@ class Image2(models.Model):
 
     class Meta:
         verbose_name = "Xizmat ko'rsatish rasmlari"
+
+
