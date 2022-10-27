@@ -143,7 +143,7 @@
 	<div class="container pb-3">
 		<div class="row m-0">
 		  <div class="offset-2 offset-sm-0 col-8 col-sm-12 col-md-6 col-lg-3 col-xl-2 pt-3 pt-lg-0 text-center">
-			<img src="{% static 'img/logo.png' %}" width="100%" alt="">
+			<a href="{% url 'myprint:home' %}"><img  src="{% static 'img/logo.png' %}" width="100%" alt=""></a>
 		  </div>
 		  <div class="offset-3 offset-sm-0 col-9 col-sm-12 col-md-6 col-lg-6 col-xl-7 footer_menu">
 			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:contact' %}" class="colorBlack">КОНТАКТЫ</a></h5>
@@ -151,10 +151,9 @@
 			<h5 class="ml-3"><a href="{% url 'myprint:design' %}" class="colorBlack">Дизайн</a></h5>
 		  </div>
 		  <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center text-md-right">
-			<span class="ml-2"><i class="fab fa-2x fa-telegram colorBlack"></i></span>
-			<span class="ml-2"><i class="fab fa-2x fa-instagram colorBlack"></i></span>
-			<span class="ml-2"><i class="fab fa-2x fa-facebook colorBlack"></i></span>
-			<span class="ml-2"><i class="fab fa-2x fa-youtube colorBlack"></i></span>
+			<span class="ml-2"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></span>
+			<span class="ml-2"><a href="{{ telegram }}"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></span>
+			<span class="ml-2"><a href="{{ instagram }}"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></span>
 		  </div>
 		</div>
 	</div>
@@ -162,7 +161,7 @@
 		<div class="container text-white">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 form-inline justify-content-between">
-					<p class="small">&copy; 2020 Все права защищены.</p>                          
+					<p class="small">&copy; 2022 Все права защищены.</p>                          
 					<p class="small">Сайт разработан в студио инновационныx разработок <a href="https://datasite.uz" class="text-white text-decoration-none font-weight-bold">DataSite.uz</a></p>             
 				  </div>
 			</div>
