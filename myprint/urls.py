@@ -24,9 +24,9 @@ urlpatterns = [
     path('create/', createView, name="create"),
     path('list/', listView, name="list"),
     path('user_login_view/', user_login, name='login'),
-    path('create-pdf/', ViewPDF.as_view(), name="create_pdf"),
+    path('create-pdf/', HelloPDFView.as_view(), name="create_pdf"),
     path('aboutview/', aboutview, name='aboutview'),
     path('servicecategory/', servicecategory, name='servicecategory'),
     # path('type-service/<int:pk>/', service_type, name='type_service'),
-    path('typeimage/<int:pk>',typeimage,name='typeimage'),
+    # path('typeimage/<int:pk>',typeimage,name='typeimage'),
 ]

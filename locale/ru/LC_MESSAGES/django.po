@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-27 16:38+0500\n"
+"PO-Revision-Date: 2022-10-27 17:05+0500\n"
+"Last-Translator: admin User <None>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\config\settings.py:129
+msgid "Uzbek"
+msgstr ""
+
+#: .\config\settings.py:130
+msgid "Russian"
+msgstr ""
+
+#: .\config\urls.py:25
+msgid "admin/"
+msgstr ""
+
+#: .\myprint\models.py:36
+msgid "first_name"
+msgstr ""
+
+#: .\myprint\models.py:37 .\myprint\models.py:277
+msgid "full_name"
+msgstr ""
+
+#: .\myprint\models.py:38 .\myprint\models.py:278
+msgid "phone_number"
+msgstr ""
+
+#: .\myprint\models.py:70
+msgid "size"
+msgstr ""
+
+#: .\myprint\models.py:71
+msgid "element"
+msgstr ""
+
+#: .\myprint\models.py:80 .\myprint\models.py:98 .\myprint\models.py:131
+#: .\myprint\models.py:151 .\myprint\models.py:161 .\myprint\models.py:176
+#: .\myprint\models.py:188 .\myprint\models.py:218
+msgid "name"
+msgstr ""
+
+#: .\myprint\models.py:81 .\myprint\models.py:99 .\myprint\models.py:162
+#: .\myprint\models.py:189 .\myprint\models.py:269
+msgid "image"
+msgstr ""
+
+#: .\myprint\models.py:103
+msgid "description"
+msgstr "описание"
+
+#: .\myprint\models.py:197
+msgid "id_name_order"
+msgstr "порядок имени идентификатора"
+
+#: .\myprint\models.py:198
+msgid "client"
+msgstr "клиент"
+
+#: .\myprint\models.py:199
+msgid "client_phone_number"
+msgstr "номер телефона клиента"
+
+#: .\myprint\models.py:200
+msgid "manager_name"
+msgstr " имя менеджера"
+
+#: .\myprint\models.py:201
+msgid "date_order"
+msgstr "дата заказа"
+
+#: .\myprint\models.py:202
+msgid "ready_product_date_order"
+msgstr "заказ даты готовности продукта"
+
+#: .\myprint\models.py:219
+msgid "status_order"
+msgstr "статус заказ"
+
+#: .\myprint\models.py:220
+msgid "amount"
+msgstr ""
+
+#: .\myprint\models.py:221
+msgid "price"
+msgstr ""
+
+#: .\myprint\models.py:222
+msgid "price_free_VAT"
+msgstr ""
+
+#: .\myprint\models.py:223
+msgid "VAT"
+msgstr ""
+
+#: .\myprint\models.py:224
+msgid "price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:225
+msgid "total"
+msgstr ""
+
+#: .\myprint\models.py:226
+msgid "total_price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:227
+msgid "total_price_ALL"
+msgstr ""
+
+#: .\myprint\models.py:251
+msgid "key"
+msgstr ""
+
+#: .\myprint\models.py:252
+msgid "value"
+msgstr ""
+
+#: .\myprint\models.py:260
+msgid "description_uz"
+msgstr ""
+
+#: .\myprint\models.py:268
+msgid "name_uz"
+msgstr ""
+
+#: .\myprint\models.py:279
+msgid "files"
+msgstr ""
+
+#: .\templates\main\application_order.html:34
+msgid "ЗАЯВКА-ЗАКАЗ № "
+msgstr "ЗАЯВКА-ЗАКАЗ № "
+
+#: .\templates\main\application_order.html:35
+msgid ""
+"Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в "
+"размере и объеме, в указанном счет-заказе:"
+msgstr ""
+"Прошу Вас изготовить полиграфическую продукцию и/или оказать услугу в "
+"размере и объеме, в указанном счет-заказе:"
+
+#: .\templates\main\application_order.html:44
+msgid "ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span>"
+msgstr "ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span>"
+
+#: .\templates\main\application_order.html:45
+msgid "Имя <br> ЗАКАЗЧИКА"
+msgstr "Имя <br> ЗАКАЗЧИКА"
+
+#: .\templates\main\application_order.html:46
+msgid "Номер <br> ТЕЛЕФОНА"
+msgstr ""
+
+#: .\templates\main\application_order.html:47
+msgid "ОТВЕТСВЕННЫЙ <br> Менеджер"
+msgstr ""
+
+#: .\templates\main\application_order.html:48
+msgid "ДАТА ПРИЕМА ЗАКАЗА"
+msgstr ""
+
+#: .\templates\main\application_order.html:49
+msgid "ДАТА ОТГРУЗКИ ЗАКАЗА"
+msgstr ""
+
+#: .\templates\main\application_order.html:73
+msgid "№ "
+msgstr ""
+
+#: .\templates\main\application_order.html:74
+msgid "Наименование работ,услуг,изделий"
+msgstr ""
+
+#: .\templates\main\application_order.html:75
+msgid "Ед.изм."
+msgstr ""
+
+#: .\templates\main\application_order.html:76
+msgid "Кол-во"
+msgstr ""
+
+#: .\templates\main\application_order.html:77
+msgid "Цена за единицу"
+msgstr ""
+
+#: .\templates\main\application_order.html:78
+msgid "Цена без учета НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:79
+msgid "НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:80
+msgid "Цена с учетом НДС"
+msgstr ""
+
+#: .\templates\main\application_order.html:81
+msgid "Всего"
+msgstr ""
+
+#: .\templates\main\application_order.html:108
+msgid "Итого:"
+msgstr ""
+
+#: .\templates\main\application_order.html:123
+msgid "Mакет: "
+msgstr ""
+
+#: .\templates\main\application_order.html:124
+msgid ""
+"Пояснение к утверждению макета : "
+"_________________________________________________________________"
+msgstr ""
+
+#: .\templates\main\application_order.html:128
+msgid "Ознокомлен и согласен:  ___________________ "
+msgstr ""
+
+#: .\templates\main\application_order.html:128
+#: .\templates\main\application_order.html:129
+msgid "Подпись заказчика"
+msgstr "Buyurtmachi imzosi"
+
+#: .\templates\main\application_order.html:129
+msgid "Продукцию получил:  ______________________ "
+msgstr ""
+
+#: .\templates\main\application_order.html:132
+msgid "Менеджер _____________________"
+msgstr "Menejer _____________________"
+
+#: .\templates\main\application_order.html:133
+msgid "Кассир _________________________"
+msgstr "Kassachi  _________________________"
+
+#: .\templates\main\application_order.html:136
+msgid "    При получении продукции наличие счет-заказа обязательно."
+msgstr ""
+
+#: .\templates\main\contact.html:10
+msgid "Контакты."
+msgstr "Kontakti"
+
+#: .\templates\main\contact.html:20
+msgid "Шайхантахурский филиал"
+msgstr "Shayxontohur filliali"
+
+#: .\templates\main\contact.html:40
+msgid "Учтепинский филиал"
+msgstr "Uchtepa filliali"
+
+#: .\templates\main\dizayn.html:12
+msgid "Дизайн студио."
+msgstr ""
+
+#: .\templates\main\dizayn.html:52 .\templates\main\markirovka.html:44
+#: .\templates\main\printing-paper.html:47
+#: .\templates\main\printing-textile.html:46
+msgid "Наши работы."
+msgstr ""
+
+#: .\templates\main\error.html:9
+msgid "LOGIN SUPPORT CENTER"
+msgstr ""
+
+#: .\templates\main\error.html:10
+msgid "ERROR !!!!!!!!!"
+msgstr ""
+
+#: .\templates\main\error.html:11
+msgid "Если вы еще не создали учетную запись"
+msgstr ""
+
+#: .\templates\main\error.html:12
+msgid "Try again"
+msgstr ""
+
+#: .\templates\main\reklama.html:14
+msgid ""
+"Наши производственные мощности позволяют работать не только с Конечным "
+"клиентом, но и с ним же через Рекламные Агентства. Для Рекламных Агентств и "
+"посредников мы предлагаем:"
+msgstr ""
+
+#: .\templates\main\reklama.html:15
+msgid "Производственные мощности;"
+msgstr ""
+
+#: .\templates\main\reklama.html:16
+msgid "Профессиональных специалистов;"
+msgstr ""
+
+#: .\templates\main\reklama.html:17
+msgid "Конфиденциальность "
+msgstr ""
+
+#: .\templates\main\reklama.html:18
+msgid ""
+"Предоставление цен, отличных от цен для Конечного Клиента возможно лишь тем "
+"посредникам, которые готовы уменьшить наши трудозатраты за счет грамотного "
+"снятия потребности с Клиента, точно сформированного ТЗ, профессиональной "
+"подготовки макета к печати и готовых авансировать производство! "
+msgstr ""

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import (TemplateView, ListView, CreateView, DetailView, FormView)
 from django.contrib import messages
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse, FileResponse
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
@@ -119,6 +119,7 @@ def markirovka(request):
     if request.method == 'POST':
         form = OrderServiceForm(request.POST, request.FILES)
         if form.is_valid():
+            print("<<<<<<<<<<<<<<<<<<<", request.FILES)
             form.save()
             return redirect('/')
         else:
@@ -224,70 +225,6 @@ class OrderCreateView(CreateView):
     fields = '__all__'
     success_url = '/application_order'
 
-# def get_name(request):
-#     if request.method == 'POST':
-#         form = OrderMForm(request.POST)
-#         if form.is_valid():
-            
-#             return HttpResponseRedirect('/thanks/')
-
-#     # if a GET (or any other method) we'll create a blank form
-#     else:
-#         form = NameForm()
-
-#     return render(request, 'name.html', {'form': form})
-
-
-
-
-
-# @csrf_exempt
-# def test_form(request):
-#     detail = OrderForm.objects.all()
-#     form = OrderMForm()
-#     if request.method == 'POST':
-#         form = OrderMForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#     context = {"form": form,
-#                 "detail": detail
-#                     }
-#     return render(request, "main/application_order.html", context)
-
-
-
-
-# def order(request):
-#     if request.method == "POST":
-#         form = OrderMForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return render(request, 'Reddit_app/order_thankyou.html')
-#     else:
-#         form = OrderMForm()
-#     return render(request, 'Reddit_app/order_from_post.html', {"form": form})
-
-
-
-# def listView(request):
-#     order = OrderForm.objects.filter(amount='amount', price='price',VAT='VAT')
-#     total = 0
-#     all_price = order.price * order.amount
-#     percent_sum = (all_price / 100) * order.VAT
-#     sum_list = all_price + percent_sum
-#     total = total + sum_list
-#     context = {}
-
-#     context['order'] = order
-#     context['sum_list'] = sum_list
-#     context['all_price'] = all_price
-#     context['total'] = total
-#     if order.VAT:
-#         total = total + (total*order.VAT/100)
-#         context['total_sum']=total
-#     else:
-#         context = {}
-#     return render(request, 'invoice.html', context=context)
 
 
 
@@ -322,10 +259,23 @@ def createView(request):
     context['formset'] = formset
     return render(request, 'multi_forms/create.html', context=context)
 
+
+
+
+
+
 def listView(request):
     datas = OrderForm.objects.all()
     context = {'datas' : datas}
     return render(request, 'multi_forms/list.html', context=context)
+
+
+
+
+
+
+
+
 
 
 
@@ -366,135 +316,29 @@ def user_login(request):
                 return render(request, template_name='main/error.html', context={'login': auth_login})
 
 
-# def pdf_report_create(request):
-#     order = OrderForm.objects.all()
-
-#     template_path = 'pdf_convert/pdfReport.html'
-
-#     context = {'order': order}
-
-#     response = HttpResponse(content_type='application/pdf')
-
-#     response['Content-Disposition'] = 'filename="orders_report.pdf"'
-
-#     template = get_template(template_path)
-
-#     html = template.render(context)
-
-#     # create a pdf
-#     pisa_status = pisa.CreatePDF(
-#        html, dest=response)
-#     # if error then show some funy view
-#     if pisa_status.err:
-#        return HttpResponse('We had some errors <pre>' + html + '</pre>')
-#     return response
-
-
-# import os
-# from django.conf import settings
-# from django.http import HttpResponse
-# from django.template.loader import get_template
-# from xhtml2pdf import pisa
-# from django.contrib.staticfiles import finders
-# from config import settings
-
-# def link_callback(uri, rel):
-#         """
-#         Convert HTML URIs to absolute system paths so xhtml2pdf can access those
-#         resources
-#         """
-#         result = finders.find(uri)
-#         if result:
-#                 if not isinstance(result, (list, tuple)):
-#                         result = [result]
-#                 result = list(os.path.realpath(path) for path in result)
-#                 path=result[0]
-#         else:
-#                 sUrl = settings.STATIC_URL        # Typically /static/
-#                 sRoot = settings.STATIC_ROOT      # Typically /home/userX/project_static/
-#                 mUrl = settings.MEDIA_URL         # Typically /media/
-#                 mRoot = settings.MEDIA_ROOT       # Typically /home/userX/project_static/media/
-#                 if uri.startswith(mUrl):
-#                         path = os.path.join(mRoot, uri.replace(mUrl, ""))
-#                 elif uri.startswith(sUrl):
-#                         path = os.path.join(sRoot, uri.replace(sUrl, ""))
-#                 else:
-#                         return uri
-#         # make sure that file exists
-#         if not os.path.isfile(path):
-#                 raise Exception(
-#                         'media URI must start with %s or %s' % (sUrl, mUrl)
-#                 )
-#         return path
-
-# def render_pdf_view(request):
-#     template_path = 'multi_forms/list.html'
-#     context = {'myvar': 'this is your template context'}
-#     # Create a Django response object, and specify content_type as pdf
-#     response = HttpResponse(content_type='application/pdf')
-#     response['Content-Disposition'] = 'attachment; filename="report.pdf"'
-#     # find the template and render it.
-#     template = get_template(template_path)
-#     html = template.render(context)
-
-#     # create a pdf
-#     pisa_status = pisa.CreatePDF(
-#        html, dest=response, link_callback=link_callback)
-#     # if error then show some funny view
-#     if pisa_status.err:
-#        return HttpResponse('We had some errors <pre>' + html + '</pre>')
-#     return response
-
-
 
 
 def not_found_page(request, exception):
     return render(request, 'main.not_found.html')
 
-#Rendering html page to pdf
+from reportlab.pdfgen import canvas
 
 
-from django.shortcuts import render
-from io import BytesIO
-from django.http import HttpResponse
-from django.template.loader import get_template
-from django.views import View
-from xhtml2pdf import pisa
 
-def render_to_pdf(template_src, context_dict={}):
-	template = get_template(template_src)
-	html  = template.render(context_dict)
-	result = BytesIO()
-	pdf = pisa.pisaDocument(BytesIO(html.encode("cp1252")), result)
-	if not pdf.err:
-		return HttpResponse(result.getvalue(), content_type='application/pdf')
-	return None
+def pdf_rendering(request):
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=letter,bottomup=0)
+    textob= c.beginText()
+    textob.setTextOrigin(inch, inch)
+    textob.setFont("Helvetica", 14)
+    orders = OrderForm()
+    lines = []
 
+    for line in lines:
+        textob.textLine(line)
 
-data = {
-	"company": "Dennnis Ivanov Company",
-	"address": "123 Street name",
-	"city": "Vancouver",
-	"state": "WA",
-	"zipcode": "98663",
-
-
-	"phone": "555-555-2345",
-	"email": "youremail@dennisivy.com",
-	"website": "dennisivy.com",
-	}
-
-#Opens up page as PDF
-class ViewPDF(View):
-	def get(self, request, *args, **kwargs):
-
-		pdf = render_to_pdf('pdf_convert/pdfReport.html', data)
-		return HttpResponse(pdf, content_type='application/pdf')
-
-
-def typeimage(request, pk):
-    t_image = Image.objects.filter(type_sevice_id=pk)
-    context = {
-        't_image': t_image
-    }
-    return render(request, 'main/reklama_image.html', context=context)
+    c.drawText(textob)
+    c.showPage()
+    c.save()
+    buf.seek(0)
+    return FileResponse(buf, as_attachment=True, filename='report.pdf')

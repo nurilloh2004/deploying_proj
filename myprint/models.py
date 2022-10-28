@@ -235,6 +235,10 @@ class OrderForm(models.Model):
         total_summ_with_nds = (self.total_sum)/100 * self.VAT + self.total_sum
         return total_summ_with_nds
 
+    @property
+    def without_percent_price(self):
+        sume = self.price * self.amount
+        return sume
 
     def __str__(self) -> str:
                 return self.name
