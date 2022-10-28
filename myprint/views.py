@@ -321,24 +321,13 @@ def user_login(request):
 def not_found_page(request, exception):
     return render(request, 'main.not_found.html')
 
-from reportlab.pdfgen import canvas
+from django.http import HttpResponse
+from django.shortcuts import render
 
+from .utils import *
 
-
-def pdf_rendering(request):
-    buf = io.BytesIO()
-    c = canvas.Canvas(buf, pagesize=letter,bottomup=0)
-    textob= c.beginText()
-    textob.setTextOrigin(inch, inch)
-    textob.setFont("Helvetica", 14)
-    orders = OrderForm()
-    lines = []
-
-    for line in lines:
-        textob.textLine(line)
-
-    c.drawText(textob)
-    c.showPage()
-    c.save()
-    buf.seek(0)
-    return FileResponse(buf, as_attachment=True, filename='report.pdf')
+def generate_pdf(request):
+    datas = OrderForm.objects.all()
+    context = {'datas': datas}
+    pdf = html_to_pdf('pdf_convert/pdfReport.html', context=context)
+    return HttpResponse(pdf, content_type='application/pdf')

@@ -2,6 +2,37 @@
 {% load static %}
 
 {% block content %}
+<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML to PDF</title>
+    <style>
+        @font-face {
+        font-family: "Alice-Regular";
+        src: url(" {% static 'Alice-Regular.ttf' %}") format("truetype");
+        }
+
+        body {
+        font-family: "Alice-Regular";
+        font-size: 20px
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        table td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            height: 50px;
+        }
+
+        #cssTable th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
 <section class="container-fluid pt-5 pb-5">
     <div class="container p-5">
         <div class="row border p-3">
