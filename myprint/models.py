@@ -78,6 +78,7 @@ class InfoProduct(models.Model):
 class Category(models.Model):
     parent = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True, default=None)
     name = models.CharField(_('name'), max_length=65, null=True, blank=True)
+    slug = models.SlugField(_("slug"), null=False, blank=False)
     image = models.ImageField(_('image'), upload_to='media/category_image', blank=True, null=True)
 
 
@@ -97,10 +98,11 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/product')
+    slug = models.SlugField(_("slug"), null=False, blank=False)
     info_product = models.ForeignKey(InfoProduct, on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     vendor_code = models.CharField(max_length=20)
-    description = models.TextField(_('description'))
+    description = models.TextField(_('description'), max_length=500)
 
     def str(self):
         return self.name

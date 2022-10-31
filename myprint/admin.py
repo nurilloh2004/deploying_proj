@@ -94,7 +94,7 @@ class TypeServiceAdmin(TranslationAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
-        'category', 'name',  'image', 'info_product',
+        'category', 'name','slug',  'image', 'info_product',
         'vendor_code', 'description'
     ]
     list_display_links = [
@@ -112,7 +112,7 @@ admin.site.register(Product, ProductAdmin)
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
     fields = [
-        'parent', 'name', 'image'
+        'parent', 'name','slug', 'image'
     ]
     list_display = [
         'id', 'parent', 'name','image'
