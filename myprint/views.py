@@ -226,16 +226,13 @@ class OrderCreateView(CreateView):
 @csrf_exempt
 def createView(request):
     context = {}
-    print("ppppp -------------->>>>>", request.POST)
     OrdersFormset = modelformset_factory(OrderForm, form=OrdersForm)
-    print("order form set", OrdersFormset)
     form = CustomerForm(request.POST or None)
     
     formset = OrdersFormset(request.POST or None, queryset=OrderForm.objects.none(), prefix='orders')
     
     if request.method == "POST":
         if form.is_valid() and formset.is_valid():
-            print("print POST-------------->>>>", request.POST)
             try:
                 with transaction.atomic():
                     student = form.save(commit=False)
@@ -244,7 +241,6 @@ def createView(request):
                     for order in formset:
                         data = order.save(commit=False)
                         data.student = student
-                        print("print POST-------------->>>>", data)
                         data.save()
             except IntegrityError:
                 print("Error encountered")
