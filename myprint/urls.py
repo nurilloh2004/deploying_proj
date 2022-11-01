@@ -7,6 +7,8 @@ app_name = "myprint"
 
 urlpatterns = [
     path('', home, name='home'),
+    path('gift_product/<int:id>/', gift_product, name='gift_product'),
+    path('poligraphy_product/<int:pk>/', poligraphy_product,  name='poligraphy_product'),
     path('contact/', contact, name='contact'),
     path('portfolio/', portfolio, name='portfolio'),
     path('gift_product/', gift_product, name='gift_product'),

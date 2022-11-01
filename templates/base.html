@@ -1,6 +1,8 @@
 {% load static %}
-{% load i18n %}
+
 <!DOCTYPE html>
+{% load i18n %}
+{% get_available_languages as languages %}
 <html>
 	
 <!-- Mirrored from myprint.uz/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2022 05:18:16 GMT -->
@@ -106,23 +108,37 @@
 						  </ul>
 					  </li>
 					  <li><a href="#!">ПРОДУКЦИЯ</a>
-						  <ul class="dropdown">
+						<ul class="dropdown">
 							<li style="list-style-type: none;">
 								{% for row in allcategory %}
-								<a href="{% url 'myprint:poligraphy_product' row.pk %}">{{ row.name }}</a>
+									<a href="{% url 'myprint:poligraphy_product' row.pk %}">{{ row.name }}</a>
 								{% endfor %}
 							</li>
-						  </ul>
-					  </li>								
+						</ul>
+					</li>								
 					  <li><a href="{% url 'myprint:portfolio' %}">НАШИ РАБОТЫ</a></li>
 					  <li><a href="{% url 'myprint:contact' %}">КОНТАКТЫ</a></li>
 					  {% if request.user.is_authenticated %}
-					  <li><a href="{% url 'myprint:create'%}">Order</a></li>
-					  <li><a href="{% url 'myprint:list' %}">INVOICE</a></li>
+					  	<li><a href="{% url 'myprint:create'%}">Order</a></li>
+					  	<li><a href="{% url 'myprint:list' %}">INVOICE</a></li>
+					  {% else %}
+					  	<li><a href="{% url 'myprint:login' %}">LOG IN</a></li>
 					  {% endif %}
-					  <li><a href="{% url 'myprint:login' %}">LOG IN</a></li>
-				  </ul>
-										
+					  <li><a href="#!">TIL</a>
+						<ul class="dropdown">
+							<li style="list-style-type: none;">
+								{% for lang_code, lang_name in languages %}
+									{% language lang_code %}
+										<li style="list-style-type: none;">
+											<a href="/{{ lang_code }}">{{ lang_name }}</a>
+										</li>
+									{% endlanguage %}
+								{% endfor %}
+							</li>
+						</ul>
+					</li>
+					</ul>
+									
 									</div>
 									
 								</div>

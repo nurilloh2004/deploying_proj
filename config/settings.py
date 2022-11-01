@@ -82,9 +82,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# JAZZMIN_UI_TWEAKS = {
-#     "theme": "darkly",
-# }
+
 
 
 
@@ -126,9 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 LANGUAGES = (
-    ('uz', _('Uzbek')),
-    ('ru', _('Russian')),
-    
+    ('uz', 'UZ'),
+    ('ru', 'RU'),
 )
 
 

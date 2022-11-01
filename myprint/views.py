@@ -126,6 +126,8 @@ def markirovka(request):
         'sub': sub
     }
     return render(request, 'main/markirovka.html', context=context)
+
+
 def poligraphy_product(request, pk):
     product = Product.objects.filter(category_id=pk)
     form = OrderServiceForm()
@@ -140,6 +142,17 @@ def poligraphy_product(request, pk):
         'form' : form
     }
     return render(request, 'main/poligraphy-products.html', context=context)
+
+def gift_product(request, id):
+    product = Product.objects.filter(category__parent_id=id)
+    print("Product Child -------------- >>>>>", product)
+    context = {
+        'product': product,
+        'id': id
+    }
+    return render(request, 'main/gifts-products.html', context=context)
+
+
 
 
 @csrf_exempt

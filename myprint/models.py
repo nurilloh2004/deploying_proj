@@ -59,8 +59,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return str(self.phone_number)
 
     def save(self, *args, **kwargs):
-        password = self.password
-        self.set_password(password)
+        # password = self.password
+        # self.set_password(password)
         return super(User,self).save(*args, **kwargs)
 
 
@@ -77,8 +77,7 @@ class InfoProduct(models.Model):
 
 class Category(models.Model):
     parent = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True, default=None)
-    name = models.CharField(_('name'), max_length=65, null=True, blank=True)
-    slug = models.SlugField(_("slug"), null=False, blank=False)
+    name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/category_image', blank=True, null=True)
 
 
@@ -98,21 +97,28 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/product')
-    slug = models.SlugField(_("slug"), null=False, blank=False)
     info_product = models.ForeignKey(InfoProduct, on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     vendor_code = models.CharField(max_length=20)
-    description = models.TextField(_('description'), max_length=500)
+    description = models.TextField(_('description'))
 
-    def str(self):
+    def __str__(self):
         return self.name
-
     class Meta:
         verbose_name = "Maxsulot"
         verbose_name_plural = "Maxsulotlar"
 
-#печать.
+class Product_Orders(models.Model):
+    name = models.CharField(max_length=50)
+    vendor_code = models.CharField(max_length=50)
+    phone = models.CharField(max_length=14)
 
+    def __str__(self):
+        return f"{self.name} {self.vendor_code} {self.phone}"
+
+    class Meta:
+        verbose_name = "Maxsulot zakazi"
+        verbose_name_plural = "Maxsulot zakazlari"
 
 
 # class InfoType(models.Model):
