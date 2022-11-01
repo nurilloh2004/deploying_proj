@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 {% load i18n %}
 {% get_available_languages as languages %}
+{% get_current_language as LANGUAGE_CODE %}
 <html>
 	
 <!-- Mirrored from myprint.uz/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Oct 2022 05:18:16 GMT -->
@@ -124,7 +125,7 @@
 					  {% else %}
 					  	<li><a href="{% url 'myprint:login' %}">LOG IN</a></li>
 					  {% endif %}
-					  <li><a href="#!">TIL</a>
+					  <li><a href="#!">{{ LANGUAGE_CODE }}</a>
 						<ul class="dropdown">
 							<li style="list-style-type: none;">
 								{% for lang_code, lang_name in languages %}

@@ -112,9 +112,10 @@ class Product_Orders(models.Model):
     name = models.CharField(max_length=50)
     vendor_code = models.CharField(max_length=50)
     phone = models.CharField(max_length=14)
+    creat_add = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
-        return f"{self.name} {self.vendor_code} {self.phone}"
+        return self.name
 
     class Meta:
         verbose_name = "Maxsulot zakazi"

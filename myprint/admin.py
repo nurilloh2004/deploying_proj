@@ -102,6 +102,7 @@ class ProductAdmin(TranslationAdmin):
         'category', 'name'
     ]
     list_per_page = 2
+    search_fields = ['vendor_code', 'name']
 
 
 
@@ -227,3 +228,17 @@ class OrderServiceAdmin(admin.ModelAdmin):
     list_per_page = 2
 
 admin.site.register(OrderService, OrderServiceAdmin)
+
+
+
+class ProductOrderAdmin(admin.ModelAdmin):
+    list_display = [
+        'name', 'vendor_code', 'phone', 'creat_add'
+    ]
+    list_display_links = [
+        'name', 'vendor_code',
+    ]
+    class Meta:
+        model = Product_Orders
+
+admin.site.register(Product_Orders, ProductOrderAdmin)

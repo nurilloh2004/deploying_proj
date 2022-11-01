@@ -40,21 +40,6 @@ class OrderServiceForm(forms.ModelForm):
                 'value': '+998'
             })
         }
-# class OrForm(forms.Form):
-#     class Meta:
-#         model = Form
-
-#     widgets = {
-#             'full_name': forms.TextInput(attrs={
-#                 'class': 'form-control',
-#                 'placeholder': 'ФИШ'
-#             }),
-#             'phone_number': forms.NumberInput(attrs={
-#                 'class': 'form-control mt-3 mb-3',
-#                 'placeholder': 'Telefon',
-#             })
-#         }
-
 
 
 class CustomerForm(forms.ModelForm):
@@ -119,3 +104,26 @@ class UserLoginForm(forms.Form):
             'password': forms.PasswordInput(),
         }
 
+
+class Product_OrdersForm(forms.ModelForm):
+    class Meta:
+        model = Product_Orders
+        exclude = ['creat_add']
+
+        widgets = {
+            'name': forms.TextInput(attrs={
+                'class': 'form-control mt-4',
+                'placeholder': 'Nomi...'
+            }),
+            'vendor_code': forms.TextInput(attrs={
+                'class': 'form-control mt-3',
+                'maxlength': '13',
+                'placeholder': 'Maxsulod kodi...',
+            }),
+            'phone': forms.NumberInput(attrs={
+                'class': 'form-control mt-3',
+                'maxlength': '13',
+                'placeholder': 'Телефон...',
+                'value': '+998'
+            })
+        }
