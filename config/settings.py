@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)_$fpec2weywx@__(!*=o)br5u7#@y!@t$bisf)q^=(p@zl(v6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -161,9 +161,14 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-CSRF_TRUSTED_ORIGINS = ['https://myprint-data-site.azurewebsites.net'],
+CSRF_TRUSTED_ORIGINS = ['https://myprint-data-site.azurewebsites.net']
 
+#🟢🟢🟢🟢🟢🟢🟢🟢
 MEDIA_URL = '/media/'
+
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
