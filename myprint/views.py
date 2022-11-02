@@ -129,7 +129,9 @@ def markirovka(request):
 
 
 def poligraphy_product(request, pk):
-    product = Product.objects.filter(category_id=pk)
+    product = Product.objects.filter(category=pk)
+    products = Product.objects.all()
+    print(products)
     form = Product_OrdersForm()
     if request.method == 'POST':
         form = Product_OrdersForm(request.POST)
@@ -147,6 +149,7 @@ def poligraphy_product(request, pk):
 
 def gift_product(request, id):
     product = Product.objects.filter(category__parent_id=id)
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>-------------",product)
     form = Product_OrdersForm()
     if request.method == 'POST':
         form = Product_OrdersForm(request.POST)

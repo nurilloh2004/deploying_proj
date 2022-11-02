@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n %}
 {% load static %}
-
 
 {% block content %}
     <section class="container-fluid pl-0 pr-0">
@@ -28,11 +26,43 @@
                         {% endfor %}
                     {% endfor %}
                 </div>
-                
+                <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-9 pl-4 pr-4 pt-0">
+                    <div class="row gifts-card-wrapper">
+                        <div class="col-12 pt-2 borderDashedBottom form-inline justify-content-between">
+                            <h6 class="form-inline">
+                                <a href="#" class="text-decoration-none colorBlack fontSize16">Сортировать по артикула
+                                    <i class="fa fa-sort-alt"></i></a>
+                                <a href="#" class="text-decoration-none colorBlack fontSize16 pl-3">Сортировать по
+                                    популярности
+                                    <svg style="width: 20px; margin-top: -5px;" xmlns="http://www.w3.org/2000/svg"
+                                         viewBox="0 0 576 512">
+                                        <path d="M544 416h-223.1c-17.67 0-32 14.33-32 32s14.33 32 32 32H544c17.67 0 32-14.33 32-32S561.7 416 544 416zM320 96h32c17.67 0 31.1-14.33 31.1-32s-14.33-32-31.1-32h-32c-17.67 0-32 14.33-32 32S302.3 96 320 96zM320 224H416c17.67 0 32-14.33 32-32s-14.33-32-32-32h-95.1c-17.67 0-32 14.33-32 32S302.3 224 320 224zM320 352H480c17.67 0 32-14.33 32-32s-14.33-32-32-32h-159.1c-17.67 0-32 14.33-32 32S302.3 352 320 352zM151.6 41.95c-12.12-13.26-35.06-13.26-47.19 0l-87.1 96.09C4.475 151.1 5.35 171.4 18.38 183.3c6.141 5.629 13.89 8.414 21.61 8.414c8.672 0 17.3-3.504 23.61-10.39L96 145.9v302C96 465.7 110.3 480 128 480s32-14.33 32-32.03V145.9L192.4 181.3C204.4 194.3 224.6 195.3 237.6 183.3c13.03-11.95 13.9-32.22 1.969-45.27L151.6 41.95z"/>
+                                    </svg>
+                                </a>
+                            </h6>
+                            <h6 class="form-inline">
+                                <a href="#!" class="pr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                         fill="none">
+                                        <path d="M2.49967 7.50004H7.49967V2.50004H2.49967V7.50004ZM0.833008 2.49972C0.833008 1.57942 1.57254 0.833374 2.49935 0.833374H7.49999C8.42029 0.833374 9.16634 1.5729 9.16634 2.49972V7.50036C9.16634 8.42066 8.42681 9.16671 7.49999 9.16671H2.49935C1.57906 9.16671 0.833008 8.42718 0.833008 7.50036V2.49972ZM2.49967 17.5H7.49967V12.5H2.49967V17.5ZM0.833008 12.4997C0.833008 11.5794 1.57254 10.8334 2.49935 10.8334H7.49999C8.42029 10.8334 9.16634 11.5729 9.16634 12.4997V17.5004C9.16634 18.4207 8.42681 19.1667 7.49999 19.1667H2.49935C1.57906 19.1667 0.833008 18.4272 0.833008 17.5004V12.4997ZM12.4997 17.5H17.4997V12.5H12.4997V17.5ZM10.833 12.4997C10.833 11.5794 11.5725 10.8334 12.4994 10.8334H17.5C18.4203 10.8334 19.1663 11.5729 19.1663 12.4997V17.5004C19.1663 18.4207 18.4268 19.1667 17.5 19.1667H12.4994C11.5791 19.1667 10.833 18.4272 10.833 17.5004V12.4997ZM12.4997 7.50004H17.4997V2.50004H12.4997V7.50004ZM10.833 2.49972C10.833 1.57942 11.5725 0.833374 12.4994 0.833374H17.5C18.4203 0.833374 19.1663 1.5729 19.1663 2.49972V7.50036C19.1663 8.42066 18.4268 9.16671 17.5 9.16671H12.4994C11.5791 9.16671 10.833 8.42718 10.833 7.50036V2.49972Z"
+                                              fill="#333333"></path>
+                                    </svg>
+                                </a>
+                                <a href="#!">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                         fill="none">
+                                        <path d="M17.8568 9.52377H2.14253C1.79522 9.52377 1.46214 9.3858 1.21656 9.14022C0.970975 8.89463 0.833008 8.56155 0.833008 8.21424L0.833008 2.97615C0.833008 2.62884 0.970975 2.29576 1.21656 2.05018C1.46214 1.80459 1.79522 1.66663 2.14253 1.66663H17.8568C18.2041 1.66663 18.5372 1.80459 18.7828 2.05018C19.0284 2.29576 19.1663 2.62884 19.1663 2.97615V8.21424C19.1663 8.56155 19.0284 8.89463 18.7828 9.14022C18.5372 9.3858 18.2041 9.52377 17.8568 9.52377ZM2.57904 7.77774H17.4203V3.41266H2.57904V7.77774Z"
+                                              fill="#333333"></path>
+                                        <path d="M17.8568 19.1269H2.14253C1.79522 19.1269 1.46214 18.9889 1.21656 18.7434C0.970975 18.4978 0.833008 18.1647 0.833008 17.8174L0.833008 12.5793C0.833008 12.232 0.970975 11.8989 1.21656 11.6533C1.46214 11.4077 1.79522 11.2698 2.14253 11.2698H17.8568C18.2041 11.2698 18.5372 11.4077 18.7828 11.6533C19.0284 11.8989 19.1663 12.232 19.1663 12.5793V17.8174C19.1663 18.1647 19.0284 18.4978 18.7828 18.7434C18.5372 18.9889 18.2041 19.1269 17.8568 19.1269ZM2.57904 17.3809H17.4203V13.0158H2.57904V17.3809Z"
+                                              fill="#333333"></path>
+                                    </svg>
+                                </a>
+                            </h6>
+                        </div>
                         {% for col in product %}
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
                                 <div class="card p-3 bg-transparent">
-                                    <a href="id{{ col.id}}" data-toggle="modal" data-target="#id{{ col.id }}">
+                                    <a href="id{{ col.id }}" data-toggle="modal" data-target="#id{{ col.id }}">
                                         <img src="{{ col.image.url }}" width="100%" height="200"
                                              alt="">
                                         <h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom"
@@ -43,7 +73,7 @@
                                             class="btn btn-secondary"
                                             data-toggle="modal" data-target="#orderModal">Заказать
                                     </button>
-								</div>
+                                </div>
                             </div>
                             <div class="modal fade" id="id{{ col.id }}" tabindex="-1" role="dialog"
                                  aria-labelledby="example#{{ col.id }}"
@@ -101,13 +131,13 @@
                                 <div class="modal-dialog modal-dialog-centered " role="document">
                                     <div class="modal-content pl-3 pr-3">
                                         <div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel"></h5>
+                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
                                             <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
                                                 Закрыть
                                             </button>
                                         </div>
                                         <div class="modal-body pt-2 pb-5 text-center">
-                                            <h6>Наш менеджер свяжется с вами в самое ближайшее время!</h6>
+                                            <h6>Bizning menejerimiz imkon qadar tezroq siz bilan bog'lanadi!</h6>
                                             <form action="" method="POST">
                                                 {% csrf_token %}
                                                 {{ form.name }}
@@ -117,6 +147,7 @@
                                                     <button type="submit" class="btn btn-success btn-sm">So'rov qoldiring</button>
                                                 </div>
                                             </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

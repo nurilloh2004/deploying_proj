@@ -96,6 +96,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'myprint',
+#         'USER': 'postgres',
+#         'PASSWORD': '2003',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -161,7 +172,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-#🟢🟢🟢🟢🟢🟢🟢🟢
 MEDIA_URL = '/media/'
 
 
