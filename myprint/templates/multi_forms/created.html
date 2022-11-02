@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+
+    <table class="table form-table table-bordered table-sm">
+        <thead class="text-center">
+            <tr>
+                <th class="font-weight-bold">ID-№ <span>H_001 </span> <br> № Заказа <span> _ 1 _</span></th>
+                <th class="font-weight-bold">Имя <br> ЗАКАЗЧИКА</th>
+                <th class="font-weight-bold">Номер <br> ТЕЛЕФОНА</th>
+                <th class="font-weight-bold">ОТВЕТСВЕННЫЙ <br> Менеджер</th>
+                <th class="font-weight-bold">ДАТА ПРИЕМА ЗАКАЗА</th>
+                <th class="font-weight-bold">ДАТА ОТГРУЗКИ ЗАКАЗА</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input name="id_name_order" type="text" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="client" type="text" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="client_phone_number" type="text" class="form-control" placeholder="ID-№"
+                        aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="manager_name" type="text" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="date_order" type="date" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="ready_product_date_order" type="date" class="form-control"
+                        placeholder="ДАТА ОТГРУЗКИ ЗАКАЗА" aria-label="ДАТА ОТГРУЗКИ ЗАКАЗА">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table form-table table-bordered table-sm">
+        <thead class="text-center">
+            <tr>
+                <th class="font-weight-bold">Products</th>
+                <th class="font-weight-bold">Amount</th>
+                <th class="font-weight-bold">Price</th>
+                <th class="font-weight-bold">Percent %</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ formset.management_form }}
+            <tr>
+                <td>
+                    <input name="nomi" type="text" class="form-control" placeholder="nomi" aria-label="nomi">
+                </td>
+                <td>
+                    <input name="soni" type="number" class="form-control" placeholder="soni" aria-label="soni">
+                </td>
+                <td>
+                    <input name="narxi" type="number" class="form-control" placeholder="narxi" aria-label="narxi">
+                </td>
+                <td>
+                    <input name="foizi" type="number" class="form-control" placeholder="foizi" aria-label="foizi">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-form-row" id="{{ formset.prefix }}">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9"
+                    style="border-left: none!important; border-right: none !important; border-bottom: none!important;">
+                    <button type="button" class="btn btn-sm btn-success add-form-row"
+                            id="{{ formset.prefix }}">
+                        Add
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    {{ formset.management_form }}
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+{% block extra_script %}
+<script type="text/javascript" src="{% static 'js/formset.js' %}"></script>
+{% endblock%}

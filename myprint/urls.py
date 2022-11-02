@@ -16,7 +16,6 @@ urlpatterns = [
     path('printing_large/', printing_large, name='printing_large'),
     path('promotional_products/', promotional_products, name='promotional_products'),
     path('markirovka/', markirovka, name='markirovka'),
-    path('poligraphy_product/<int:pk>/', poligraphy_product,  name='poligraphy_product'),
     path('printing_paper/', printing_paper,  name='printing_paper'),
     path('printing_textile/', printing_textile, name='printing_textile'),
     path('textile_products/', textile_products, name='textile_products'),

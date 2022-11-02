@@ -274,7 +274,7 @@ def createView(request):
             return redirect('myprint:list')
     context['form'] = form
     context['formset'] = formset
-    return render(request, 'multi_forms/create.html', context=context)
+    return render(request, 'multi_forms/created.html', context=context)
 
 
 

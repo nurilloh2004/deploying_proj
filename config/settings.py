@@ -174,7 +174,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_URL = '/media/'
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://myprint-data-site.azurewebsites.net'
+],
 
 
 # Default primary key field type
