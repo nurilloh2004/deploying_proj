@@ -148,7 +148,7 @@ def poligraphy_product(request, pk):
     return render(request, 'main/poligraphy-products.html', context=context)
 
 def gift_product(request, id):
-    product = Product.objects.filter(category__parent_id=id)
+    product = Product.objects.filter(category__id=id)
     print(">>>>>>>>>>>>>>>>>>>>>>>>>-------------",product)
     form = Product_OrdersForm()
     if request.method == 'POST':
@@ -274,7 +274,7 @@ def createView(request):
             return redirect('myprint:list')
     context['form'] = form
     context['formset'] = formset
-    return render(request, 'multi_forms/created.html', context=context)
+    return render(request, 'multi_forms/create.html', context=context)
 
 
 

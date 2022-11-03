@@ -12,7 +12,7 @@
                                 class="font-weight-bold">Products</h5></div>
                     </div>
                     {% for par in allcategory %}
-                        {% for child in par.children %}
+                        {% for child in par.children.all %}
                             {% if par.id == pk %}
                                 <a href="{% url 'myprint:gift_product' par.id %}">
 
