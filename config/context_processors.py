@@ -6,7 +6,7 @@ from myprint.models import Category, Settings, Type
 
 def all_category(request):
     return {
-        "allcategory": Category.objects.filter(parent=None).all(),
+        "allcategory": Category.objects.filter(),
         # "phone":Settings.objects.get(key='phone').value,
         # "instagram":Settings.objects.get(key='instagram').value,
         # "facebook":Settings.objects.get(key='facebook').value,

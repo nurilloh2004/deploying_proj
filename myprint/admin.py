@@ -92,30 +92,32 @@ class TypeServiceAdmin(TranslationAdmin):
 
 
 
-@admin.register(Product)
-class ProductAdmin(TranslationAdmin):
-    list_display = [
-        'category', 'name', 'image', 'info_product',
-        'vendor_code', 'description'
-    ]
-    list_display_links = [
-        'category', 'name'
-    ]
-    list_per_page = 2
-    search_fields = ['vendor_code', 'name']
-
-
 
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
     list_display = [
-        'id', 'parent', 'name', 'image'
+        'name'
     ]
     list_display_links = [
-        'parent', 'name',
+        'name'
     ]
-    list_per_page = 2
+    class Meta:
+        model = Category
 
+
+
+
+class SubCategoryAdmin(admin.ModelAdmin):
+    list_display = [
+        'category', 'name', 'image',
+    ]
+    list_display_links = [
+        'name'
+    ]
+    class Meta:
+        model = SubCategory
+
+admin.site.register(SubCategory, SubCategoryAdmin)
 
 
 
@@ -242,3 +244,16 @@ class ProductOrderAdmin(admin.ModelAdmin):
         model = Product_Orders
 
 admin.site.register(Product_Orders, ProductOrderAdmin)
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = [
+        'category', 'subcategory', 'name', 'image', 'info_product', 'vendor_code', 'description'
+    ]
+    list_display_links = [
+        'name', 'vendor_code',
+    ]
+    class Meta:
+        model = Product
+
+admin.site.register(Product, ProductAdmin)

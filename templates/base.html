@@ -112,7 +112,7 @@
 						<ul class="dropdown">
 							<li style="list-style-type: none;">
 								{% for row in allcategory %}
-									<a href="{% url 'myprint:poligraphy_product' row.pk %}">{{ row.name }}</a>
+									<a href="{% url 'myprint:parent' row.pk %}">{{ row.name }}</a>
 								{% endfor %}
 							</li>
 						</ul>

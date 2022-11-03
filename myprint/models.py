@@ -76,29 +76,34 @@ class InfoProduct(models.Model):
 
 
 class Category(models.Model):
-    parent = models.ForeignKey("self", on_delete=models.CASCADE, null=True, blank=True, default=None)
-    name = models.CharField(_('name'), max_length=65)
-    image = models.ImageField(_('image'), upload_to='media/category_image', blank=True, null=True)
-
-
-    @property
-    def children(self):
-        return Category.objects.filter(parent=self)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "Kategoriya"
-        verbose_name_plural = "Kategoriyalar"
+        verbose_name = 'Category'
+
+
+class SubCategory(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Sub Category"
 
 
 #Product
 class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(_('name'), max_length=65)
     image = models.ImageField(_('image'), upload_to='media/product')
     info_product = models.ForeignKey(InfoProduct, on_delete=models.CASCADE, blank=True, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     vendor_code = models.CharField(max_length=20)
     description = models.TextField(_('description'))
 

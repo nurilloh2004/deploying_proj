@@ -26,8 +26,8 @@ from .help_views import handle_upload_file
 
 
 def home(request):
-    categories = Category.objects.filter(parent=None)
-    products = Product.objects.all()
+    # categories = Category.objects.filter(parent=None)
+    # products = Product.objects.all()
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()
@@ -44,8 +44,6 @@ def home(request):
         "servistype": servistype,
         "menuservice": menuservice,
         'sponsor': sponsor,
-        'categories': categories,
-        'products': products,
     }
     return render(request, 'main/index.html', context=context)
     
@@ -128,40 +126,24 @@ def markirovka(request):
     return render(request, 'main/markirovka.html', context=context)
 
 
-def poligraphy_product(request, pk):
-    product = Product.objects.filter(category=pk)
-    products = Product.objects.all()
-    print(products)
-    form = Product_OrdersForm()
-    if request.method == 'POST':
-        form = Product_OrdersForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('myprint:home')
-        else:
-            form = Product_OrdersForm()
+def parent(request, pk):
+    products = Product.objects.filter(category_id=pk)
+    subcategory = SubCategory.objects.filter(category_id=pk)
     context = {
-        "product": product,
-        'form': form,
-        'pk': pk
+        'subcategory': subcategory,
+        'products': products
     }
     return render(request, 'main/poligraphy-products.html', context=context)
 
-def gift_product(request, id):
-    product = Product.objects.filter(category__id=id)
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>-------------",product)
-    form = Product_OrdersForm()
-    if request.method == 'POST':
-        form = Product_OrdersForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('myprint:home')
-        else:
-            form = Product_OrdersForm()
+
+def parent_product(request, pk):
+    product = SubCategory.objects.all()
+    products = Product.objects.filter(subcategory_id=pk)
+    subcategory = SubCategory.objects.filter(category_id=pk)
     context = {
+        'subcategory': subcategory,
+        'products': products,
         'product': product,
-        'form': form,
-        'id': id
     }
     return render(request, 'main/gifts-products.html', context=context)
 
