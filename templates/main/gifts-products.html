@@ -12,21 +12,16 @@
                     <div class="p-2 text-center">
                         <div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;"><h5
                                 class="font-weight-bold">Категория</h5></div>
-                    </div>
-                    {% for par in subcategory %}
-                                
-
-                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6 ><img src="{{ par.image.url }}"
-                                                                                            width="20"
-                                                                                            alt="category-title-icon"
-                                                                                            class="mr-1"><a      href="{% url 'myprint:parent_product' par.id %}" style='color=black' >{{ par.name }}</a>
-                                    </h6>
+                                {% for par in subcategory %}
+                        </div>
+                    <a href="{% url 'myprint:parent_product' par.id %}" style='color=black' >{{ par.name }}</a>
+                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6 ><img src="{{ par.image.url }}" width="20" alt="category-title-icon" class="mr-1"></h6>
                                     </div>
-                                
-                    {% endfor %}
+                    
                     <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6 ><a  class='text-dark' href="{% url 'myprint:home' %}" style='color=black' >----------------BACK----------------</a>
                     </h6>
                     </div>
+                    {% endfor %}
                  </div>
                 </div>
                 
@@ -122,6 +117,7 @@
                                                     <button type="submit" class="btn btn-success btn-sm">So'rov qoldiring</button>
                                                 </div>
                                             </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +125,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 

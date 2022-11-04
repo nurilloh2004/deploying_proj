@@ -27,7 +27,7 @@ from .help_views import handle_upload_file
 
 def home(request):
     # categories = Category.objects.filter(parent=None)
-    # products = Product.objects.all()
+    products = Product.objects.all()
     servistype = TypeService.objects.all()
     menuservice = MenuService.objects.all()
     sponsor = Sponsors.objects.all()
@@ -44,6 +44,7 @@ def home(request):
         "servistype": servistype,
         "menuservice": menuservice,
         'sponsor': sponsor,
+        'products' : products
     }
     return render(request, 'main/index.html', context=context)
     
@@ -53,8 +54,10 @@ def contact(request):
 
 def portfolio(request):
     image = Portfolio.objects.all()
+    product = Product.objects.all()
     context = {
-        "image": image
+        "image": image,
+        'product': product
     }
     return render(request, 'main/portfolio.html', context=context)
 
@@ -129,7 +132,14 @@ def markirovka(request):
 def parent(request, pk):
     products = Product.objects.filter(category_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
+    form = OrderServiceForm()
+    if request.method == 'POST':
+        form = OrderServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {
+        'form': form,
         'subcategory': subcategory,
         'products': products
     }
@@ -140,7 +150,14 @@ def parent_product(request, pk):
     product = SubCategory.objects.all()
     products = Product.objects.filter(subcategory_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
+    form = OrderServiceForm()
+    if request.method == 'POST':
+        form = OrderServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {
+        'form': form,
         'subcategory': subcategory,
         'products': products,
         'product': product,

@@ -186,13 +186,9 @@ class MenuService(models.Model):
 
 
 class Sponsors(models.Model):
-
-    name = models.CharField(_('name'), max_length=65)
     image = models.FileField(upload_to="media/pictures/%Y/%m/", validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
 
 
-    def __str__(self) -> str:
-                return self.name
 
 
 
