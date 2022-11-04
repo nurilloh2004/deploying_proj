@@ -132,9 +132,9 @@ def markirovka(request):
 def parent(request, pk):
     products = Product.objects.filter(category_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
-    form = Product_Orders()
+    form = Product_OrdersForm()
     if request.method == 'POST':
-        form = Product_Orders(request.POST)
+        form = Product_OrdersForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
@@ -150,9 +150,9 @@ def parent_product(request, pk):
     product = SubCategory.objects.all()
     products = Product.objects.filter(subcategory_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
-    form = Product_Orders()
+    form = Product_OrdersForm()
     if request.method == 'POST':
-        form = Product_Orders(request.POST)
+        form = Product_OrdersForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
