@@ -1,34 +1,43 @@
 {% extends 'base.html' %}
 
+
 {% load static %}
 
-{% block content %}
-    <section class="container-fluid pl-0 pr-0">
-        <div class="container pb-5 pt-5">
-            <div class="row category-list">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 border pl-0 pr-0">
-                    <div class="p-2 text-center">
-                        <div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;">
-                            <h5 class="font-weight-bold">Products</h5>
-                        </div>
-                    </div>
 
-                    {% for par in subcategory %}
-                        <a class='text-dark' href="{% url 'myprint:parent_product' par.id %}">
-                            <div class="pt-3 pb-1 pl-3 borderDashedBottom">
-                                <h6>
-                                    <img 
-                                        src="{{ par.image.url }}" 
-                                        width="20" 
-                                        alt="category-title-icon"
-                                        class="mr-1"
-                                    >
-                                    {{ par.name }}
-                                </h6>
-                            </div>
-                        </a>
-                    {% endfor %}
+
+{% block content %}
+
+    <section class="container-fluid pl-0 pr-0">
+        
+        <div class="container d-flex pb-5 pt-5">
+
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 border pl-0 pr-0">
+                <div class="p-2 text-center">
+                    <div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;">
+                        <h5 class="font-weight-bold">Products</h5>
+                    </div>
                 </div>
+
+                {% for par in subcategory %}
+                    <a class='text-dark' href="{% url 'myprint:parent_product' par.id %}">
+                        <div class="pt-3 pb-1 pl-3 borderDashedBottom">
+                            <h6>
+                                <img 
+                                    src="{{ par.image.url }}" 
+                                    width="20" 
+                                    alt="category-title-icon"
+                                    class="mr-1"
+                                >
+                                {{ par.name }}
+                            </h6>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            
+            <div class="row category-list">
+                
+                
             
                         {% for pro in products %}
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
@@ -110,7 +119,7 @@
                                         </div>
                                         <div class="modal-body pt-2 pb-5 text-center">
                                             <h6>Bizning menejerimiz imkon qadar tezroq siz bilan bog'lanadi!</h6>
-                                            <form action="" method="POST">
+                                            <form method="POST">
                                                 {% csrf_token %}
                                                 {{ form.name }}
                                                 {{ form.vendor_code }}

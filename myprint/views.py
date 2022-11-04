@@ -132,16 +132,16 @@ def markirovka(request):
 def parent(request, pk):
     products = Product.objects.filter(category_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
-    form = OrderServiceForm()
+    form = Product_Orders()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = Product_Orders(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
     context = {
-        'form': form,
         'subcategory': subcategory,
-        'products': products
+        'products': products,
+        'form': form,
     }
     return render(request, 'main/poligraphy-products.html', context=context)
 
@@ -150,17 +150,17 @@ def parent_product(request, pk):
     product = SubCategory.objects.all()
     products = Product.objects.filter(subcategory_id=pk)
     subcategory = SubCategory.objects.filter(category_id=pk)
-    form = OrderServiceForm()
+    form = Product_Orders()
     if request.method == 'POST':
-        form = OrderServiceForm(request.POST)
+        form = Product_Orders(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
     context = {
-        'form': form,
         'subcategory': subcategory,
         'products': products,
         'product': product,
+        'form': form,
     }
     return render(request, 'main/gifts-products.html', context=context)
 
