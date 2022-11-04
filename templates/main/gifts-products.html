@@ -4,54 +4,56 @@
 
 
 {% block content %}
-
     <section class="container-fluid pl-0 pr-0">
         <div class="container pb-5 pt-5">
             <div class="row category-list">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 border pl-0 pr-0">
                     <div class="p-2 text-center">
-                        <div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;"><h5
-                                class="font-weight-bold">Категория</h5></div>
-                                {% for par in subcategory %}
+                        <div class="border bgSecondary shadow-lg" style="padding: 5px 0px 1px 0px;">
+                            <h5 class="font-weight-bold">Products</h5>
                         </div>
-                    <a href="{% url 'myprint:parent_product' par.id %}" style='color=black' >{{ par.name }}</a>
-                                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6 ><img src="{{ par.image.url }}" width="20" alt="category-title-icon" class="mr-1"></h6>
-                                    </div>
-                    
-                    <div class="pt-3 pb-1 pl-3 borderDashedBottom"><h6 ><a  class='text-dark' href="{% url 'myprint:home' %}" style='color=black' >----------------BACK----------------</a>
-                    </h6>
                     </div>
+
+                    {% for par in product %}
+                        <a class='text-dark' href="{% url 'myprint:parent_product' par.id %}">
+                            <div class="pt-3 pb-1 pl-3 borderDashedBottom">
+                                <h6>
+                                    <img
+                                        src="{{ par.image.url }}" 
+                                        width="20" 
+                                        alt="category-title-icon"
+                                        class="mr-1"
+                                    >
+                                    {{ par.name }}
+                                </h6>
+                            </div>
+                        </a>
                     {% endfor %}
-                 </div>
                 </div>
-                
-            </div>                        
-                 
-                
-                        {% for col in products %}
+                {% for pro in products %}
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 p-2">
-                                <div class="row gifts-card-wrapper">
-                                <div class="card p-3 bg-transparent">
-                                    <a href="id{{ col.id}}" data-toggle="modal" data-target="#id{{ col.id }}">
-                                        <img src="{{ col.image.url }}" width="100%" height="200"
-                                             alt="">
-                                        <h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom"
-                                            style="height: 45px; overflow: hidden;">{{ col.name }}</h6>
-                                        <h6 class="colorBlack small pl-1">Артикул : {{ col.vendor_code }}</h6>
-                                    </a>
-                                    <button class="btn btn-sm pl-4 pr-4 bgOrange" type="button"
+                                    <div class="card p-3 bg-transparent">
+                                        <a href="id{{ pro.id }}" data-toggle="modal" data-target="#id{{ pro.id }}">
+                                            <img src="{{ pro.image.url }}" width="100%" height="220" alt="">
+                                            <h6 class="font-weight-normal small text-dark text-left p-2 borderDashedBottom"
+                                                style="height: 45px; overflow: hidden;">{{ pro.name }}</h6>
+                                            <h6 class="colorBlack small pl-1">Артикул : {{ pro.vendor_code }}</h6>
+                                        </a>
+                                        <button 
+                                            class="btn btn-sm pl-4 pr-4 bgOrange" type="button"
                                             class="btn btn-secondary"
                                             data-toggle="modal" data-target="#orderModal">Заказать
-                                    </button>
-								</div>
+                                        </button>
+                                    </div>
+                                    
                             </div>
-                            <div class="modal fade" id="id{{ col.id }}" tabindex="-1" role="dialog"
-                                 aria-labelledby="example#{{ col.id }}"
+                            <div class="modal fade" id="id{{ pro.id }}" tabindex="-1" role="dialog"
+                                 aria-labelledby="example#{{ pro.id }}"
                                  aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title pl-3" id="id{{ col.id }}">Календарь</h5>
+                                            <h5 class="modal-title pl-3" id="id{{ pro.id }}">Календарь</h5>
                                             <button type="button" class="btn btn-outline-danger btn-sm mt-1 mr-3"
                                                     data-dismiss="modal">Закрыть
                                             </button>
@@ -60,7 +62,7 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-3">
-                                                        <img src="{{ col.image.url }}" width="100%"
+                                                        <img src="{{ pro.image.url }}" width="100%"
                                                              alt="">
                                                     </div>
                                                     <table>
@@ -74,20 +76,20 @@
                                                         <tbody>
                                                         <tr>
                                                             <td>
-                                                                {{ col.name }}
+                                                                {{ pro.name }}
                                                             </td>
                                                             <td>
-                                                                {{ col.category }}
+                                                                {{ pro.category }}
                                                             </td>
                                                             <td>
-                                                                {{ col.vendor_code }}
+                                                                {{ pro.vendor_code }}
                                                             </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
                                                     <!-- Scrollable modal -->
                                                     <div class="modal-dialog modal-dialog-scrollable">
-                                                        {{ col.description }}
+                                                        {{ pro.description }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,13 +103,13 @@
                                 <div class="modal-dialog modal-dialog-centered " role="document">
                                     <div class="modal-content pl-3 pr-3">
                                         <div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel"></h5>
+                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
                                             <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
-                                                Закрыть
+                                                Yopish
                                             </button>
                                         </div>
                                         <div class="modal-body pt-2 pb-5 text-center">
-                                            <h6>Наш менеджер свяжется с вами в самое ближайшее время!</h6>
+                                            <h6>Bizning menejerimiz imkon qadar tezroq siz bilan bog'lanadi!</h6>
                                             <form action="" method="POST">
                                                 {% csrf_token %}
                                                 {{ form.name }}
@@ -127,5 +129,4 @@
             </div>
         </div>
     </section>
-
 {% endblock content %}
