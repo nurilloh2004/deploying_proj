@@ -85,15 +85,14 @@ def design(request):
 
 @csrf_exempt
 def printing_large(request):
-    form = OrderServiceForm()
     sub = SubLargeFormat.objects.all()
     lar = LargeFormat.objects.all()
+    form = OrderServiceForm()
     if request.method == 'POST':
         form = OrderServiceForm(request.POST, request.FILES)
+        print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
-            handle_upload_file(request.FILES['files'])
-            model_instance = form.save(commit=False)
-            model_instance.save()
+            form.save()
             return redirect('/')
         else:
             form = OrderServiceForm()
