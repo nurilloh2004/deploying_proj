@@ -93,7 +93,8 @@ def printing_large(request):
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            messages.success(request, "Saqlandi")
+            return redirect('myprint:printing_large')
         else:
             form = OrderServiceForm()
     context = {
@@ -116,7 +117,8 @@ def markirovka(request):
         if form.is_valid():
             print("<<<<<<<<<<<<<<<<<<<", request.FILES)
             form.save()
-            return redirect('/')
+            messages.success(request, "Saqlandi")
+            return redirect('myprint:markirovka')
         else:
             form = OrderServiceForm()
     context = {
@@ -177,7 +179,8 @@ def printing_paper(request):
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            messages.success(request, "Saqlandi")
+            return redirect('myprint:printing_paper')
         else:
             form = OrderServiceForm()
     context = {
@@ -200,7 +203,8 @@ def printing_textile(request):
         print("<-----------------------__>>>>", request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            messages.success(request, "Saqlandi")
+            return redirect('myprint:printing_textile')
         else:
             form = OrderServiceForm()
     context = {
@@ -345,3 +349,4 @@ def generate_pdf(request):
 def logoutview(request):
     logout(request)
     return redirect('myprint:login')
+
