@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+
+    <section class="container-fluid">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-12"><h6><span><a href="{% url 'myprint:home' %}"
+                                                 class="text-decoration-none colorBlack"><i class="fa fa-home"></i>{% trans " Главная" %}</a></span>
+                    / <a href="#!" class="colorBlack">{% trans " Услуга " %}</a> / <span>{% trans "Наружная реклама" %}</span></h6></div>
+                <div class="col-12 pt-3">
+                    <h1 class="font-weight-bold h2 text-center pb-3">{% trans "Наружная реклама" %}</h1>
+                    {% for des in about %}
+                        <h6 class="font-weight-normal text-justify">{{ des.description }}</h6>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                {% for img in image %}
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="text-right"
+                             style="background-image: url('{{ img.image.url }}'); background-size: cover; height: 200px;">
+                            <div class="p-3" style="background-color: rgba(0,0,0,0.5); height:100%;">
+                                <h5 class="pb-5 pt-2 text-white text-left">{{ img.name }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

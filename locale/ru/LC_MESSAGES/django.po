@@ -1,0 +1,767 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-07 15:44+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\config\urls.py:25
+msgid "admin/"
+msgstr ""
+
+#: .\myprint\models.py:36
+msgid "first_name"
+msgstr ""
+
+#: .\myprint\models.py:37 .\myprint\models.py:294
+msgid "full_name"
+msgstr ""
+
+#: .\myprint\models.py:38 .\myprint\models.py:295
+msgid "phone_number"
+msgstr ""
+
+#: .\myprint\models.py:55
+msgid "Manager"
+msgstr ""
+
+#: .\myprint\models.py:56
+msgid "Managers"
+msgstr ""
+
+#: .\myprint\models.py:70
+msgid "size"
+msgstr ""
+
+#: .\myprint\models.py:71
+msgid "element"
+msgstr ""
+
+#: .\myprint\models.py:85
+msgid "Category"
+msgstr ""
+
+#: .\myprint\models.py:97
+msgid "Sub Category"
+msgstr ""
+
+#: .\myprint\models.py:104 .\myprint\models.py:145 .\myprint\models.py:165
+#: .\myprint\models.py:174 .\myprint\models.py:198 .\myprint\models.py:229
+msgid "name"
+msgstr ""
+
+#: .\myprint\models.py:105 .\myprint\models.py:175 .\myprint\models.py:199
+#: .\myprint\models.py:286
+msgid "image"
+msgstr ""
+
+#: .\myprint\models.py:108
+msgid "description"
+msgstr ""
+
+#: .\myprint\models.py:113
+msgid "Maxsulot"
+msgstr ""
+
+#: .\myprint\models.py:114
+msgid "Maxsulotlar"
+msgstr ""
+
+#: .\myprint\models.py:126
+msgid "Maxsulot zakazi"
+msgstr ""
+
+#: .\myprint\models.py:127
+msgid "Maxsulot zakazlari"
+msgstr ""
+
+#: .\myprint\models.py:150
+msgid "Xizmat ko'rsatish turlari"
+msgstr ""
+
+#: .\myprint\models.py:160
+msgid "Rasm"
+msgstr ""
+
+#: .\myprint\models.py:161
+msgid "Rasmlar"
+msgstr ""
+
+#: .\myprint\models.py:171
+msgid "Xizmat turi"
+msgstr ""
+
+#: .\myprint\models.py:182
+msgid "Menyu Xizmati"
+msgstr ""
+
+#: .\myprint\models.py:191
+msgid "Sponsors"
+msgstr ""
+
+#: .\myprint\models.py:204
+msgid "Portfolio"
+msgstr ""
+
+#: .\myprint\models.py:208
+msgid "id_name_order"
+msgstr ""
+
+#: .\myprint\models.py:209
+msgid "client"
+msgstr ""
+
+#: .\myprint\models.py:210
+msgid "client_phone_number"
+msgstr ""
+
+#: .\myprint\models.py:211
+msgid "manager_name"
+msgstr ""
+
+#: .\myprint\models.py:212
+msgid "date_order"
+msgstr ""
+
+#: .\myprint\models.py:213
+msgid "ready_product_date_order"
+msgstr ""
+
+#: .\myprint\models.py:230
+msgid "status_order"
+msgstr ""
+
+#: .\myprint\models.py:231
+msgid "amount"
+msgstr ""
+
+#: .\myprint\models.py:232
+msgid "price"
+msgstr ""
+
+#: .\myprint\models.py:233
+msgid "price_free_VAT"
+msgstr ""
+
+#: .\myprint\models.py:234 .\myprint\templates\multi_forms\list.html:71
+msgid "VAT"
+msgstr ""
+
+#: .\myprint\models.py:235
+msgid "price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:236
+msgid "total"
+msgstr ""
+
+#: .\myprint\models.py:237
+msgid "total_price_with_VAT"
+msgstr ""
+
+#: .\myprint\models.py:238
+msgid "total_price_ALL"
+msgstr ""
+
+#: .\myprint\models.py:258
+msgid "orders"
+msgstr ""
+
+#: .\myprint\models.py:266
+msgid "key"
+msgstr ""
+
+#: .\myprint\models.py:267
+msgid "value"
+msgstr ""
+
+#: .\myprint\models.py:271
+msgid "Sozlama"
+msgstr ""
+
+#: .\myprint\models.py:272
+msgid "Sozlamalar"
+msgstr ""
+
+#: .\myprint\models.py:277
+msgid "description_uz"
+msgstr ""
+
+#: .\myprint\models.py:282
+msgid "Biz Haqimizda"
+msgstr ""
+
+#: .\myprint\models.py:285
+msgid "name_uz"
+msgstr ""
+
+#: .\myprint\models.py:296
+msgid "files"
+msgstr ""
+
+#: .\myprint\models.py:302
+msgid "Xizmat ko'rsatish zakazlari"
+msgstr ""
+
+#: .\myprint\models.py:318
+msgid "Dizayn"
+msgstr ""
+
+#: .\myprint\models.py:331
+msgid "Raqamli chop etish"
+msgstr ""
+
+#: .\myprint\models.py:359
+msgid "Katta formatda chop etish"
+msgstr ""
+
+#: .\myprint\models.py:386
+msgid "Tekstilni chop etish"
+msgstr ""
+
+#: .\myprint\models.py:407
+msgid "Lazerni chop etish"
+msgstr ""
+
+#: .\myprint\models.py:426
+msgid "Xizmat ko'rsatish rasmlari"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:12
+msgid "ID"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:13
+msgid " Имя ЗАКАЗЧИКА"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:14
+msgid " Номер  ТЕЛЕФОНА"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:15
+msgid " ОТВЕТСВЕННЫЙ  Менеджер"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:16
+msgid " ДАТА ПРИЕМА ЗАКАЗА"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:17
+msgid " ДАТА ОТГРУЗКИ ЗАКАЗА"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:49
+msgid " Nomi"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:50
+msgid "Soni"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:51
+#: .\templates\main\service_type.html:88
+#: .\templates\main\service_type.html:104
+msgid "Narxi"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:52
+msgid "Foizi"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\create.html:98
+msgid "Submit"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:65
+msgid "Clinet"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:66
+msgid "Name"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:67
+msgid "Selected"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:68
+msgid "Amount"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:69
+msgid "Price"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:70
+msgid "Wtihout Price VAT"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:72
+msgid "Price VAT"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:73
+msgid "Total"
+msgstr ""
+
+#: .\myprint\templates\multi_forms\list.html:119
+msgid "CONVERT PDF"
+msgstr ""
+
+#: .\templates\base.html:87
+msgid "Exit"
+msgstr ""
+
+#: .\templates\base.html:91
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.html:111
+msgid "ГЛАВНАЯ"
+msgstr ""
+
+#: .\templates\base.html:112
+msgid "О компании"
+msgstr ""
+
+#: .\templates\base.html:113
+msgid "УСЛУГИ"
+msgstr ""
+
+#: .\templates\base.html:116 .\templates\base.html:169
+msgid "Дизайн"
+msgstr ""
+
+#: .\templates\base.html:117
+msgid "Цифровая печать"
+msgstr ""
+
+#: .\templates\base.html:118
+msgid "Широкоформатная печать"
+msgstr ""
+
+#: .\templates\base.html:119
+msgid "Текстильная печать"
+msgstr ""
+
+#: .\templates\base.html:120
+msgid "Лазерная маркировка"
+msgstr ""
+
+#: .\templates\base.html:124
+msgid "ПРОДУКЦИЯ"
+msgstr ""
+
+#: .\templates\base.html:133
+msgid "НАШИ РАБОТЫ"
+msgstr ""
+
+#: .\templates\base.html:134 .\templates\base.html:167
+msgid "КОНТАКТЫ"
+msgstr ""
+
+#: .\templates\base.html:136
+msgid "Order"
+msgstr ""
+
+#: .\templates\base.html:137
+msgid "INVOICE"
+msgstr ""
+
+#: .\templates\base.html:139
+msgid "LOG IN"
+msgstr ""
+
+#: .\templates\base.html:168
+msgid "Реклама"
+msgstr ""
+
+#: .\templates\base.html:182
+msgid "&copy; 2022 Все права защищены."
+msgstr ""
+
+#: .\templates\base.html:183
+msgid "Сайт разработан в студио инновационныx разработок "
+msgstr ""
+
+#: .\templates\main\about.html:13
+msgid " Главная"
+msgstr ""
+
+#: .\templates\main\about.html:14
+msgid " Услуга "
+msgstr ""
+
+#: .\templates\main\about.html:14 .\templates\main\about.html:16
+msgid "Наружная реклама"
+msgstr ""
+
+#: .\templates\main\contact.html:10
+msgid "Шайхантахурский филиал"
+msgstr ""
+
+#: .\templates\main\contact.html:30
+msgid "Учтепинский филиал"
+msgstr ""
+
+#: .\templates\main\dizayn.html:12
+msgid "Дизайн студио."
+msgstr ""
+
+#: .\templates\main\dizayn.html:52 .\templates\main\markirovka.html:44
+#: .\templates\main\printing-paper.html:47
+#: .\templates\main\printing-textile.html:46
+msgid "Наши работы."
+msgstr ""
+
+#: .\templates\main\error.html:9
+msgid "LOGIN SUPPORT CENTER"
+msgstr ""
+
+#: .\templates\main\error.html:10
+msgid "ERROR !!!!!!!!!"
+msgstr ""
+
+#: .\templates\main\error.html:11
+msgid "Если вы еще не создали учетную запись"
+msgstr ""
+
+#: .\templates\main\error.html:12
+msgid "Try again"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:17
+#: .\templates\main\poligraphy-products.html:17
+msgid "Products"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:49
+msgid "Артикул :"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:54
+#: .\templates\main\poligraphy-products.html:54
+msgid "Заказать"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:65
+#: .\templates\main\poligraphy-products.html:65
+msgid "Календарь"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:67
+#: .\templates\main\poligraphy-products.html:67
+#: .\templates\main\printing-paper.html:66
+#: .\templates\main\printing-textile.html:67
+#: .\templates\main\service_type.html:128
+msgid "Закрыть"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:80
+#: .\templates\main\poligraphy-products.html:80
+#: .\templates\main\service_type.html:69
+msgid "Nomi"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:81
+#: .\templates\main\poligraphy-products.html:81
+msgid "Masulot turi"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:82
+#: .\templates\main\poligraphy-products.html:82
+msgid "Sotuvchi kodi"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:121
+#: .\templates\main\poligraphy-products.html:121
+msgid "Bizning menejerimiz imkon qadar tezroq siz bilan bog'lanadi!"
+msgstr ""
+
+#: .\templates\main\gifts-products.html:128
+#: .\templates\main\markirovka.html:76
+#: .\templates\main\poligraphy-products.html:128
+#: .\templates\main\printing-largeformat.html:83
+#: .\templates\main\printing-paper.html:78
+#: .\templates\main\printing-textile.html:79
+#: .\templates\main\service_type.html:139
+msgid "So'rov qoldiring"
+msgstr ""
+
+#: .\templates\main\index.html:52
+msgid "Кто мы ?"
+msgstr ""
+
+#: .\templates\main\index.html:67
+msgid "Как мы работаем"
+msgstr ""
+
+#: .\templates\main\index.html:71
+msgid "Оставьте заявку на сайте или позвоните"
+msgstr ""
+
+#: .\templates\main\index.html:75
+msgid "Подберем оптимальное решение"
+msgstr ""
+
+#: .\templates\main\index.html:79
+msgid "Заключение договора"
+msgstr ""
+
+#: .\templates\main\index.html:83
+msgid "Вы получаете готовый продукции"
+msgstr ""
+
+#: .\templates\main\index.html:93
+msgid "Mы предлагаем"
+msgstr ""
+
+#: .\templates\main\index.html:114
+msgid "Есть вопросы ?"
+msgstr ""
+
+#: .\templates\main\index.html:123
+msgid "Звоните! "
+msgstr ""
+
+#: .\templates\main\index.html:124
+msgid "Мы всегда рады!"
+msgstr ""
+
+#: .\templates\main\index.html:136
+msgid "Наши преимущества"
+msgstr ""
+
+#: .\templates\main\index.html:142
+msgid "Заказ любого объема"
+msgstr ""
+
+#: .\templates\main\index.html:143
+msgid ""
+"Типография полного цикла предполагает изготовление заказа любого объема и "
+"сложности."
+msgstr ""
+
+#: .\templates\main\index.html:151
+msgid "Доступные цены"
+msgstr ""
+
+#: .\templates\main\index.html:152
+msgid "Мы гарантируем высочайшее качество печати по доступным ценам."
+msgstr ""
+
+#: .\templates\main\index.html:160
+msgid "Соблюдение сроков сдачи"
+msgstr ""
+
+#: .\templates\main\index.html:161
+msgid ""
+"Отлаженные процессы выполнения заказов гарантируют соблюдение оптимальных "
+"сроков."
+msgstr ""
+
+#: .\templates\main\index.html:170
+msgid "Различные виды печати"
+msgstr ""
+
+#: .\templates\main\index.html:171
+msgid ""
+"Представляем цифровую печать, офсетную печать, широкоформатную печать и т.д."
+msgstr ""
+
+#: .\templates\main\index.html:179
+msgid "Контроль качества"
+msgstr ""
+
+#: .\templates\main\index.html:180
+msgid ""
+"На каждом этапе производства продукции специалисты тщательно следят за ее "
+"качеством."
+msgstr ""
+
+#: .\templates\main\index.html:188
+msgid "Собственная дизайн-студия"
+msgstr ""
+
+#: .\templates\main\index.html:189
+msgid ""
+"Наши дизайнеры настоящие профессионалы, воплощающие Ваше видение в чудесные "
+"макеты."
+msgstr ""
+
+#: .\templates\main\index.html:200
+msgid "наша цель - Быть партнерами лучших, <br> быть лучшими партнерами"
+msgstr ""
+
+#: .\templates\main\index.html:209
+msgid "Нам доверяют"
+msgstr ""
+
+#: .\templates\main\index.html:224
+msgid "Остались Вопросы? "
+msgstr ""
+
+#: .\templates\main\index.html:225
+msgid "Оставляйте свой номер телефона и мы перезвоним Вам в течение 50 секунд!"
+msgstr ""
+
+#: .\templates\main\index.html:229
+msgid "ЖДУ ЗВОНОК!"
+msgstr ""
+
+#: .\templates\main\login.html:9 .\templates\main\success.html:9
+msgid "Авторизоваться"
+msgstr ""
+
+#: .\templates\main\login.html:14
+msgid "Войти"
+msgstr ""
+
+#: .\templates\main\login.html:17
+msgid "Company products"
+msgstr ""
+
+#: .\templates\main\login.html:19
+msgid "зарегистрируйтесь."
+msgstr ""
+
+#: .\templates\main\markirovka.html:21
+#: .\templates\main\printing-textile.html:22
+msgid "Размер"
+msgstr ""
+
+#: .\templates\main\markirovka.html:22
+#: .\templates\main\printing-textile.html:23
+msgid "Цена"
+msgstr ""
+
+#: .\templates\main\markirovka.html:53
+msgid "Button jo'natish"
+msgstr ""
+
+#: .\templates\main\markirovka.html:70
+#: .\templates\main\printing-largeformat.html:77
+#: .\templates\main\printing-paper.html:72
+#: .\templates\main\printing-textile.html:73
+#: .\templates\main\service_type.html:134
+msgid "Menejerimiz imkon qadar tezroq siz bilan bog'lanadi!"
+msgstr ""
+
+#: .\templates\main\markirovka.html:71
+#: .\templates\main\printing-largeformat.html:78
+#: .\templates\main\printing-paper.html:73
+#: .\templates\main\printing-textile.html:74
+msgid "Iltimos xizmat turini tanlang!"
+msgstr ""
+
+#: .\templates\main\poligraphy-products.html:117
+msgid "Yopish"
+msgstr ""
+
+#: .\templates\main\printing-largeformat.html:43
+msgid "Наименования"
+msgstr ""
+
+#: .\templates\main\printing-largeformat.html:44
+msgid "Ед.изм"
+msgstr ""
+
+#: .\templates\main\printing-largeformat.html:45
+msgid "Печать цена"
+msgstr ""
+
+#: .\templates\main\printing-largeformat.html:60
+#: .\templates\main\printing-paper.html:55
+#: .\templates\main\printing-textile.html:56
+#: .\templates\main\service_type.html:117
+msgid "Bosib chiqarishga buyurtma bering"
+msgstr ""
+
+#: .\templates\main\printing-paper.html:29
+msgid "Размер бумага"
+msgstr ""
+
+#: .\templates\main\printing-paper.html:30
+msgid "Тип бумага"
+msgstr ""
+
+#: .\templates\main\printing-paper.html:31
+msgid "Односторонняя печать (4+0)"
+msgstr ""
+
+#: .\templates\main\printing-paper.html:32
+msgid "Двухсторонняя печать (4+4)"
+msgstr ""
+
+#: .\templates\main\service_type.html:21
+msgid "Chop etish dizayni"
+msgstr ""
+
+#: .\templates\main\service_type.html:29
+msgid "Tashqi reklama"
+msgstr ""
+
+#: .\templates\main\service_type.html:37
+msgid "Brendlash"
+msgstr ""
+
+#: .\templates\main\service_type.html:49
+msgid "Qog'oz o'lchami"
+msgstr ""
+
+#: .\templates\main\service_type.html:50
+msgid "Qog'oz turi"
+msgstr ""
+
+#: .\templates\main\service_type.html:51
+msgid "Bir tomonlama bosib chiqarish(4+0)"
+msgstr ""
+
+#: .\templates\main\service_type.html:52
+msgid "Ikki tomonlama chop etish (4+4)"
+msgstr ""
+
+#: .\templates\main\service_type.html:70
+msgid "Razmer"
+msgstr ""
+
+#: .\templates\main\service_type.html:71
+msgid "Chop etish narxi"
+msgstr ""
+
+#: .\templates\main\service_type.html:87
+#: .\templates\main\service_type.html:103
+msgid "Razmeri"
+msgstr ""
+
+#: .\templates\main\service_type.html:135
+msgid "Iltimos xizmat turini tanlang!<"
+msgstr ""
+
+#: .\templates\main\service_type.html:151
+msgid "Bizning ishlarimiz."
+msgstr ""
+
+#: .\templates\main\success.html:10
+msgid "Successfuly !!!!!!"
+msgstr ""
+
+#: .\templates\main\success.html:11
+msgid "START WORK"
+msgstr ""

@@ -1,0 +1,58 @@
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<table>
+     <thead>
+        <tr>
+          <th scope='col'>Client</th>
+          <th scope='col'>Наименование работ</th>
+          <th scope='col'>Ед.изм.</th>
+          <th scope='col'>Кол-во</th>
+          <th scope='col'>Цена за единицу</th>
+          <th scope='col'>Price without HDC</th>
+          <th scope='col'>НДС</th>
+          <th scope='col'>Price with HDC</th>
+          <th scope='col'>TOTAL</th>
+        </tr>
+     </thead>   
+     <tbody>
+          
+         {% for data in datas %}
+            
+           <tr>
+            <td class="pt-3">{{data.customer.client}}</td>
+            <td class="pt-3">{{data.name}}</td>
+            <td class="pt-5">{{data.status_order}}</td>
+            <td class="pt-5">{{data.amount}}</td>
+            <td class="pt-5">{{data.price}}</td>
+            <td class="pt-5">{{price_without_VAT}}</td>
+            <td class="pt-5">{{data.VAT}}</td>
+            <td class="pt-5">{{total}}</td>
+            
+           </tr>
+         {% endfor %}
+     </tbody>
+    </table>
+{% endblock %} {% endcomment %}
+
+
+{% extends "easy_pdf/base.html" %}
+
+{% block extra_style %}
+    <style type="text/css">
+        body {
+            font-family: "Helvetica", "sans-serif";
+            color: #333333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <div class="main">
+            <h1>Hi there!</h1>
+            <img src="file:///STATIC_ROOT/img/hello.png" />
+        </div>
+    </div>
+{% endblock %}

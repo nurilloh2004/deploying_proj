@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML to PDF</title>
+    <style>
+        @font-face {
+        font-family: "Alice-Regular";
+        src: url(" {% static 'Alice-Regular.ttf' %}") format("truetype");
+        }
+
+        body {
+        font-family: "Alice-Regular";
+        font-size: 20px
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        table td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            height: 50px;
+        }
+
+        #cssTable th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+<section class="container-fluid pt-5 pb-5">
+    <div class="container p-5">
+        <div class="row border p-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-8">
+                <h5 class="font-weight-bold">OOO «MY PRINT»</h5>
+                <h6>Адрес: г.Ташкент Учтепинский р-н, 14-квартал дом № 4. Тел: 90-109-15-00</h6s>
+                    <p class="pt-3 h6 ">Со склада: Участок оперативной печати склад</p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 p-3">
+                <img src="img/logo.png" width="100%" alt="">
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                <h5 class="text-center font-weight-bold pt-3">№ 0000000003 от <span
+                        class="h5 font-weight-bold">02.12.2022</span></h5>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                <p class="h6">Получатель: ________________</p>
+                <p class="h6">Основание: Заявка 00001 г.</p>
+                <p class="h6">Через: ID 001</p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 text-center justify-content-center">
+                <table class="table table-bordered">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <th>{% trans "Clinet" %}</th>
+                            <th>{% trans "Name" %}</th>
+                            <th>{% trans "Selected" %}</th>
+                            <th>{% trans "Amount" %}</th>
+                            <th>{% trans "Price" %}</th>
+                            <th>{% trans "Wtihout Price VAT" %}</th>
+                            <th>{% trans "VAT" %}</th>
+                            <th>{% trans "Price VAT" %}</th>
+                            <th>{% trans "Total" %}</th>
+                        </tr>
+                        {% for data in datas %}
+
+                        <tr>
+                            <td class="pt-3">{{data.student.client|truncatewords:'1'}}</td>
+                            <td class="pt-3">{{data.name}}</td>
+                            <td class="pt-5">{{data.status_order}}</td>
+                            <td class="pt-5">{{data.amount}}</td>
+                            <td class="pt-5">{{data.price}}</td>
+                            <td class="pt-5">{{data.without_percent_price|truncatechars:5}}</td>
+                            <td class="pt-5">{{data.VAT}}</td>
+                            <td class="pt-5">{{data.total_sum_wit_nds|truncatechars:5}}</td>
+                            <td class="pt-5">{{data.total_sum_wit_nds|truncatechars:5}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <h6> Разрешил _____________________</h6>
+                <h6>Отпустил ______________________</h6>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <h6>Гл.бухгалтер _____________________</h6>
+                <h6>Получил _________________________</h6>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<p><a href="{% url 'myprint:create_pdf' %}" style="
+
+    width: 200px; 
+    height: 50px; 
+    background: green; 
+    color: white; 
+    border: none;
+    border-radius: 8px;
+    margin-left: 80%;  
+    margin-bottom: 20px;
+    padding: 10px;;
+
+">{% trans "CONVERT PDF" %}</a></p><br>
+{% endblock %}

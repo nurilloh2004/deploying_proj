@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+
+    <table class="table form-table table-bordered table-sm">
+        <thead class="text-center">
+            <tr>
+                <th class="font-weight-bold">{% trans "ID" %}</th>
+                <th class="font-weight-bold">{% trans " Имя ЗАКАЗЧИКА" %}</th>
+                <th class="font-weight-bold">{% trans " Номер  ТЕЛЕФОНА" %}</th>
+                <th class="font-weight-bold">{% trans " ОТВЕТСВЕННЫЙ  Менеджер" %}</th>
+                <th class="font-weight-bold">{% trans " ДАТА ПРИЕМА ЗАКАЗА" %}</th>
+                <th class="font-weight-bold">{% trans " ДАТА ОТГРУЗКИ ЗАКАЗА" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input name="id_name_order" type="text" class="form-control" placeholder="ID-№" aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="client" type="text" class="form-control" placeholder="client" aria-label="client">
+                </td>
+                <td>
+                    <input name="client_phone_number" type="text" class="form-control" placeholder="client_phone_number"
+                        aria-label="ID-№">
+                </td>
+                <td>
+                    <input name="manager_name" type="text" class="form-control" placeholder="manager_name" aria-label="manager_name">
+                </td>
+                <td>
+                    <input name="date_order" type="date" class="form-control" placeholder="date_order" aria-label="date_order">
+                </td>
+                <td>
+                    <input name="ready_product_date_order" type="date" class="form-control"
+                        placeholder="ДАТА ОТГРУЗКИ ЗАКАЗА" aria-label="ДАТА ОТГРУЗКИ ЗАКАЗА">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table form-table table-bordered table-sm">
+        <thead class="text-center">
+            <tr>
+                <th class="font-weight-bold" style="width: 23%">{% trans " Nomi" %}</th>
+                <th class="font-weight-bold" style="width: 23%" >{% trans "Soni" %}</th>
+                <th class="font-weight-bold" style="width: 23%" >{% trans "Narxi" %}</th>
+                <th class="font-weight-bold" style="width: 23%" >{% trans "Foizi" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ formset.management_form }}
+            {% for form_data in formset %}
+                <tr class="item">
+                    <td> {{ form_data.name }}   </td>
+                    <td> {{ form_data.amount }} </td>
+                    <td> {{ form_data.price }}  </td>
+                    <td> {{ form_data.VAT }}    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm remove-form-row"
+                                id="{{ formset.prefix }}">
+
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="9"
+                    style="border-left: none!important; border-right: none !important; border-bottom: none!important;">
+                    <button type="button" class="btn btn-sm btn-success add-form-row"
+                            id="{{ formset.prefix }}">
+                        Add
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+    </table>
+    {{ formset.management_form }}
+
+    <button 
+        type="submit" 
+            style="
+
+                width: 200px; 
+                height: 50px; 
+                background: green; 
+                color: white; 
+                border: none;
+                border-radius: 8px;
+                margin-left: 80%;  
+                margin-bottom: 20px;
+
+            ">{% trans "Submit" %}</button>
+</form>
+{% endblock %}
+{% block extra_script %}
+<script type="text/javascript" src="{% static 'js/formset.js' %}"></script>
+{% endblock%}
