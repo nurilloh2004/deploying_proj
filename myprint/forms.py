@@ -22,8 +22,9 @@ class OrderServiceForm(forms.ModelForm):
         widgets = {
             'files': forms.FileInput(attrs={
                 "accept": ".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf",
-                "type": "file"
-            }),
+                "type": "file",
+                "class": "form-control mt-4 bg-secondary",       
+                }),
 
             'order_type': forms.Select(attrs={
                 'class': 'custom-select',
