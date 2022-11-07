@@ -1,8 +1,0 @@
-{% load crispy_forms_tags %}
-{% load i18n %}
-
-<form method="POST">
-    {% csrf_token %}
-    {{form|crispy}}
-    <button type='POST'>Submit</button>
-</form>
