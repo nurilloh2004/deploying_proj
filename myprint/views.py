@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect, HttpResponse, FileResponse
 from .models import *
 from .forms import *
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.db import transaction, IntegrityError
 from django.contrib.auth import  authenticate
@@ -346,3 +347,8 @@ def generate_pdf(request):
     context = {'datas': datas}
     pdf = html_to_pdf('pdf_convert/pdfReport.html', context=context)
     return HttpResponse(pdf, content_type='application/pdf')
+
+
+def logoutview(request):
+    logout(request)
+    return redirect('myprint:login')
