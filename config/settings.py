@@ -274,6 +274,7 @@ JAZZMIN_SETTINGS = {
         {"model": "myprint.About"},
         {"model": "myprint.Settings"},
         {"model": "myprint.TypeService"},
+        {"model": 'myprint.OrderForm'},
     ],
     
     #############
@@ -300,7 +301,7 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
 
     # Hide these models when generating side menu (e.g auth.user)
-    "hide_models": ['myprint.OrderForm', 'myprint.Category', 'myprint.User', 'myprint.AboutImage', 'myprint.About', 'myprint.Settings', 'myprint.TypeService', 'myprint.Customer'],
+    "hide_models": [ 'myprint.Category', 'myprint.User', 'myprint.AboutImage', 'myprint.About', 'myprint.Settings', 'myprint.TypeService', 'myprint.Customer'],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],

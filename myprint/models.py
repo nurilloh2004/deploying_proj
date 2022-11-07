@@ -52,8 +52,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_superadmin = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name = 'Manager'
-        verbose_name_plural = 'Managers'
+        verbose_name = _('Manager')
+        verbose_name_plural = _('Managers')
 
     def __str__(self) -> str:
         return str(self.phone_number)
@@ -82,7 +82,7 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Category'
+        verbose_name = _('Category')
 
 
 class SubCategory(models.Model):
@@ -94,7 +94,7 @@ class SubCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Sub Category"
+        verbose_name = _("Sub Category")
 
 
 #Product
@@ -110,8 +110,8 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        verbose_name = "Maxsulot"
-        verbose_name_plural = "Maxsulotlar"
+        verbose_name = _("Maxsulot")
+        verbose_name_plural = _("Maxsulotlar")
 
 class Product_Orders(models.Model):
     name = models.CharField(max_length=50)
@@ -123,23 +123,11 @@ class Product_Orders(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Maxsulot zakazi"
-        verbose_name_plural = "Maxsulot zakazlari"
+        verbose_name = _("Maxsulot zakazi")
+        verbose_name_plural = _("Maxsulot zakazlari")
 
 
-# class InfoType(models.Model):
-#     size = models.CharField(_('size'), max_length=65)
-#     type_paper = models.CharField(_('type_paper'), max_length=65)
-#     one_site_print = models.CharField(_('one_site_print'), max_length=65)
-#     double_site_print = models.CharField(_('double_site_print'), max_length=65)
 
-
-#     def __str__(self):
-#         return self.size
-    
-
-
-#Размер бумага 	Тип бумага 	Односторонняя печать (4+0) 	Двухсторонняя печать (4+4)
 
 class Type(models.Model):
     name = models.CharField(_('name'), max_length=65)
@@ -147,7 +135,7 @@ class Type(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Xizmat ko'rsatish turlari"
+        verbose_name = _("Xizmat ko'rsatish turlari")
 
 class Image(models.Model):
     type_sevice = models.ForeignKey(Type, on_delete=models.SET_NULL, blank=True, null=True)
@@ -157,8 +145,8 @@ class Image(models.Model):
         return str(self.type_sevice)
 
     class Meta:
-        verbose_name = "Rasm"
-        verbose_name_plural = "Rasmlar"
+        verbose_name = _("Rasm")
+        verbose_name_plural = _("Rasmlar")
 
 # Reklama , Poligrafia, Suviner
 class TypeService(models.Model):
@@ -168,7 +156,7 @@ class TypeService(models.Model):
     def str(self) -> str:
         return self.name
     class Meta:
-        verbose_name = "Xizmat turi"
+        verbose_name = _("Xizmat turi")
 
 
 class MenuService(models.Model):
@@ -180,7 +168,7 @@ class MenuService(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Menyu Xizmati"
+        verbose_name = _("Menyu Xizmati")
 
 
 
@@ -189,7 +177,8 @@ class Sponsors(models.Model):
     image = models.FileField(upload_to="media/pictures/%Y/%m/", validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])])
 
 
-
+    class Meta:
+        verbose_name = _("Sponsors")
 
 
 
@@ -200,7 +189,8 @@ class Portfolio(models.Model):
 
     def __str__(self) -> str:
                 return self.name
-
+    class Meta:
+        verbose_name = _("Portfolio")
 
 
 class Customer(models.Model):
@@ -216,14 +206,14 @@ class Customer(models.Model):
         return self.client
 
     class Meta:
-        db_table = 'customers'  
+        db_table = _('customers')  
 
 
 class OrderForm(models.Model):
     student = models.ForeignKey(Customer, related_name = "orders", on_delete=models.CASCADE)
     Product_Status = (
-        ('шт', 'шт'),
-        ('усл', 'усл'),
+        ('ta', 'ta'),
+        ('kg', 'kg'),
     )
     name = models.CharField(_('name'), max_length=65, blank=True, null=True)
     status_order = models.CharField(_('status_order'), max_length=20, choices=Product_Status, default='шт', null=True, blank=True)
@@ -254,7 +244,7 @@ class OrderForm(models.Model):
                 return self.name
 
     class Meta:
-        db_table = 'orders'
+        db_table = _('orders')
 
 
 
@@ -265,8 +255,8 @@ class Settings(models.Model):
     key = models.CharField(_('key'), max_length=50, primary_key=True)
     value = models.TextField(_('value'))
     class Meta:
-        verbose_name = "Sozlama"
-        verbose_name_plural = "Sozlamalar"
+        verbose_name = _("Sozlama")
+        verbose_name_plural = _("Sozlamalar")
 
 
 
@@ -276,7 +266,7 @@ class About(models.Model):
         return self.description
 
     class Meta:
-        verbose_name = "Biz Haqimizda"
+        verbose_name = _("Biz Haqimizda")
 
 class AboutImage(models.Model):
     name = models.CharField(_('name_uz'), max_length=60, blank=True, null=True)
@@ -296,7 +286,7 @@ class OrderService(models.Model):
     def __str__(self):
         return self.username
     class Meta:
-        verbose_name = "Xizmat ko'rsatish zakazlari"
+        verbose_name = _("Xizmat ko'rsatish zakazlari")
 
 #####################################################################################################################################
 
@@ -312,7 +302,7 @@ class Design(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Dizayn"
+        verbose_name = _("Dizayn")
 
 
 class DigitalPrint(models.Model):
@@ -325,7 +315,7 @@ class DigitalPrint(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Raqamli chop etish"
+        verbose_name = _("Raqamli chop etish")
 
 
 class SubDigitalPrint(models.Model):
@@ -378,7 +368,7 @@ class TextPrint(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = "Tekstilni chop etish"
+        verbose_name = _("Tekstilni chop etish")
 
 
 class SUbTextPrint(models.Model):
@@ -399,7 +389,7 @@ class LaserPrint(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = "Lazerni chop etish"
+        verbose_name = _("Lazerni chop etish")
 
 
 class SubLaserPrint(models.Model):
@@ -418,6 +408,6 @@ class Image2(models.Model):
         return str(self.type_sevice)
 
     class Meta:
-        verbose_name = "Xizmat ko'rsatish rasmlari"
+        verbose_name = _("Xizmat ko'rsatish rasmlari")
 
 

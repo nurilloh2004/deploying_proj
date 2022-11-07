@@ -85,11 +85,11 @@
 							{% endfor %}
 							{% if user.is_authenticated %}
 							<button type="button" class="btn btn-light">
-								<a href="{% url 'myprint:logout' %}">Exit</a>
+								<a href="{% url 'myprint:logout' %}">{% trans "Exit" %}</a>
 							</button>
 							{% else %}
 							<button type="button" class="btn btn-light">
-								<a href="{% url 'myprint:login' %}">Login</a>
+								<a href="{% url 'myprint:login' %}">{% trans "Login" %}</a>
 							</button>
 							{% endif %}</li>
 							
@@ -108,18 +108,18 @@
 								<div class="navbar-collapse">	
 									<div class="nav-inner">	
 				  <ul class="nav menu navbar-nav">
-					  <li class="active"><a href="{% url 'myprint:home' %}">ГЛАВНАЯ</a></li>
-					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">О компании</a></li>
-												<li><a href="#!">УСЛУГИ</a>
+					  <li class="active"><a href="{% url 'myprint:home' %}">{% trans "ГЛАВНАЯ" %}</a></li>
+					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">{% trans "О компании" %}</a></li>
+												<li><a href="#!">{% trans "УСЛУГИ" %}</a>
 						  <ul class="dropdown">
-								<li style="list-style-type: none;"><a href="{% url 'myprint:design' %}">Дизайн</a></li>
-                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_paper' %}">Цифровая печать</a></li>
-                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_large' %}">Широкоформатная печать</a></li>
-                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_textile' %}">Текстильная печать</a></li>
-                				<li style="list-style-type: none;"><a href="{% url 'myprint:markirovka' %}">Лазерная маркировка</a></li>	
+								<li style="list-style-type: none;"><a href="{% url 'myprint:design' %}">{% trans "Дизайн" %}</a></li>
+                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_paper' %}">{% trans "Цифровая печать" %}</a></li>
+                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_large' %}">{% trans "Широкоформатная печать" %}</a></li>
+                				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_textile' %}">{% trans "Текстильная печать" %}</a></li>
+                				<li style="list-style-type: none;"><a href="{% url 'myprint:markirovka' %}">{% trans "Лазерная маркировка" %}</a></li>	
 						  </ul>
 					  </li>
-					  <li><a href="#!">ПРОДУКЦИЯ</a>
+					  <li><a href="#!">{% trans "ПРОДУКЦИЯ" %}</a>
 						<ul class="dropdown">
 							{% for row in allcategory %}
 								<li style="list-style-type: none;">
@@ -128,11 +128,11 @@
 							{% endfor %}
 						</ul>
 					</li>								
-					  <li><a href="{% url 'myprint:portfolio' %}">НАШИ РАБОТЫ</a></li>
-					  <li><a href="{% url 'myprint:contact' %}">КОНТАКТЫ</a></li>
+					  <li><a href="{% url 'myprint:portfolio' %}">{% trans "НАШИ РАБОТЫ" %}</a></li>
+					  <li><a href="{% url 'myprint:contact' %}">{% trans "КОНТАКТЫ" %}</a></li>
 					  {% if request.user.is_authenticated %}
-					  	<li><a href="{% url 'myprint:create'%}">Order</a></li>
-					  	<li><a href="{% url 'myprint:list' %}">INVOICE</a></li>
+					  	<li><a href="{% url 'myprint:create'%}">{% trans "Order" %}</a></li>
+					  	<li><a href="{% url 'myprint:list' %}">{% trans "INVOICE" %}</a></li>
 					  {% else %}
 					  {% endif %}
 					  
@@ -162,9 +162,9 @@
 			<a href="{% url 'myprint:home' %}"><img  src="{% static 'img/logo.png' %}" width="100%" alt=""></a>
 		  </div>
 		  <div class="offset-3 offset-sm-0 col-9 col-sm-12 col-md-6 col-lg-6 col-xl-7 footer_menu">
-			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:contact' %}" class="colorBlack">КОНТАКТЫ</a></h5>
-			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:portfolio' %}" class="colorBlack">Реклама</a></h5>
-			<h5 class="ml-3"><a href="{% url 'myprint:design' %}" class="colorBlack">Дизайн</a></h5>
+			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:contact' %}" class="colorBlack">{% trans "КОНТАКТЫ" %}</a></h5>
+			<h5 class="ml-3 mr-3"><a href="{% url 'myprint:portfolio' %}" class="colorBlack">{% trans "Реклама" %}</a></h5>
+			<h5 class="ml-3"><a href="{% url 'myprint:design' %}" class="colorBlack">{% trans "Дизайн" %}</a></h5>
 		  </div>
 		  <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-center text-md-right">
 			<span class="ml-2"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></span>
@@ -177,8 +177,8 @@
 		<div class="container text-white">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 pt-3 form-inline justify-content-between">
-					<p class="small">&copy; 2022 Все права защищены.</p>                          
-					<p class="small">Сайт разработан в студио инновационныx разработок <a href="https://datasite.uz" class="text-white text-decoration-none font-weight-bold">DataSite.uz</a></p>             
+					<p class="small">{% trans "&copy; 2022 Все права защищены." %}</p>                          
+					<p class="small">{% trans "Сайт разработан в студио инновационныx разработок " %}<a href="https://datasite.uz" class="text-white text-decoration-none font-weight-bold">DataSite.uz</a></p>             
 				  </div>
 			</div>
 		</div>

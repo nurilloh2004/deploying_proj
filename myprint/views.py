@@ -279,7 +279,6 @@ def createView(request):
 
 
 
-
 def listView(request):
     datas = OrderForm.objects.all()
     context = {'datas' : datas}
