@@ -123,11 +123,11 @@
 					  </li>
 					  <li><a href="#!">{% trans "ПРОДУКЦИЯ" %}</a>
 						<ul class="dropdown">
+							{% for row in allcategory %}
 							<li style="list-style-type: none;">
-								{% for row in allcategory %}
 									<a href="{% url 'myprint:parent' row.pk %}">{{ row.name }}</a>
-								{% endfor %}
-							</li>
+								</li>
+							{% endfor %}
 						</ul>
 					</li>								
 					  <li><a href="{% url 'myprint:portfolio' %}">{% trans "НАШИ РАБОТЫ" %}</a></li>
