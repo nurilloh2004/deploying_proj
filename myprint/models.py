@@ -368,7 +368,7 @@ class SubLargeFormat(models.Model):
 
 
 
-class   TextPrint(models.Model):
+class TextPrint(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     slug = models.SlugField(max_length=50, blank=True, null=True)
     description = models.TextField()

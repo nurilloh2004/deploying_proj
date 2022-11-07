@@ -68,34 +68,25 @@
 		<div class="topbar">
 		 <div class="container">
 		   <div class="row">
-			 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center text-md-left">
-			   <a href="{% url 'myprint:home' %}" class="cat-1heading"><img src="{% static 'img/logo.svg' %}" width="220" alt=""></a>
-			 </div>
-			 <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 text-center">
-			   <div class="right-content">							
-				 <ul class="list-main pt-3">
-				   <li class="pr-1 pb-2 border-0"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ telegram }}"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ instagram }}"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}" class="pb-0 pt-3 mb-0 font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a>
-					<li><a href="#!">{{ LANGUAGE_CODE }}</a>
-						<ul class="dropdown">
-							<li style="list-style-type: none;">
+			 	<div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 text-center text-md-left">
+			   		<a href="{% url 'myprint:home' %}" class="cat-1heading"><img src="{% static 'img/logo.svg' %}" width="220" alt=""></a>
+			 	</div>
+			 	<div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 text-center">
+			   		<div class="right-content">							
+				 		<ul class="list-main pt-3">
+							<li class="pr-1 pb-2 border-0"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
+							<li class="pl-1 pr-1 pb-2 border-0"><a href="{{ telegram }}"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
+							<li class="pl-1 pr-1 pb-2 border-0"><a href="{{ instagram }}"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
+							<li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}" class="pb-0 pt-3 mb-0 font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a>
 								{% for lang_code, lang_name in languages %}
 									{% language lang_code %}
-										<li style="list-style-type: none;">
-											<a href="/{{ lang_code }}">{{ lang_name }}</a>
-										</li>
+										<a href="/{{ lang_code }}">{{ LANGUAGE_CODE }}</a>
 									{% endlanguage %}
 								{% endfor %}
 							</li>
 						</ul>
-					</li>
-</li>
-	
-				 </ul>
-			   </div>
-			 </div>
+			   		</div>
+				</div>
 		   </div>
 		 </div>
 	   </div>  
@@ -112,22 +103,20 @@
 					  <li><a href="{% url 'myprint:advertisement' %}" class="text-uppercase">О компании</a></li>
 												<li><a href="#!">УСЛУГИ</a>
 						  <ul class="dropdown">
-							<li style="list-style-type: none;">
 								<li style="list-style-type: none;"><a href="{% url 'myprint:design' %}">Дизайн</a></li>
                 				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_paper' %}">Цифровая печать</a></li>
                 				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_large' %}">Широкоформатная печать</a></li>
                 				<li style="list-style-type: none;"><a href="{% url 'myprint:printing_textile' %}">Текстильная печать</a></li>
                 				<li style="list-style-type: none;"><a href="{% url 'myprint:markirovka' %}">Лазерная маркировка</a></li>	
-							</li>
 						  </ul>
 					  </li>
 					  <li><a href="#!">ПРОДУКЦИЯ</a>
 						<ul class="dropdown">
-							<li style="list-style-type: none;">
-								{% for row in allcategory %}
+							{% for row in allcategory %}
+								<li style="list-style-type: none;">
 									<a href="{% url 'myprint:parent' row.pk %}">{{ row.name }}</a>
-								{% endfor %}
-							</li>
+								</li>
+							{% endfor %}
 						</ul>
 					</li>								
 					  <li><a href="{% url 'myprint:portfolio' %}">НАШИ РАБОТЫ</a></li>
