@@ -77,11 +77,14 @@
 				   <li class="pr-1 pb-2 border-0"><a href="{{ facebook }}"><img src="{% static 'img/icons/facebook.png' %}" width="30" height="30" alt=""></a></li>
 				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ telegram }}"><img src="{% static 'img/icons/telegramBlack.png' %}" width="30" height="30" alt=""></a></li>
 				   <li class="pl-1 pr-1 pb-2 border-0"><a href="{{ instagram }}"><img src="{% static 'img/icons/instagramBlack.png' %}" width="30" height="30" alt=""></a></li>
-				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}" class="font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a>{% for lang_code, lang_name in languages %}{% language lang_code %}
-					<button type="button" class="btn btn-light"><a
-							href="/{{ lang_code }}">{{ lang_name }}</a></button>
-				{% endlanguage %}
-			{% endfor %}
+				   <li class="pl-1 pr-1 pb-1 mb-0 border-0 font-weight-normal"><a href="tel:{{ phone }}" class="font-weight-normal" style="font-size: 25px;"><img src="{% static 'img/icons/phonesvg.svg' %}" width="25" class="mr-2 ml-2" height="30" alt="">{{ phone }}</a>
+					{% for lang_code, lang_name in languages %}
+					{% language lang_code %}
+						<button type="button" class="btn btn-light">
+							<a href="/{{ lang_code }}">{{ lang_name }}</a>
+						</button>
+					{% endlanguage %}
+					{% endfor %}
 			{% if user.is_authenticated %}
 			<button type="button" class="btn btn-light">
 				<a href="{% url 'myprint:logout' %}">{% trans "Exit" %}</a>
