@@ -171,7 +171,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CSRF_TRUSTED_ORIGINS=['https://myprint-data-site.azurewebsites.net']
+
 
 
 SESSION_COOKIE_SECURE = True
