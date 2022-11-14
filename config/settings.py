@@ -142,6 +142,8 @@ MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'ru'
 
 TIME_ZONE = 'Asia/Tashkent'
 
+SESSION_COOKIE_SECURE = True
+
 USE_I18N = True
 
 USE_TZ = True
@@ -174,8 +176,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-SESSION_COOKIE_SECURE = True
-USE_I18N = True
+
 
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": False,
